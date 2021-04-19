@@ -1,79 +1,171 @@
 <!DOCTYPE html>
-<html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
 <style>
-* {box-sizing: border-box}
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;}
+    * {
+      box-sizing: border-box
+    }
 
-.navbar {
-  width: 100%;
-  background-color: rgb(78, 134, 103);
-  overflow: auto;
-}
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-.navbar a {
-  float: left;
-  padding: 12px;
-  color: white;
-  text-decoration: none;
-  font-size: 17px;
-  width: 25%; /* Four links of equal widths */
-  text-align: center;
-}
+    .navbar {
+      width: 100%;
+      background-color: rgb(78, 134, 103);
+      overflow: auto;
+    }
 
-.navbar a:hover {
-  background-color: rgb(252, 252, 252);
-  color: rgb(78, 134, 103);
-}
+    .navbar a {
+      float: left;
+      padding: 12px;
+      color: white;
+      text-decoration: none;
+      font-size: 17px;
+      width: 25%; /* Four links of equal widths */
+      text-align: center;
+    }
 
-.topnav a {
-  float: right;
-  color: red;
-  text-align: center;
-  padding: 14px 50px;
-  text-decoration: none;
-  font-size: 17px;
-  border-top: 10px solid red;
-}
+    .navbar a:hover {
+      background-color: rgb(252, 252, 252);
+      color: rgb(78, 134, 103);
+    }
 
-.topnav a:hover {
-  background-color: red;
-  color: white;
-  border-top: 10px solid transparent;
-  
-}
+    .topnav a {
+      float: right;
+      color: red;
+      text-align: center;
+      padding: 14px 50px;
+      text-decoration: none;
+      font-size: 17px;
+      border-top: 10px solid red;
+    }
+
+    .topnav a:hover {
+      background-color: red;
+      color: white;
+      border-top: 10px solid transparent;
+    }
+
+    @media screen and (max-width: 500px) {
+      .navbar a {
+        float: none;
+        display: block;
+        width: 100%;
+        text-align: left;
+      }
+    }
+
+    h1 {
+      color: rgb(78, 134, 103);
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    h2 {
+      color: rgb(78, 134, 103);
+      text-align: center;
+      padding: 20px;
+    }
+
+    .column {
+      float: left;
+      width: 33.33%;
+      padding: 15px;
+      position: relative;
+      filter: blur(0);
+    }
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 35px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+
+    .overlay p {
+        transform: translateY(20px);
+        transition: transform 0.25s;
+    }
+
+    .overlay:hover {
+        opacity: 1;
+    }
+
+    .column:hover p {
+        transform: translateY(0);
+    }
+
+    .column:hover img {
+        -webkit-filter: blur(5px);
+        filter: blur(5px);
+    }
 
 
-
-@media screen and (max-width: 500px) {
-  .navbar a {
-    float: none;
-    display: block;
-    width: 100%;
-    text-align: left;
-  }
-}
 </style>
+
+<title>General Campus Health and Safety</title>
+</head>
+
 <body>
-        <div class="topnav">
-          <a  href="mailto:tatum.botha7@gmail.com">Email</a>
-          <a href="0410015152">Phone</a> 
-      
+    <div class="topnav">
+        <a href="mailto:tatum.botha7@gmail.com">Email</a>
+        <a href="0410015152">Phone</a>
+    </div>
+
+    <img src="https://cdn.logo.com/hotlink-ok/logo-social.png" alt="Logo" width="300px">
+
+    <div class="navbar">
+        <a href="HomePage.html">Home</a>
+        <a href="About.html">About</a>
+        <a href="Rankings.html">Rankings</a>
+        <a href="Login.html">Login</a>
+    </div>
+
+    <h1>GENERAL CAMPUS HEALTH + SAFETY</h1>
+    <h2>Staying Safe, Healthy, and Happy!</h2>
+
+    <div class="row">
+        <div class="column" onclick="getTransportContent()">
+            <img src="https://media.istockphoto.com/vectors/bicycle-helmet-vector-id483449037?k=6&m=483449037&s=612x612&w=0&h=PBZcErgCFC2HBavAGRUqIQ0k_rL2gIqsW01Dcf5JKo4=" 
+            alt="helmet" width="400px" style="width:80%">
+            <div class="overlay">
+                <p>Transport Tips + Tricks</p>
+            </div>
         </div>
-      </div>
-<img src="https://cdn.logo.com/hotlink-ok/logo-social.png" alt="Logo" float="right" width="300px">
-
-<div class="navbar">
-  <a href="HomePage.html">Home</a> 
-  <a href="#">About</a> 
-  <a href="Rankings.html">Rankings</a> 
-  <a href="Login.html">Login</a>
-</div>
-
-<h1> Text 1</h1>
-
+        <div class="column" onclick="getMentalHealthContent()">
+            <img src="https://www.nicepng.com/png/detail/236-2362567_health-clipart-mental-illness-positive-attitude-icon-png.png" 
+            alt="mental health clipart" width="400px" style="width:80%">
+            <div class="overlay">
+                <p>Social Safety + Mental Health</p>
+            </div>
+        </div>
+        <div class="column" onclick="getStudyContent()">
+            <img src="https://www.pngitem.com/pimgs/m/241-2417740_drawing-of-student-studying-clipart-png-download-studying.png" 
+            alt="study clipart" width="400px" style="width:80%">
+            <div class="overlay">
+                <p>Study Smart</p>
+            </div>
+        </div>
+    </div>
 </body>
-</html> 
-
