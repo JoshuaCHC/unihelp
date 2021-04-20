@@ -1,10 +1,24 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+      tr{
+          border: 1px solid black;
+      }
+      td{
+          border: 1px solid black;
+      }
+      table{
+          border: 1px solid black;
+      }
+      th{
+          border: 1px solid black;
+      }
+  </style>
 </head>
 <script>
   window.onload = function() {
@@ -19,14 +33,12 @@
     table.appendChild(head);
     for(var i = 0; i < 10; i++){
       const row = document.createElement('tr');
-      for(var j = 0; j < 2; j++){
-          const c1 = document.createElement('td');
-          c1.innerHTML = 'Name: ' + j;
-          const c2 = document.createElement('td');
-          c2.innerHTML = 10-j + '00000';
-          row.appendChild(c1);
-          row.appendChild(c2);
-      }
+      const c1 = document.createElement('td');
+      c1.innerHTML = 'Name: ' + i;
+      const c2 = document.createElement('td');
+      c2.innerHTML = 10-i + '00000';
+      row.appendChild(c1);
+      row.appendChild(c2);
       table.appendChild(row);
     }
     document.body.appendChild(table);
