@@ -1,0 +1,38 @@
+!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<script>
+  window.onload = function() {
+    const table = document.createElement("table");
+    const head = document.createElement('tr');
+    const h1 = document.createElement('th');
+    const h2 = document.createElement('th');
+    h1.innerHTML = 'Name';
+    h2.innerHTML = 'Score';
+    head.appendChild(h1);
+    head.appendChild(h2);
+    table.appendChild(head);
+    for(var i = 0; i < 10; i++){
+      const row = document.createElement('tr');
+      for(var j = 0; j < 2; j++){
+          const c1 = document.createElement('td');
+          c1.innerHTML = 'Name: ' + j;
+          const c2 = document.createElement('td');
+          c2.innerHTML = 10-j + '00000';
+          row.appendChild(c1);
+          row.appendChild(c2);
+      }
+      table.appendChild(row);
+    }
+    document.body.appendChild(table);
+  }
+</script>
+<body>
+  <h1>This will be the basic webpage containing the rankings table</h1>
+</body>
+</html>
