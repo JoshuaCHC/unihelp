@@ -23,21 +23,20 @@ html, body {
   position: relative;
 }
 .footer .footer-content {
-  border: 1px solid red;
   height: 350px;
   display: flex;
 }
 .footer .footer-content .footer-section {
   flex: 1;
   padding: 25px;
-  border: 1px solid white;
 }
 .footer .footer-content h1,
 .footer .footer-content h2{
   color: white;
+  font-size: 30px;
 }
 .footer .footer-content .about h1 span {
-  color: #05f7ff;
+  color: red;
 }
 .footer .footer-content .about .contact span{
   display:block;
@@ -48,6 +47,7 @@ html, body {
   border: 1px solid white;
   width: 45px;
   height: 41px;
+  color: white;
   padding-top: 5px;
   margin-right: 5px;
   text-align: center;
@@ -58,14 +58,18 @@ html, body {
 }
 .footer .footer-content .about .socials a:hover{
   border: 1px solid white;
-  color: white;
+  color: rgb(155, 64, 64);
   transition: all .3s;
+  border: 1px solid rgb(155, 64, 64);
 }
 .footer .footer-content .links ul a{
   display:block;
   margin-bottom: 10px;
-  font-size: 1.2em;
+  color: white;
+  font-size: 2.0em;
+  text-decoration: none;
   transition: all .3s;
+  
 }
 .footer .footer-content .links ul a:hover{
   color:white;
@@ -90,7 +94,7 @@ html, body {
 }
 .footer .footer-bottom{
   background:rgb(25, 149, 81);
-  color: rgb(155, 64, 64);
+  color: white;
   height: 50px;
   width: 100%;
   text-align: center;
@@ -238,7 +242,7 @@ section h1 {
 <div class = "footer">
   <div class="footer-content">
     <div class="footer-section about">
-      <h1 class="logo-text">Uni Safe</h1>
+      <h1 class="logo-text"><span>Uni</span>Safe</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
@@ -277,7 +281,9 @@ section h1 {
     <br>
     <form action="index.html" method="post">
       <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
+      <br>
       <textarea name="message" class="text-input contact-input" placeholder="Your message..."></textarea>
+      <br>
       <button type="submit" class="btn btn-big">
         <i class="fa fa-envelope"></i>
         Send
