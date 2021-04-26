@@ -18,7 +18,6 @@ html, body {
 .page-wrapper {
     min-height: 100%
 }
-/* FOOTER */
 .footer{
   background: rgb(78, 134, 103);
   color:#fff;
@@ -105,7 +104,7 @@ html, body {
   bottom: 0px;
   left: 0px;
   padding-top: 20px;
-}
+} 
 @media only screen and (max-width:934px){
 .footer {
   height: auto;
@@ -126,7 +125,7 @@ html, body {
   color: white;
 }
 /* this page-wrapper stuff just makes sure the footer stays at bottom */
-.page-wrapper a:hover{
+ .page-wrapper a:hover{
   color: #fff;
 }
 
@@ -289,21 +288,6 @@ section h1 {
   }
 
   
-  .hero-image {
-    background: url("https://connect-assets.prosple.com/cdn/ff/PHIoDt07QOyFPh0w1YjCuQqz4Bpj6K25J9UXk0EG1g8/1576411961/public/styles/scale_and_crop_center_890x320/public/2019-12/UWA%20Banner%201786x642px_0.jpg?itok=FaT7bjel") no-repeat center; 
-    background-size: cover;
-    height: 500px;
-    position: relative;
-  }
-  
-  .hero-text {
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-  }  
   .navbar {
     width: 100%;
     background-color: rgb(78, 134, 103);
@@ -468,6 +452,6 @@ body {
 
 
 
-}
+
 
   

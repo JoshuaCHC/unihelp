@@ -6,12 +6,16 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="Stylesheet.css">
+  <!-- Font Awesome-->
+  <link rel="stylesheet" href = "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- //Font Awesome-->
+  <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/Stylesheet.css') }}">
+  <!-- <link rel = "stylesheet" href="..\static\stylesheets\Stylesheet.css"> -->
 </head>
 
 <body>
   <!--Page Wrapper (Contains "middle" of page)-->
-  <div class = 'page-wrapper'>
+  <!-- <div class = 'page-wrapper'> -->
       <div class = 'backgroundimg'>
         <div class="topnav">
           <a  href="mailto:tatum.botha7@gmail.com">Email</a>
@@ -19,8 +23,7 @@
       
         </div>
       </div>
-    </div>
-
+      <img src="/static/images/UniSafeLogo.jpeg" alt="Logo" width="300px">
 <div class="navbar">
   <a href="/">Home</a> 
   <a href="/about">About</a> 
@@ -29,12 +32,9 @@
 </div>
 {% block content %}{%endblock%}
 
-<!-- Font Awesome-->
-<link rel="stylesheet" text = "text/css" href = "style.css">
-<link rel="stylesheet" href = "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- //Font Awesome-->
 
-</div>
+
+</div> 
 <!--//Page Wrapper-->
 
 <!-- Footer -->
@@ -99,9 +99,9 @@
 
 
 <!-- JQuery -->
-<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.js"></script> -->
 
-<!-- part of dodgy socials package-->
-<script src="js/c-share.js"></script>
+
+<!-- <script src="js/c-share.js"></script> --> 
 </body>
 </html> 

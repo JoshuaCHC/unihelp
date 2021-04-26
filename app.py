@@ -26,5 +26,6 @@ def login():
     return render_template('Login.html', error=error)
 
 if( __name__ == '__main__'):
+    app.static_folder = 'static'
     app.run(debug = 1)
 
