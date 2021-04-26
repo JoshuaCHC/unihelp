@@ -1,10 +1,22 @@
-* {
-    box-sizing: border-box
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;}
+    
+@media screen and (max-width: 500px) {
+    .navbar a {
+      float: none;
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+    .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
   }
 
-  body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+  
+* {
+    box-sizing: border-box
   }
 
   .navbar {
@@ -44,14 +56,7 @@
     border-top: 10px solid transparent;
   }
 
-  @media screen and (max-width: 500px) {
-    .navbar a {
-      float: none;
-      display: block;
-      width: 100%;
-      text-align: left;
-    }
-  }
+  
 
   h1 {
     color: rgb(78, 134, 103);
@@ -116,10 +121,6 @@
       filter: blur(5px);
   }
 
-  * {box-sizing: border-box}
-  body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;}
   
   .hero-image {
     background: url("https://connect-assets.prosple.com/cdn/ff/PHIoDt07QOyFPh0w1YjCuQqz4Bpj6K25J9UXk0EG1g8/1576411961/public/styles/scale_and_crop_center_890x320/public/2019-12/UWA%20Banner%201786x642px_0.jpg?itok=FaT7bjel") no-repeat center; 
@@ -176,14 +177,8 @@
   
   
   
-  @media screen and (max-width: 500px) {
-    .navbar a {
-      float: none;
-      display: block;
-      width: 100%;
-      text-align: left;
-    }
 
+    
    
  .sidenav a, .dropdown-btn {
   padding: 6px 8px 6px 16px;
@@ -255,39 +250,36 @@
   padding: 0px 10px;
 }
 
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
 
-* {box-sizing: border-box}
+
+
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;}
 
-.navbar {
-  width: 100%;
-  background-color: rgb(78, 134, 103);
-  overflow: auto;
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 0;
-}
-
-.navbar a {
-  float: right;
-  padding: 12px;
-  color: white;
-  text-decoration: none;
-  font-size: 17px;
-  width: 25%; /* Four links of equal widths */
-  text-align: center;
-}
-
-.navbar a:hover {
-  background-color: rgb(252, 252, 252);
-  color: rgb(78, 134, 103);
-}
+    .module_navbar {
+        width: 100%;
+        background-color: rgb(78, 134, 103);
+        overflow: auto;
+        position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+        z-index: 1; /* Stay on top */
+        top: 0;
+      }
+      
+      .module_navbar a {
+        float: right;
+        padding: 12px;
+        color: white;
+        text-decoration: none;
+        font-size: 17px;
+        width: 25%; /* Four links of equal widths */
+        text-align: center;
+      }
+      
+      .module_navbar a:hover {
+        background-color: rgb(252, 252, 252);
+        color: rgb(78, 134, 103);
+      }
 
 .topnav a {
   float: right;
@@ -308,13 +300,7 @@ body {
 
 
 
-@media screen and (max-width: 500px) {
-  .navbar a {
-    float: none;
-    display: block;
-    width: 100%;
-    text-align: left;
-  }
+
 }
 
-  }
+  
