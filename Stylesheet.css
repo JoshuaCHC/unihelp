@@ -53,16 +53,21 @@
     }
   }
 
-  h1 {
-    color: rgb(78, 134, 103);
+  .content {
+    color:rgb(78, 134, 103);
     text-align: center;
+  }
+
+  .content h1 {
     padding-top: 50px;
   }
 
-  h2 {
-    color: rgb(78, 134, 103);
-    text-align: center;
-    padding: 20px;
+  .content h2 {
+    padding: 5px 20px 40px;
+  }
+
+  .content p {
+    padding: 10px 20px 30px;
   }
 
   .column {
