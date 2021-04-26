@@ -1,0 +1,34 @@
+{% extends "base.html"%}
+{% block content %}
+<div class = 'container'>
+  <h1>Current Rankings:</h1>
+  <table class = 'table table-bordered table-hover' id = 'table1'></table>
+</div>
+
+</body>
+<script>
+  window.onload = function() {
+    const table = document.querySelector("table");
+    const head = document.createElement('thead');
+    const h1 = document.createElement('th');
+    const h2 = document.createElement('th');
+    const tbody = document.createElement('tbody');
+    h1.innerHTML = 'Name';
+    h2.innerHTML = 'Score';
+    head.appendChild(h1);
+    head.appendChild(h2);
+    table.appendChild(head);
+    for(var i = 0; i < 10; i++){
+      const row = document.createElement('tr');
+      const c1 = document.createElement('td');
+      c1.innerHTML = 'Name: ' + i;
+      const c2 = document.createElement('td');
+      c2.innerHTML = 10-i + '00000';
+      row.appendChild(c1);
+      row.appendChild(c2);
+      tbody.appendChild(row);
+    }
+    table.appendChild(tbody);
+  }
+</script>
+{% endblock %}
