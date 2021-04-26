@@ -15,10 +15,16 @@ def about():
 def rankings():
     return render_template('Rankings.html')	
 
-@app.route('/login')
+@app.route('/login', methods = ['GET', 'POST'])
 def login():
-    return render_template('Login.html')
+    error = ''
+    if request.method == 'POST':
+        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
+            error = 'Invalid user'
+        else:
+            return redirect(url_for('about'))
+    return render_template('Login.html', error=error)
 
 if( __name__ == '__main__'):
-    app.run()
+    app.run(debug = 1)
 
