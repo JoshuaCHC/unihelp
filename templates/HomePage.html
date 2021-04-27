@@ -1,8 +1,24 @@
 {% extends "base.html"%}
 {% block content %}
-<div id="Home" class="hero-image">
-    
-  </div>
+<section>
+  <img src = https://www.perkinsbuilders.com.au/wp-content/uploads/2020/05/UWA_EZONE275_001_small-Copy.jpg class = "img-blur">
+</section>
+<section>
+  <h1>I feel like we should put something here, and some text over the image above</h1>
+  <h2></h2>
+</section>
+<h2>Definitely going to make the footer look better, its got all the content I want on it, its just not arranged well</h2>
+<h3>Also colour scheme doesn't work very well here, just doesn't look very modern.  Depends on what we want really</h3>
+
+<!--The blur JS-->
+<script type="text/javascript">
+  $(window).scroll(function(){
+    var scroll = $(window).scrollTop();
+    $('.img-blur').css({
+      filter: "blur(" + (scroll/200) + "px)"
+    })
+  })
+</script>
 
   {% endblock %}
 
