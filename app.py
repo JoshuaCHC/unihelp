@@ -14,6 +14,22 @@ def about():
 @app.route('/rankings')
 def rankings():
     return render_template('Rankings.html')	
+@app.route('/login/module1')
+def mod1():
+    return render_template('Module1.html')
+
+@app.route('/login/module2')
+def mod2():
+    return render_template('Module2.html')
+
+@app.route('/login/module3')
+def mod3():
+    return render_template('Module3.html')
+
+
+
+
+
 
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
@@ -22,7 +38,7 @@ def login():
         if request.form['username'] != 'admin' or request.form['password'] != 'admin':
             error = 'Invalid user'
         else:
-            return redirect(url_for('modules'))
+            return redirect(url_for('mod1'))
     return render_template('Login.html', error=error)
 
 @app.route('/modules')
