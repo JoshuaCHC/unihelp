@@ -22,9 +22,12 @@ def login():
         if request.form['username'] != 'admin' or request.form['password'] != 'admin':
             error = 'Invalid user'
         else:
-            return redirect(url_for('about'))
+            return redirect(url_for('modules'))
     return render_template('Login.html', error=error)
 
+@app.route('/modules')
+def modules():
+    return render_template('Modules.html')
 if( __name__ == '__main__'):
     app.static_folder = 'static'
     app.run(debug = 1)
