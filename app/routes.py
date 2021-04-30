@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-	
-app = Flask(__name__)
+from app import app
 
 @app.route("/")
 def homePage():
@@ -41,7 +40,6 @@ def login():
             return redirect(url_for('mod1'))
     return render_template('Login.html', error=error)
 
-if( __name__ == '__main__'):
-    app.static_folder = 'static'
-    app.run(debug = 1)
-
+@app.route('/modules')
+def modules():
+    return render_template('Modules.html')
