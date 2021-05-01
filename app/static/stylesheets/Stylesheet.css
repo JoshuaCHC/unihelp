@@ -4,6 +4,26 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;}
+
+    blinking {
+      animation: blinkingText 1.6s;
+      animation-iteration-count: 10;
+    }
+        
+    @keyframes blinkingText{
+        0%{     color: white;    }
+        49%{    color: white; }
+        60%{    color: transparent; }
+        99%{    color:transparent;  }
+        100%{   color: white;    }
+    }
+    .header {
+      padding: 20px;
+      text-align: center;
+      background: #1abc9c;
+      color: white;
+      font-size: 70px;
+    }
     
 @media screen and (max-width: 500px) {
     .navbar a {
@@ -175,7 +195,7 @@ section h1 {
     color: white;
     text-decoration: none;
     font-size: 17px;
-    width: 25%; /* Four links of equal widths */
+    width: 100/3%; /* three links of equal widths */
     text-align: center;
   }
 
