@@ -1,0 +1,133 @@
+{% extends "base.html"%}
+{% block content %}
+<div class='container-fluid' id = 'login-container'>
+    <div class = "container-fluid">
+      <div class='row'>
+        <div class='col-sm-7'></div>
+        <div class = 'col-sm-4' style = "border:1px solid rgb(78, 134, 103); padding:15px; margin-top:15px">
+            <h3>New User:</h3>
+            <form action="" method= 'post' id='regform' class = "needs-validation" >
+              {{ form.hidden_tag() }}
+                <div class="form-group">
+                  <label for="uname">Username:</label>
+                  {{ form.username(type='text', class='form-control',placeholder='Enter username',id='uname')}}
+                  {% for error in errors %}
+                    {%if error == 'Username is taken, please try another.'%}
+                        <span style="color: red;">[{{ error }}]</span>
+                    {%endif%}
+                  {% endfor %}
+                  <!-- <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required> -->
+                </div>
+                <div class="form-group">
+                    <label for='email'>Email address</label>
+                    {{ form.email(type='email', class='form-control',placeholder='Enter email',id='email')}}
+    
+                    <!-- <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required> -->
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    {% for error in errors %}
+                    {%if error == 'There is already an account with that email address.'%}
+                        <span style="color: red;">[{{ error }}]</span>
+                    {%endif%}
+                  {% endfor %}
+                  </div>
+                <div class="form-group">
+                  <label for="pswd">Password:</label>
+                  {{ form.password(type='password', class='form-control',placeholder='Enter password',id='pswd')}}
+    
+                  <!-- <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required> -->
+                </div>
+                <div class="form-group">
+                    <label for="cpswd">Confim password:</label>
+                    {{ form.password2(type='password', class='form-control',placeholder='Re-enter password',id='cpswd')}}
+    
+                    <!-- <input type="password" class="form-control" id="cpwd" placeholder="Re-enter password" name="cpswd" required> -->
+                  </div>
+                <!-- <button type="submit" class="btn btn-primary" id="register">Submit</button> -->
+                {{form.submit(class='btn btn-primary', type='submit', value='Register', id='register')}}
+
+              </form>
+            <div class='col-sm-1'></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <!-- <script>
+          $('#register').on('click', function(event) {
+    var firstpwd = '';
+    var bool=false;
+  $("form#regform :input").each(function(){
+    var value = $(this);
+    console.log(value.attr('type'));
+    if(value.attr('type') == 'email'){
+      console.log('checking email');
+
+      var reg = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*/g;
+      var check = value.val().match(reg);
+      console.log(check);
+      if(check === null){
+        bool = true;
+        console.log('Its null');
+        value.addClass('is-invalid');
+      }
+      else{
+        console.log('Not null!');
+        value.addClass('is-valid');
+      }
+    }
+    if(value.attr('type') == 'text'){
+      console.log('checking user');
+      if(value.val() === '' || value.val() == null){
+        bool = true;
+
+        value.addClass('is-invalid');
+        console.log(value.attr('class'));
+
+      }
+      else{
+        value.addClass('is-valid');
+      }
+    }
+    if(value.attr('type') == 'password'){
+      console.log('checking password');
+      if(value.attr('id') == 'pswd'){
+        if(value.val() === '' || value.val() == null){
+          bool = true;
+
+          value.addClass('is-invalid');
+          console.log(value.attr('class'));
+
+        }
+        else{
+          firstpwd = value.val();
+          value.addClass('is-valid');
+        }
+      }
+      else{
+        if(value.val() === '' || value.val() == null){
+          bool = true;
+
+          value.addClass('is-invalid');
+          console.log(value.attr('class'));
+
+        }
+        else{
+          if(value.val() != firstpwd){
+          bool = true;
+          value.addClass('is-invalid');
+          console.log(value.attr('class'));
+          }
+          else{
+            value.addClass('is-valid');
+          }
+        }
+      }
+    }
+  });
+    if(bool == true){
+      event.preventDefault();
+    }
+  });
+      </script> -->
+
+{%endblock%}

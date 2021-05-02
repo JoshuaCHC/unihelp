@@ -1,152 +1,49 @@
 {% extends "base.html"%}
 {% block content %}
 <div class='container-fluid' id = 'login-container'>
-    <h2> Its login time my dude </h2>
     <div class = "container-fluid">
-        <div class='row'>
-            <div class = 'col-sm-1'></div>
-        <div class = 'col-sm-4' style = "border:1px solid rgb(78, 134, 103); padding:15px">
-            <h3> Existing User: </h3>
-    <form action="" method = 'post' id='loginform'>
-      {{ form.hidden_tag() }}
-        <div class="form-group">
-          <label for="username">Username:</label>
-          {{ form.username(type='text', class='form-control',placeholder='Enter username',id='user')}}
-          {% for error in form.username.errors %}
-            <span style="color: red;">[{{ error }}]</span>
-          {% endfor %}
-          <!-- <input type="text" class="form-control" placeholder="username" id="user" name='username' value='{{form.username}}' required placeholder="required"> -->
-        </div>  
-        <div class="form-group">
-          <label for="pwd">Password:</label>
-          {{ form.password(type='password', class='form-control',placeholder='Enter password',id='loginpwd')}}
-          {% for error in form.password.errors %}
-            <span style="color: red;">[{{ error }}]</span>
-          {% endfor %}
-          <!-- <input type="password" class="form-control" placeholder="password" id="loginpwd" name='password' value='{{form.password}}' required placeholder="required"> -->
-        </div>
-        <div class="form-group form-check">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox"> Remember me
-          </label>
-        </div>
-        <button type="submit" class="btn btn-primary" value='Login' id = 'login'>Submit</button>
-      </form>
-    </div>
-      <div class = 'col-sm-2'></div>
-      <div class = 'col-sm-4' style = "border:1px solid rgb(78, 134, 103); padding:15px">
-        <h3>New User:</h3>
-        <form action="" method= 'post' id='regform' class = "needs-validation" >
+      <div class='row'>
+        <div class='col-sm-7'></div>
+        <div class = 'col-sm-4' style = "border:1px solid rgb(78, 134, 103); padding:15px; margin-top:15px">
+          <h3> Login: </h3>
+          <form action="" method = 'post' id='loginform'>
+            {{ form.hidden_tag() }}
             <div class="form-group">
-              <label for="uname">Username:</label>
-              <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-              </div>
+              <label for="username">Username:</label>
+              {{ form.username(type='text', class='form-control',placeholder='Enter username',id='user')}}
+              {% for error in errors %}
+                {%if error == 'Invalid username'%}
+                  <span style="color: red;">[{{ error }}]</span>
+                {%endif%}
+              {% endfor %}
+              <!-- <input type="text" class="form-control" placeholder="username" id="user" name='username' value='{{form.username}}' required placeholder="required"> -->
+            </div>  
             <div class="form-group">
               <label for="pwd">Password:</label>
-              <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+              {{ form.password(type='password', class='form-control',placeholder='Enter password',id='loginpwd')}}
+              {% for error in errors %}
+                {%if error == 'Invalid password'%}
+                  <span style="color: red;">[{{ error }}]</span>
+                {%endif%}
+              {% endfor %}
+              <!-- <input type="password" class="form-control" placeholder="password" id="loginpwd" name='password' value='{{form.password}}' required placeholder="required"> -->
             </div>
-            <div class="form-group">
-                <label for="cpwd">Confim password:</label>
-                <input type="password" class="form-control" id="cpwd" placeholder="Re-enter password" name="cpswd" required>
-              </div>
             <div class="form-group form-check">
-              <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="remember" required> I agree on blabla.
-              </label>
+              <label class="form-check-label"><input class="form-check-input" type="checkbox"> Remember me </label>
             </div>
-            <button type="submit" class="btn btn-primary" id="register">Submit</button>
+            <!-- <button type="submit" class="btn btn-primary" value='Login' id = 'login'>Login</button> -->
+            {{form.submit(class='btn btn-primary', type='submit', value='Login', id='login')}}
           </form>
-          
-
+          <hr>
+          <h3>New User?</h3>
+          <p>Register Here!</p>
+          <a href="register" class="btn btn-primary" role="button">Register Now!</a>
+        </div>
+        <div class='col-sm-1'></div>
       </div>
-      <div class = 'col-sm-1'></div>
-
     </div>
-    </div>
-    {% if error %}
-        <p class='error'> Error!! It is: {{error}} </p>
-    {% endif %}
-<script>
-  $('#register').on('click', function(event) {
-    var firstpwd = '';
-    var bool=false;
-  $("form#regform :input").each(function(){
-    var value = $(this);
-    console.log(value.attr('type'));
-    if(value.attr('type') == 'email'){
-      console.log('checking email');
-
-      var reg = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*/g;
-      var check = value.val().match(reg);
-      console.log(check);
-      if(check === null){
-        bool = true;
-        console.log('Its null');
-        value.addClass('is-invalid');
-      }
-      else{
-        console.log('Not null!');
-        value.addClass('is-valid');
-      }
-    }
-    if(value.attr('type') == 'text'){
-      console.log('checking user');
-      if(value.val() === '' || value.val() == null){
-        bool = true;
-
-        value.addClass('is-invalid');
-        console.log(value.attr('class'));
-
-      }
-      else{
-        value.addClass('is-valid');
-      }
-    }
-    if(value.attr('type') == 'password'){
-      console.log('checking password');
-      if(value.attr('id') == 'pwd'){
-        if(value.val() === '' || value.val() == null){
-          bool = true;
-
-          value.addClass('is-invalid');
-          console.log(value.attr('class'));
-
-        }
-        else{
-          firstpwd = value.val();
-          value.addClass('is-valid');
-        }
-      }
-      else{
-        if(value.val() === '' || value.val() == null){
-          bool = true;
-
-          value.addClass('is-invalid');
-          console.log(value.attr('class'));
-
-        }
-        else{
-          if(value.val() != firstpwd){
-          bool = true;
-          value.addClass('is-invalid');
-          console.log(value.attr('class'));
-          }
-          else{
-            value.addClass('is-valid');
-          }
-        }
-      }
-    }
-  });
-    if(bool == true){
-      event.preventDefault();
-    }
-  });
+</div>
+<!-- <script>
 
   $('#login').on('click', function(event) {
     var firstpwd = '';
@@ -185,5 +82,5 @@
       event.preventDefault();
     }
   });
-</script>
+</script> -->
 {% endblock %}
