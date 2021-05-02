@@ -8,13 +8,22 @@
         <div class = 'col-sm-4' style = "border:1px solid rgb(78, 134, 103); padding:15px">
             <h3> Existing User: </h3>
     <form action="" method = 'post' id='loginform'>
+      {{ form.hidden_tag() }}
         <div class="form-group">
           <label for="username">Username:</label>
-          <input type="text" class="form-control" placeholder="username" id="user" name='username' value='{{request.form.username}}' required placeholder="required">
+          {{ form.username(type='text', class='form-control',placeholder='Enter username',id='user')}}
+          {% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+          <!-- <input type="text" class="form-control" placeholder="username" id="user" name='username' value='{{form.username}}' required placeholder="required"> -->
         </div>  
         <div class="form-group">
           <label for="pwd">Password:</label>
-          <input type="password" class="form-control" placeholder="password" id="loginpwd" name='password' value='{{request.form.password}}' required placeholder="required">
+          {{ form.password(type='password', class='form-control',placeholder='Enter password',id='loginpwd')}}
+          {% for error in form.password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+          <!-- <input type="password" class="form-control" placeholder="password" id="loginpwd" name='password' value='{{form.password}}' required placeholder="required"> -->
         </div>
         <div class="form-group form-check">
           <label class="form-check-label">
@@ -138,18 +147,43 @@
       event.preventDefault();
     }
   });
-//   $(function() {
-//     $('input:required').each(function(index) {
-//         var id = this.form.name+this.name+"mark";
-//         $(this).after( "<span id='"+id+"'>*</span>" ); 
-//     });
-// });
 
-// $('input:required').keyup(function(){
-//     if(this.value.length > 0) {
-//         var id = this.form.name+this.name+"mark";
-//         $("#"+id).text("!");
-//     }
-// });
+  $('#login').on('click', function(event) {
+    var firstpwd = '';
+    var bool=false;
+  $("form#loginform :input").each(function(){
+    var value = $(this);
+    console.log(value.attr('type'));
+    if(value.attr('type') == 'text'){
+      console.log('checking user');
+      if(value.val() === '' || value.val() == null){
+        bool = true;
+
+        value.addClass('is-invalid');
+        console.log(value.attr('class'));
+
+      }
+      else{
+        value.addClass('is-valid');
+      }
+    }
+    if(value.attr('type') == 'password'){
+      console.log('checking password');
+      if(value.val() === '' || value.val() == null){
+        bool = true;
+
+        value.addClass('is-invalid');
+        console.log(value.attr('class'));
+
+      }
+      else{
+        value.addClass('is-valid');
+      }      
+    }
+  });
+    if(bool == true){
+      event.preventDefault();
+    }
+  });
 </script>
 {% endblock %}
