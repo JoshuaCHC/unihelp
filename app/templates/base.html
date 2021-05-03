@@ -18,9 +18,13 @@
   <div class = 'page-wrapper'>
       <div class = 'backgroundimg'>
         <div class="topnav">
-          <a  href="mailto:tatum.botha7@gmail.com">Email</a>
-          <a href="0410015152">Phone</a> 
-      
+          <!-- <a  href="mailto:tatum.botha7@gmail.com">Email</a>
+          <a href="0410015152">Phone</a>  -->
+          {% if current_user.is_anonymous %}
+            <p class='topleft'><b>Welcome</b></p>
+          {% else %}
+            <p class='topleft'><b>Logged in as: {{current_user.username}}</b></p>
+          {% endif %}
         </div>
       </div>
       <img src="/static/images/UniSafeLogo.jpeg" alt="Logo" width="300px">
