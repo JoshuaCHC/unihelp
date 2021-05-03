@@ -18,17 +18,25 @@
   <div class = 'page-wrapper'>
       <div class = 'backgroundimg'>
         <div class="topnav">
-          <a  href="mailto:tatum.botha7@gmail.com">Email</a>
-          <a href="0410015152">Phone</a> 
-      
+          <!-- <a  href="mailto:tatum.botha7@gmail.com">Email</a>
+          <a href="0410015152">Phone</a>  -->
+          {% if current_user.is_anonymous %}
+            <p class='topleft'><b>Welcome</b></p>
+          {% else %}
+            <p class='topleft'><b>Logged in as: {{current_user.username}}</b></p>
+          {% endif %}
         </div>
       </div>
       <img src="/static/images/UniSafeLogo.jpeg" alt="Logo" width="300px">
 <div class="navbar">
   <a href="/">Home</a> 
-  <a href="/about">About</a> 
+  <a href="about">About</a> 
   <a href="rankings">Rankings</a> 
-  <a href="login">Login</a>
+  {% if current_user.is_anonymous %}
+  <a href="{{ url_for('login') }}">Login</a>
+  {% else %}
+  <a href="{{ url_for('logout') }}">Logout</a>
+  {% endif %}
 </div>
 {% block content %}{%endblock%}
 
@@ -64,13 +72,13 @@
     <h2> Quick Links</h2>
     <br>
     <ul>
-      <a href = "About.html">
+      <a href = "about">
         <li>About</li>
       </a>
-      <a href = "Rankings.html">
+      <a href = "rankings">
         <li>Rankings</li>
       </a>
-      <a href = "Login.html">
+      <a href = "login">
         <li>Login</li>
       </a>
     </ul>

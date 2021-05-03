@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <head>
-    <link rel="stylesheet" href="Stylesheet.css">
-  </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Font Awesome-->
+  <link rel="stylesheet" href = "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- //Font Awesome-->
+  <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/Stylesheet.css') }}">
+  <!-- <link rel = "stylesheet" href="..\static\stylesheets\Stylesheet.css"> -->
+</head>
 
 <div class="module_navbar">
 
 
 <!--Please change these before we submit!!!-->
 <div class="navbar">
-    <a href="Rankings.html">Rankings</a>
-    <a href="About.html">About</a>
-    <a href="HomePage.html">Home</a> 
+  <a href="/">Home</a> 
+  <a href="about">About</a> 
+  <a href="rankings">Rankings</a> 
    
   
 </div>
@@ -23,7 +30,7 @@
 <body>
 
 <div class="sidenav">
-  <a href="/">Menu</a>
+  <a href="about">Menu</a>
   <button class="dropdown-btn">Module 1 
     <i class="fa fa-caret-down"></i>
   </button>
@@ -47,13 +54,25 @@
 </div>
 
 <div class="main">
-  <h2>Sidebar</h2>
+  {% block content %}
+  <hr>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <ul>
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+  </ul>
+  {% endif %}
+  {% endwith %}
+  {%endblock%}
+  <!-- <h2>Sidebar</h2>
   <p>This sidebar is of full height (100%) and always shown.</p>
   <p>Scroll down the page to see the result.</p>
   <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
   <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
   <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
-  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+  <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p> -->
 </div>
 
 <script>

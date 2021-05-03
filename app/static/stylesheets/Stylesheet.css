@@ -432,7 +432,7 @@ body {
         color: rgb(78, 134, 103);
       }
 
-.topnav a {
+.topnav p {
   float: right;
   color: red;
   text-align: center;
