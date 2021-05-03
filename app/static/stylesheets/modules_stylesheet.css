@@ -1,7 +1,7 @@
 html, body {
   font-family: Arial, Helvetica, sans-serif;
 }
-
+/*CPR heading*/
   .blinking {
     animation: blinkingText 1.6s;
     animation-iteration-count: 10;
@@ -21,7 +21,8 @@ html, body {
     color: white;
     font-size: 70px;
   }
-  
+
+  /*Top and Side Navigation Bars*/
 @media screen and (max-width: 500px) {
   .module_navbar a {
     float: none;
@@ -33,6 +34,7 @@ html, body {
   .sidenav a {font-size: 18px;}
 }
 
+/*Top Navigation Bar*/
 .module_navbar {
   margin-left: 200px;
   background-color: rgb(78, 134, 103);
@@ -52,6 +54,8 @@ html, body {
   background-color: rgb(252, 252, 252);
   color: rgb(78, 134, 103);
 }
+
+/*Side Navigation Bar*/
 .sidenav a, .dropdown-btn {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
@@ -71,23 +75,19 @@ html, body {
   color: rgb(0, 162, 255);
 }
 .main {
-  margin-left: 200px; 
-  
-  
+  margin-left: 200px;  
 }
 .active {
   background-color: rgb(78, 134, 103);
   color: white;
 }
 
-/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
 .dropdown-container {
   display: none;
   background-color: white;
   padding-left: 8px;
 }
 
-/* Optional: Style the caret down icon */
 .fa-caret-down {
   float: right;
   padding-right: 8px;
@@ -114,4 +114,51 @@ html, body {
 
 .sidenav a:hover {
   color: rgb(0, 162, 255);
+}
+
+/* Flip Cards*/
+.flip-card {
+  display: inline-block; 
+  margin:auto;
+  background-color: transparent;
+  width: 250px;
+  height: 250px;
+  perspective: 1000px;
+}
+
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  font-size:70px;
+  padding: 100px 0;
+  text-align:center;
+  background-color: rgb(0, 162, 255);;
+  color: white;
+}
+
+.flip-card-back {
+  background-color: rgb(78, 134, 103);
+  color: white;
+  transform: rotateY(180deg);
 }
