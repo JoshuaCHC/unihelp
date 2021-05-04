@@ -184,7 +184,7 @@ section h1 {
     color: rgb(78, 134, 103);
   }
 
-  .topnav a {
+  .topnav p {
     float: right;
     color: red;
     text-align: center;
@@ -194,7 +194,7 @@ section h1 {
     border-top: 10px solid red;
   }
 
-  .topnav a:hover {
+  .topnav p:hover {
     background-color: red;
     color: white;
     border-top: 10px solid transparent;
@@ -309,7 +309,7 @@ section h1 {
     color: rgb(78, 134, 103);
   }
   
-  .topnav a {
+  .topnav p {
     float: right;
     color: red;
     text-align: center;
@@ -319,7 +319,7 @@ section h1 {
     border-top: 10px solid red;
   }
   
-  .topnav a:hover {
+  .topnav p:hover {
     background-color: red;
     color: white;
     border-top: 10px solid transparent;
@@ -442,7 +442,7 @@ body {
   border-top: 10px solid red;
 }
 
-.topnav a:hover {
+.topnav p:hover {
   background-color: red;
   color: white;
   border-top: 10px solid transparent;
