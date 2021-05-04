@@ -12,29 +12,57 @@ def homePage():
 def about():
     return render_template('About.html')
 
+@login_required
+@app.route('/login/module1/content')
+def mod1():
+    return render_template('Module1.html')
+
+@login_required
+@app.route('/login/module2/content')
+def mod2():
+    return render_template('Module2.html')
+
+@login_required
+@app.route('/login/module3/content')
+def mod3():
+    return render_template('Module3.html')
+
+@login_required
+@app.route('/login/module1/quiz')
+def quiz1():
+    return render_template('Module1_quiz.html')
+
+@login_required
+@app.route('/login/module2/quiz')
+def quiz2():
+    return render_template('Module2_quiz.html')
+
+@login_required
+@app.route('/login/module3/quiz')
+def quiz3():
+    return render_template('Module3_quiz.html')
+
+@login_required
+@app.route('/login/modules')
+def home_mod():
+    return render_template('home_mod.html')
+
+
+
+
+
 
 @app.route('/rankings')
 def rankings():
     return render_template('Rankings.html')	
-@login_required
-@app.route('/login/module1')
-def mod1():
-    return render_template('Module1.html')
-@login_required
-@app.route('/login/module2')
-def mod2():
-    return render_template('Module2.html')
-@login_required
-@app.route('/login/module3')
-def mod3():
-    return render_template('Module3.html')
+
 
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     error = []
     if current_user.is_authenticated:
-        return redirect(url_for('mod1'))
+        return redirect(url_for('home_mod'))
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
@@ -54,7 +82,7 @@ def login():
         next_page = request.args.get('next')
         if not next_page or url_parse(next_page).netloc != '' or next_page == '/':
             next_page = url_for('homePage')
-        return redirect(url_for('mod1'))
+        return redirect(url_for('home_mod'))
     return render_template('login.html', title='Sign In', form=form)
 
 @app.route('/logout')
