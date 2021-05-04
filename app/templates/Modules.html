@@ -9,52 +9,54 @@
   <!-- Font Awesome-->
   <link rel="stylesheet" href = "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- //Font Awesome-->
-  <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/Stylesheet.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/modules_stylesheet.css') }}">
   <!-- <link rel = "stylesheet" href="..\static\stylesheets\Stylesheet.css"> -->
 </head>
 
-<div class="module_navbar">
+
 
 
 <!--Please change these before we submit!!!-->
-<div class="navbar">
+<div class="module_navbar navbar">
   <a href="/">Home</a> 
   <a href="about">About</a> 
   <a href="rankings">Rankings</a> 
    
   
+
 </div>
 
 </style>
 </head>
 <body>
 
-<div class="sidenav">
-  <a href="about">Menu</a>
-  <button class="dropdown-btn">Module 1 
-    <i class="fa fa-caret-down"></i>
-  </button>
-  <div class="dropdown-container">
-    <a href="/login/Module1">Link 1</a>
-    <a href="/Module1">Link 2</a>
+  <div class="sidenav">
+    <a href="/login/modules">Menu</a>
+    <button class="dropdown-btn">Module 1 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+      <a href="/login/module1/content">Link 1</a>
+  
+      <a href="/login/module1/quiz">Link 2</a>
+    </div>
+    <button class="dropdown-btn">Module 2 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+      <a href="/login/module2/content">Link 1</a>
+      <a href="/login/module2/quiz">Link 2</a>
+    </div><button class="dropdown-btn">Module 3 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+      <a href="/login/module3/content">Link 1</a>
+      <a href="/login/module3/quiz">Link 2</a>
+    </div>
   </div>
-  <button class="dropdown-btn">Module 2 
-    <i class="fa fa-caret-down"></i>
-  </button>
-  <div class="dropdown-container">
-    <a href="/Module2">Link 1</a>
-    <a href="/Module2">Link 2</a>
-  </div><button class="dropdown-btn">Module 3 
-    <i class="fa fa-caret-down"></i>
-  </button>
-  <div class="dropdown-container">
-    <a href="/Module3">Link 1</a>
-    <a href="/Module3">Link 2</a>
-  </div>
-</div>
-
 <div class="main">
   {% block content %}
+</div>
   <hr>
   {% with messages = get_flashed_messages() %}
   {% if messages %}
@@ -73,7 +75,7 @@
   <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
   <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
   <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p> -->
-</div>
+
 
 <script>
     /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
