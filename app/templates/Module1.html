@@ -4,6 +4,7 @@
 <h1 class="blinking header">
     CPR
 </h1>
+<div class="main">
 <h2>What?</h2>
 <p>
     CPR is short for cardiopulmonary resuscitation. 
@@ -91,7 +92,7 @@ How?
       <div class="flip-card-back">
         <h1><b>Breathing</b></h1> 
         <p>Check if the patient is breathing normally</p> 
-        <p>place them in the recovery position</p>
+        <p>place them in the <a href="#C4">recovery position</a></p>
       </div>
     </div>
   </div>
@@ -119,4 +120,39 @@ How?
       </div>
     </div>
   </div>
+
+
+<h1 id="C4">How do you do CPR?</h1>
+<p>Give 30 compressions followed by 2 breaths, known as “30:2”. Aim for 5 sets of 30:2 in about 2 minutes </p>
+<iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+</iframe>
+<div data-video = "VIDEO_ID"
+         data-startseconds = "134"
+         data-endseconds = "210"
+         data-height = "480"
+         data-width = "640"
+         id = "youtube-player">
+    </div>
+
+    <script src="https://m.youtube.com/watch?v=ssIY8NYwvh4"></script>
+    <script type="text/javascript">
+      function onYouTubeIframeAPIReady() {
+        var ctrlq = document.getElementById("youtube-player");
+        var player = new YT.Player('youtube-player', {
+          height: ctrlq.dataset.height,
+          width: ctrlq.dataset.width,
+          events: {
+            'onReady': function(e) {
+              e.target.cueVideoById({
+                videoId: ctrlq.dataset.video,
+                startSeconds: ctrlq.dataset.startseconds,
+                endSeconds: ctrlq.dataset.endseconds
+              });
+            }
+          }
+        });
+      }
+    </script>
+
+</div>
 {% endblock %}
