@@ -1,11 +1,11 @@
 {% extends "base.html"%}
 {% block content %}
-<div class='container-fluid' id = 'login-container'>
+<div class='container-fluid login-img' id = 'login-container'>
     <div class = "container-fluid">
       <div class='row'>
         <div class='col-sm-7'></div>
-        <div class = 'col-sm-4' style = "border:1px solid rgb(78, 134, 103); padding:15px; margin-top:15px">
-          <h3> Login: </h3>
+        <div class = 'col-sm-4 login-box'>
+          <h2 class = 'login-text'><big> <b>Login </b></big></h2>
           <form action="" method = 'post' id='loginform'>
             {{ form.hidden_tag() }}
             <div class="form-group">
@@ -13,7 +13,7 @@
               {{ form.username(type='text', class='form-control',placeholder='Enter username',id='user')}}
               {% for error in errors %}
                 {%if error == 'Invalid username'%}
-                  <span style="color: red;">[{{ error }}]</span>
+                  <span style="color: red;">{{ error }}</span>
                 {%endif%}
               {% endfor %}
               <!-- <input type="text" class="form-control" placeholder="username" id="user" name='username' value='{{form.username}}' required placeholder="required"> -->
@@ -23,7 +23,7 @@
               {{ form.password(type='password', class='form-control',placeholder='Enter password',id='loginpwd')}}
               {% for error in errors %}
                 {%if error == 'Invalid password'%}
-                  <span style="color: red;">[{{ error }}]</span>
+                  <span style="color: red;">{{ error }}</span>
                 {%endif%}
               {% endfor %}
               <!-- <input type="password" class="form-control" placeholder="password" id="loginpwd" name='password' value='{{form.password}}' required placeholder="required"> -->
@@ -36,7 +36,7 @@
           </form>
           <hr>
           <h3>New User?</h3>
-          <p>Register Here!</p>
+          <p>Register to access our services</p>
           <a href="register" class="btn btn-primary" role="button">Register Now!</a>
         </div>
         <div class='col-sm-1'></div>
