@@ -14,7 +14,19 @@
     {%for n in range(len)%}
     {%if n==0%}
       <tr class='table-success'>
-        <td>#{{vals[n]}}</td>
+        <td><span>#{{vals[n]}} <span class='medal'>&#129351;</span></span></td>
+        <td><span><img src='{{imgs[n]}}'>   {{ranks[n][0]}}</span></td>
+        <td>{{ranks[n][1]}} points</td>
+      </tr>
+    {%elif n==1%}
+      <tr class='table-success'>
+        <td><span>#{{vals[n]}} <span class='medal'>&#129352;</span></span></td>
+        <td><span><img src='{{imgs[n]}}'>   {{ranks[n][0]}}</span></td>
+        <td>{{ranks[n][1]}} points</td>
+      </tr>
+    {%elif n==2%}
+      <tr class='table-success'>
+        <td><span>#{{vals[n]}} <span class='medal'>&#129351;</span></span></td>
         <td><span><img src='{{imgs[n]}}'>   {{ranks[n][0]}}</span></td>
         <td>{{ranks[n][1]}} points</td>
       </tr>
