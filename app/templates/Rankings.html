@@ -14,15 +14,15 @@
     {%for n in range(len)%}
     {%if n==0%}
       <tr class='table-success'>
-        <td>{{vals[n]}}</td>
-        <td>{{ranks[n][0]}}</td>
-        <td>{{ranks[n][1]}}</td>
+        <td>#{{vals[n]}}</td>
+        <td><span><img src='{{imgs[n]}}'>   {{ranks[n][0]}}</span></td>
+        <td>{{ranks[n][1]}} points</td>
       </tr>
     {%else%}
       <tr class='table-primary'>
-        <td>{{vals[n]}}</td>
-        <td>{{ranks[n][0]}}</td>
-        <td>{{ranks[n][1]}}</td>
+        <td>#{{vals[n]}}</td>
+        <td><span><img src='{{imgs[n]}}'>   {{ranks[n][0]}}</span>   </td>     
+        <td>{{ranks[n][1]}} points</td>
       </tr>
       {%endif%}
     {%endfor%}
