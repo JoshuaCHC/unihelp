@@ -1,0 +1,144 @@
+{% extends "Modules.html"%}
+{% block content %}
+<div class = "main">
+<div id="quiz"></div>
+<button id="submit">Submit Quiz</button>
+<div id="results"></div>
+</div>
+
+<script>
+    (function(){
+  function buildQuiz(){
+    // variable to store the HTML output
+    const output = [];
+
+    // for each question...
+    myQuestions.forEach(
+      (currentQuestion, questionNumber) => {
+
+        // variable to store the list of possible answers
+        const answers = [];
+
+        // and for each available answer...
+        for(letter in currentQuestion.answers){
+
+          // ...add an HTML radio button
+          answers.push(
+            `<label>
+              <input type="radio" name="question${questionNumber}" value="${letter}">
+              ${letter} :
+              ${currentQuestion.answers[letter]}
+            </label>`
+          );
+        }
+
+        // add this question and its answers to the output
+        output.push(
+          `<div class="question"> ${currentQuestion.question} </div>
+          <div class="answers"> ${answers.join('')} </div>`
+        );
+      }
+    );
+
+    // finally combine our output list into one string of HTML and put it on the page
+    quizContainer.innerHTML = output.join('');
+  }
+
+  function showResults(){
+
+    // gather answer containers from our quiz
+    const answerContainers = quizContainer.querySelectorAll('.answers');
+
+    // keep track of user's answers
+    let numCorrect = 0;
+
+    // for each question...
+    myQuestions.forEach( (currentQuestion, questionNumber) => {
+
+      // find selected answer
+      const answerContainer = answerContainers[questionNumber];
+      const selector = `input[name=question${questionNumber}]:checked`;
+      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+      // if answer is correct
+      if(userAnswer === currentQuestion.correctAnswer){
+        // add to the number of correct answers
+        numCorrect++;
+
+        // color the answers green
+        answerContainers[questionNumber].style.color = 'lightgreen';
+      }
+      // if answer is wrong or blank
+      else{
+        // color the answers red
+        answerContainers[questionNumber].style.color = 'red';
+      }
+    });
+
+    // show number of correct answers out of total
+    resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+  }
+
+  const quizContainer = document.getElementById('quiz');
+  const resultsContainer = document.getElementById('results');
+  const submitButton = document.getElementById('submit');
+  const myQuestions = [
+    {
+      question: " How long should you check for breathing while performing CPR?",
+      answers: {
+        a: "Do not check for breathing, continue chest compressions",
+        b: "2 seconds",
+        c: "No longer than 10 seconds"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "What is the correct ratio of chest compressions to rescue breaths?",
+      answers: {
+        a: "30 chest compressions to 2 rescue breath",
+        b: "15 chest compressions to 1 rescue breath",
+        c: "30 chest compressions to 1 rescue breath"
+        
+      },
+      correctAnswer: "a"
+    },
+    {
+      question: "What speed of chest compressions should you aim for?",
+      answers: {
+        a: "90 - 100 a minute",
+        b: "120 - 140 a minute",
+        c: "100 a minute",
+        d: "100 - 120 a minute"
+      },
+      correctAnswer: "d"
+    },
+
+    {
+      question: "CPR should be started immediately if a casualty isn't breathing normally",
+      answers: {
+        a: "False",
+        b: "True"
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "What is the correct depth of chest compressions on an adult victim?",
+      answers: {
+        a: "4-5cm",
+        b: "5-6cm",
+        c: "2-3cm",
+        d: "3-4cm"
+      },
+      correctAnswer: "a"
+    }
+
+  ];
+
+  // Kick things off
+  buildQuiz();
+
+  // Event listeners
+  submitButton.addEventListener('click', showResults);
+})();
+</script>
+  {% endblock %}
