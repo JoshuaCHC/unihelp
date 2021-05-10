@@ -3,7 +3,9 @@ from app import app,db
 from app.forms import LoginForm, RegistrationForm
 from werkzeug.urls import url_parse
 from flask_login import login_required, logout_user, current_user, login_user
-from app.models import User
+from app.models import User, Marks
+from hashlib import md5
+
 @app.route("/")
 def homePage():
     return render_template('HomePage.html')
@@ -49,12 +51,19 @@ def home_mod():
 
 
 
-
+#ADD NUMBERS AND STYLING TO TABLE
 
 
 @app.route('/rankings')
 def rankings():
-    return render_template('Rankings.html')	
+    t1 = User.query.join(Marks).filter(User.id == Marks.user_id).order_by(Marks.avgMark).with_entities(User.username, Marks.avgMark, User.email).limit(10).all()
+    print(t1)
+    img = []
+    for i in range(len(t1)):
+        digest = md5(t1[i][2].lower().encode('utf-8')).hexdigest()
+        img.append('https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(digest, 40))
+    nums = range(1,10)
+    return render_template('Rankings.html', ranks = t1, vals = nums, len = len(t1), imgs = img)	
 
 
 

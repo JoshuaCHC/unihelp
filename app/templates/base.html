@@ -23,19 +23,23 @@
           {% if current_user.is_anonymous %}
             <p class='topleft'><b>Welcome</b></p>
           {% else %}
-            <p class='topleft'><b>Logged in as: {{current_user.username}}</b></p>
+            <p class='topleft'><b>Logged in as: {{current_user.username}}  <img src="{{current_user.avatar(60)}}"></b></p>
           {% endif %}
         </div>
       </div>
       <img src="/static/images/UniSafeLogo.jpeg" alt="Logo" width="300px">
-<div class="navbar">
-  <a href="/">Home</a> 
-  <a href="about">About</a> 
-  <a href="rankings">Rankings</a> 
+<div class="navbar" id='nav1'>
   {% if current_user.is_anonymous %}
-  <a href="{{ url_for('login') }}">Login</a>
+  <a href="/" class = 'navitem'>Home</a> 
+  <a href="about" class = 'navitem'>About</a> 
+  <a href="rankings" class = 'navitem'>Rankings</a> 
+  <a href="{{ url_for('login') }}" class = 'navitem'>Login</a>
   {% else %}
-  <a href="{{ url_for('logout') }}">Logout</a>
+  <a href="/" class = 'navitem' style='width:20%;'>Home</a> 
+  <a href="about" class = 'navitem' style='width:20%;'>About</a> 
+  <a href="rankings" class = 'navitem' style='width:20%;'>Rankings</a> 
+  <a href="{{url_for('home_mod')}}" class = 'navitem' style='width:20%;'>Modules</a>
+  <a href="{{ url_for('logout') }}" class = 'navitem' style='width:20%;'>Logout</a>
   {% endif %}
 </div>
 {% block content %}{%endblock%}
