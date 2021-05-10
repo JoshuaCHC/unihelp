@@ -3,7 +3,7 @@ from app import app,db
 from app.forms import LoginForm, RegistrationForm
 from werkzeug.urls import url_parse
 from flask_login import login_required, logout_user, current_user, login_user
-from app.models import User
+from app.models import User, Marks
 @app.route("/")
 def homePage():
     return render_template('HomePage.html')
@@ -49,12 +49,15 @@ def home_mod():
 
 
 
-
+#ADD NUMBERS AND STYLING TO TABLE
 
 
 @app.route('/rankings')
 def rankings():
-    return render_template('Rankings.html')	
+    t1 = User.query.join(Marks).filter(User.id == Marks.user_id).order_by(Marks.avgMark).with_entities(User.username, Marks.avgMark).limit(10).all()
+    print(t1)
+    nums = range(1,10)
+    return render_template('Rankings.html', ranks = t1, vals = nums, len = len(t1))	
 
 
 
