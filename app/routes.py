@@ -61,8 +61,7 @@ def rankings():
     img = []
     for i in range(len(t1)):
         digest = md5(t1[i][2].lower().encode('utf-8')).hexdigest()
-        img.append('https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(
-            digest, 40))
+        img.append('https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(digest, 40))
     nums = range(1,10)
     return render_template('Rankings.html', ranks = t1, vals = nums, len = len(t1), imgs = img)	
 
