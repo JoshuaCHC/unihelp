@@ -5,20 +5,30 @@
   CPR
 </h1>
 <div class="main">
-<h2>What?</h2>
+<h2>Picture this...</h2>
+<p>You are sitting in a lecture when your lecturer collapses. He is unresponsive and is not responding to his name.
+  After further inspection you realised he is having trouble breathing.
+  <br>
+  What would you do in this situation?
+  <br>
+  In this module we will inform you how to perform CPR, so that in case of an emergency
+  you are prepared.
+</p>
+<h2>What is CPR?</h2>
 <p>
   CPR is short for cardiopulmonary resuscitation. 
   It is a first aid technique that can be used if someone is not breathing properly or if their heart has stopped.
   CPR involves chest compressions and mouth-to-mouth that help circulate blood and oxygen in the body. 
   This can help keep the brain and vital organs alive.
 </p>
-<h2>Why?</h2>
+<h2>Why should you learn CPR?</h2>
 <p>
   You may think that learning CPR is unnecessary but it is a valuable skill to learn, especially as 
-  a student at a university. Professors can collapse, people can drown in the mote or the pools or even
+  a student at a university. Professors can collapse, people can drown in the mote or even
   choke on their food at lunch.
 </p>
-<h2>Who?</h2>
+
+<h2>Who can you perform CPR on?</h2>
 <p>
   Only ever perform CPR if the person:
   <ul>
@@ -27,9 +37,8 @@
       <li>Is not breathing, or is breathing abnormally</li>
   </ul>
 </p>
-<h2>
-How?
-</h2>
+
+<h2>What should you do in an emergency?</h2>
 <p>
   After checking that someone is one of the above, you must first follow the DRSABCD's before starting CPR.
   One of the most important things for someone to remember is to <b>STAY CALM</b>
@@ -91,7 +100,7 @@ How?
     <div class="flip-card-back">
       <h3><b>Breathing</b></h3> 
       <p>Check if the patient is breathing normally</p> 
-      <p>place them in the <a href="recovery">recovery position</a></p>
+      <p>place them in the <a href="#recovery">recovery position</a></p>
     </div>
   </div>
 </div>
@@ -123,7 +132,9 @@ How?
 
 <h1 id="CPR">How do you perform CPR?</h1>
 <p>After following DRSABCD, you are now ready to perform CPR. There are two main steps with CPR, the first
-  being the chest compressions and the second being the mouth-to-mouth process.</p>
+  being the chest compressions and the second being the mouth-to-mouth process. In order to properly perform
+  CPR aim for 30:2 ratio, meaning 30 compressions with 2 breaths in between, you must also aim to do between 100 and 120
+  compressions per minute.</p>
   <h2> To carry out chest compressions you must:</h2>
   <img style="float:right; margin: 5px;" src="https://d2ebzu6go672f3.cloudfront.net/media/content/images/H0819b_costo(1).jpg"></img>
   <ol style="text-align: justify; font-size: 25px">
@@ -133,11 +144,12 @@ How?
       <li>Position yourself above the patient&apos;s chest.</li>
       <li>Using your body weight (not just your arms) and keeping your arms straight, press straight down on their chest by one third of the chest depth.</li>
       <li>Release the pressure. Pressing down and releasing is 1 compression</li>
-      </li>
+      </ol>
+
   
   <h2>Give mouth-to-mouth:</h2>
   <ol>
-    <li>Open the person’s airway by placing one hand on the forehead or top of the head and your other hand under the chin to tilt the head back.</li>
+    <li>Open the person’s airway by placing one hand on the forehead and your other hand under the chin to tilt the head back.</li>
     <li> Pinch the soft part of the nose closed with your index finger and thumb.</li>
     <li>Open the person’s mouth with your thumb and fingers.</li>
     <li>Take a breath and place your lips over the patient's mouth, ensuring a good seal.</li>
@@ -146,6 +158,7 @@ How?
     <li>If their chest does not rise, check the mouth again and remove any obstructions. Make sure the head is tilted and chin lifted to open the airway. Check that yours and the patient’s mouth are sealed together and the nose is closed so that air cannot easily escape. Take another breath and repeat.</li>
   </ol>
   
+
   
 <iframe width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY">
 </iframe>
@@ -157,16 +170,30 @@ How?
        id = "youtube-player">
   </div>
 
+  <h1 id="recovery">What is the recovery position?</h1>
+  <img style="float:right; margin: 5px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQoMAKO_OVf130yx35hxZbZTrOImfga3LuFA&usqp=CAU"></img>
+  <ol style="text-align: justify; font-size: 25px">
+      <li>Lie the patient down on their back</li>
+      <li>Place the patient&apos;s furthest arm directly out from their body </li>
+      <li>Place the patient&apos;s nearest arm across their chest</li>
+      <li>Lift the patient's nearest leg at the knee and place their foot on the floor so the leg is bent</li>
+      <li>Roll the patient away from you onto their side, whilst also supporting their head and neck the whole time</li>
+      <li>Keep the patient’s leg bent with their knee touching the ground to prevent the patient rolling onto their face.</li>
+      <li>Place the patient’s hand under their chin to stop their head from tilting and to keep their airway open.</li>
+    </ol>
+
+  
     <body>
-      <img id="logo" src="cursor.png" />
       <div id="content">
         Timer: <span id="timer"></span><br/>
         Score: <span id="score"></span><br/>
         Clicks/s: <span id="clicks"></span>
       </div>
+
       <div id="clickarea">
         <button id="start">Start</button>
       </div>
+
       <script type="text/javascript">
         var score; // to store the current score
         var duration = 10; // 10 seconds
@@ -226,9 +253,22 @@ How?
         // we display result to the user in delayed mode 
         //to update DOM elements just before the alert
         setTimeout(function() {
+          if(clicsBySeconds <= 2 && clicsBySeconds > 1.7){
           alert('You made ' + score + ' clicks in ' + duration + 
           ' seconds. It is ' + clicsBySeconds + 
-          ' clicks by seconds. Try again!');
+          ' clicks by seconds. Good Job, you are in the correct range');
+        }
+        else if(clicsBySeconds > 2){
+          alert('You made ' + score + ' clicks in ' + duration + 
+          ' seconds. It is ' + clicsBySeconds + 
+          ' clicks by seconds. Try again, you were too fast.');
+        }
+        else if(clicsBySeconds <= 1.7){
+          alert('You made ' + score + ' clicks in ' + duration + 
+          ' seconds. It is ' + clicsBySeconds + 
+          ' clicks by seconds. Try again, you were too slow.')}
+          
+
         }, 10);
       }
     
