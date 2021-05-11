@@ -8,7 +8,7 @@ html, body {
   }
       
   @keyframes blinkingText{
-      0%{     color: white;    }
+      0%{     color: white; }
       49%{    color: white; }
       60%{    color: transparent; }
       99%{    color:transparent;  }
@@ -205,6 +205,7 @@ html, body {
   margin-top: 50px;
   padding: 20px;
   user-select: none;
+  position: relative;
 }
 
 #clickarea {
@@ -219,18 +220,10 @@ html, body {
   position: relative;
 }
 
-#logo {
-  width: 200px;
-  height: 200px;
-  margin: 0 auto;
-  margin-top: 50px;
-  display: block;
-  user-select: none;
-}
+
 
 #start {
-  position: absolute;
-  top: 50%; left: 50%;
+  position: relative;
   transform: translate(-50%,-50%);
   border: 0;
   line-height: 2.5;
