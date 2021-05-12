@@ -2,415 +2,639 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>StudySafe</title>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <title>Study-Safe Quiz</title>
         <style>
-            body {
-                position: relative;
-                margin: 20%;
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            html, body{
+                height: 100%;
+            }
+
+
+            body{
                 font-family: Arial, Helvetica, sans-serif;
             }
-            .overview {
-                text-align: justify;
-            }
 
-            h1, h2 {
-                text-align: center;
-            }
-
-            .submodule {
-                margin: 5% 15%;
-
-            }
-
-            .history {
-                margin: 5% 20%;
-                color: rgb(78, 134, 103);
-            }
-
-            table, th, td {
-                border: 1px solid black;
-                border-collapse: collapse;
-            }
-
-            .column {
-                margin: 0px;
-                float: left;
-                width: 20%;
-                padding: 15px;
-            }
-
-            .row:after {
-                content: "";
-                display: table;
-                clear: both;
-            }
-
-            .collapsible {
-                background-color: white;
-                color: black;
-                cursor: pointer;
-                padding: 18px;
+            main{
                 width: 100%;
-                border: none;
-                text-align: center;
-                outline: none;
-                font-size: 15px;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: rgb(173, 207, 189);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
             }
 
-            .active, .collapsible:hover {
-                background-color: white;;
-                color: rgb(78, 134, 103);
-                font-size: 20px;
-            }
-
-            .content {
-                padding: 0 18px;
-                display: none;
-                overflow: hidden;
+            .quiz-container{
+                width: 40rem;
+                height: 30rem;
                 background-color: white;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                border-radius: 30px;
             }
-        </style> 
-        
+
+            .quiz-details-container{
+                width: 80%;
+                height: 4rem;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+
+            .quiz-details-container h1{
+                font-size: 1.2rem;
+            }
+
+            .quiz-question-container{
+                width: 80%;
+                height: 8rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid rgb(78, 134, 103);
+                border-radius: 25px;
+            }
+
+            .quiz-question-container h1{
+                font-size: 1.1rem;
+                text-align: center;
+                padding: 3px;
+            }
+
+            .quiz-options-container{
+                width: 80%;
+                height: 12rem;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-around;
+            }
+
+            .quiz-options-container span{
+                width: 45%;
+                height: 3rem;
+                border: 2px solid rgb(78, 134, 103);
+                border-radius: 20px;
+                overflow: hidden;
+            }
+            span label{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: transform 0.3s;
+                font-weight: 600;
+                color: rgb(22, 22, 22);
+            }
+
+            span label:hover{
+                -ms-transform: scale(1.12);
+                -webkit-transform: scale(1.12);
+                transform: scale(1.12);
+                color: rgb(78, 134, 103);
+            }
+
+            input[type="radio"] {
+                position: relative;
+                display: none;
+            }
+
+
+            input[type=radio]:checked ~ .option {
+                background: rgb(78, 134, 103);
+                color: white;
+            }
+
+            .next-button-container{
+                width: 50%;
+                height: 3rem;
+                display: flex;
+                justify-content: center;
+            }
+            .next-button-container button{
+                width: 8rem;
+                height: 2rem;
+                border-radius: 10px;
+                background: none;
+                color: rgb(25, 25, 25);
+                font-weight: 600;
+                border: 2px solid rgb(78, 134, 103);
+                cursor: pointer;
+                outline: none;
+            }
+            .next-button-container button:hover{
+                background-color: orange;
+            }
+
+            .results-container{
+                display: none;
+                position: fixed;
+                z-index: 1; 
+                left: 0;
+                top: 0;
+                width: 100%; 
+                height: 100%; 
+                overflow: auto; 
+                background-color: rgb(0,0,0); 
+                background-color: rgba(0,0,0,0.4); 
+                flex-direction: column;
+                align-items: center;
+                justify-content: center; 
+                -webkit-animation: fadeIn 1.2s ease-in-out;
+                animation: fadeIn 1.2s ease-in-out;
+            }
+
+            .results-content-container{
+                height: 20rem;
+                width: 25rem;
+                background-color: rgb(43, 42, 42);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                border-radius: 25px;
+            }
+
+            .results-content-container h1{
+                font-size: 1.3rem;
+                height: 3rem;
+                color: rgb(173, 207, 189);
+                text-align: center;
+            }
+
+            .score-details{
+                width: 15rem;
+                height: 10rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+            }
+
+            .score-details p{
+                color: white;
+                text-align: center;
+            }
+
+            .results-button-container{
+                height: 2rem;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .results-button-container button{
+                width: 10rem;
+                height: 2rem;
+                background: none;
+                outline: none;
+                border: 1px solid rgb(252, 242, 241);
+                color: white;
+                font-size: 1.1rem;
+                cursor: pointer;
+                border-radius: 20px;
+            }
+            .results-button-container button:hover{
+                background-color: rgb(83, 82, 82);
+            }
+
+            @media(min-width : 300px) and (max-width : 350px){
+                .quiz-container{
+                    width: 90%;
+                    height: 80vh;
+                }
+                .quiz-details-container h1{
+                    font-size: 0.8rem;
+                }
+
+                .quiz-question-container{
+                    height: 6rem;
+                }
+                .quiz-question-container h1{
+                font-size: 0.9rem;
+                }
+
+                .quiz-options-container span{
+                    width: 90%;
+                    height: 2.5rem;
+                }
+                .quiz-options-container span label{
+                    font-size: 0.8rem;
+                }
+                .results-content-container{
+                    width: 90%;
+                    height: 25rem;
+                }
+
+                .results-content-container h1{
+                    font-size: 1.2rem;
+                }
+            }
+
+            @media(min-width : 350px) and (max-width : 700px){
+            .quiz-container{
+                width: 90%;
+                height: 80vh;
+                }
+                .quiz-details-container h1{
+                    font-size: 1rem;
+                }
+
+                .quiz-question-container{
+                    height: 8rem;
+                }
+
+                .quiz-question-container h1{
+                    font-size: 0.9rem;
+                }
+
+                .quiz-options-container span{
+                    width: 90%;
+                }
+                .results-content-container{
+                    width: 90%;
+                    height: 25rem;
+                }
+                .results-content-container h1{
+                    font-size: 1.2rem;
+                }
+            }
+
+
+
+            @keyframes fadeIn {
+                from {opacity: 0;}
+                to {opacity:1 ;}
+            }
+
+            @-webkit-keyframes fadeIn {
+                from {opacity: 0;}
+                to {opacity: 1;}
+            }
+        </style>
+        <script>
+             const questions = [
+                {
+                    // 1 - transport
+                    question: "Sally has successfully completed 96 degree points while studying full-time at UWA. Sally lives in an area considered eligible for a permit but has decided to change to part-time study. Is Sally still eligible for a student-parking permit?",
+                    optionA: "Yes",
+                    optionB: "No",
+                    optionC: "Yes, but she will have to pay more",
+                    optionD: "Only if she has a WAM of 80+",
+                    correctOption: "optionA"
+                },
+
+                {
+                    // 2 - transport
+                    question: "If you call security on 6488 3020 after hours, what service will they provide?",
+                    optionA: "Complete your assignment for you",
+                    optionB: "Walk you to your car",
+                    optionC: "Call the police",
+                    optionD: "Buy you a drink",
+                    correctOption: "optionB"
+                },
+
+                {
+                    // 3 - transport
+                    question: "After a student died while crossing Stirling Hwy, what road-crossing alternative was introduced?",
+                    optionA: "Bike share",
+                    optionB: "private helicopters",
+                    optionC: "buddy system",
+                    optionD: "underpasses",
+                    correctOption: "optionD"
+                },
+
+                {
+                    // 4 - transport
+                    question: "Which of the following does NOT affect one's eligibility for a UWA parking permit?",
+                    optionA: "Residential postcode",
+                    optionB: "Age",
+                    optionC: "Number of degree points completed",
+                    optionD: "University at which they are enrolled",
+                    correctOption: "optionB"
+                },
+
+                {
+                    // 5 - mental health
+                    question: "What week is run by the Guild Access and Welfare Departments each year?",
+                    optionA: "Women's week",
+                    optionB: "Easter week",
+                    optionC: "Mental health week",
+                    optionD: "O-week",
+                    correctOption: "optionC"
+                },
+
+                {
+                    // 6 - mental health
+                    question: "Which of these options is not a sporting event run by UWA Sport?",
+                    optionA: "Social Sports",
+                    optionB: "Drinking Sports",
+                    optionC: "Intercollege Competitions",
+                    optionD: "Interfaculty Competitions",
+                    correctOption: "optionB"
+                },
+
+                {
+                    // 7 - study satisfaction
+                    question: "In which building will you find the Careers Centre, Uni Access, and Study Smarter?",
+                    optionA: "Student Central",
+                    optionB: "Reid Library",
+                    optionC: "The UWA medical centre",
+                    optionD: "The Refractory",
+                    correctOption: "optionA"
+                },
+
+                {
+                    // 8 - study satisfaction
+                    question: "Which of UWA's libraries opens 24/7 during exam periods?",
+                    optionA: "Barry J Marshall",
+                    optionB: "Reid",
+                    optionC: "J. Robin Warren",
+                    optionD: "Beasely",
+                    correctOption: "optionB"
+                },
+
+                {
+                    // 9 - study satisfaction
+                    question: "What time management tool can you pick up at Guild Student Central?",
+                    optionA: "Timer",
+                    optionB: "Goal journal",
+                    optionC: "Diary",
+                    optionD: "Calculator",
+                    correctOption: "optionC"
+                },
+
+                {
+                    // 10 - study satisfaction
+                    question: "What is the name of UWA's academic support team?",
+                    optionA: "Smarter Study",
+                    optionB: "Study Help",
+                    optionC: "Study Smarter",
+                    optionD: "Study 101",
+                    correctOption: "optionC"
+                },
+            ]
+
+            // store the shuffled questions
+            let shuffled = []
+
+            // shuffle the questions and store them in shuffledQuestions array
+            function shuffleQuestions() { 
+                while (shuffled.length < 10) {
+                    const random = questions[Math.floor(Math.random() * 10)]
+                    if (!shuffled.includes(random)) {
+                        shuffled.push(random)
+                    }
+                }
+            }
+
+            let questionNumber = 1 
+            let score = 0 
+            let incorrect = 0 // num of incorrect answers
+            let indexNumber = 0 // used to find next question
+
+            // display next question
+            function NextQuestion(index) {
+                handleQuestions()
+                const currentQuestion = shuffledQuestions[index]
+                document.getElementById("question-number").innerHTML = questionNumber
+                document.getElementById("player-score").innerHTML = score
+                document.getElementById("display-question").innerHTML = currentQuestion.question;
+                document.getElementById("option-one-label").innerHTML = currentQuestion.optionA;
+                document.getElementById("option-two-label").innerHTML = currentQuestion.optionB;
+                document.getElementById("option-three-label").innerHTML = currentQuestion.optionC;
+                document.getElementById("option-four-label").innerHTML = currentQuestion.optionD;
+
+            }
+
+            function checkAnswer() {
+                const currentQuestion = shuffledQuestions[indexNumber] // gets question
+                const currentAnswer = currentQuestion.correctOption // gets answer
+                const options = document.getElementsByName("option"); // gets all answer options for current Q
+                let correctOption = null
+
+                options.forEach((option) => {
+                    if (option.value === currentAnswer) {
+                        correctOption = option.labels[0].id
+                    }
+                })
+
+                //checking to make sure a radio input has been checked or an option being chosen
+                // if (options[0].checked === false && options[1].checked === false && options[2].checked === false && options[3].checked == false) {
+                //     document.getElementById('option-modal').style.display = "flex"
+                // }
+
+                // check that an option has been selected
+                if (!options[0].checked && !options[1].checked && !options[2].checked && !options[3].checked) {
+                    document.getElementById('option-page').style.display = "flex"
+                }
+
+                // check that option selected is same as correct option
+                options.forEach((option) => {
+                    if (option.checked && option.value === currentQuestionAnswer) {
+                        document.getElementById(correctOption).style.backgroundColor = "YellowGreen"
+                        score++ 
+                        indexNumber++ // move to next question
+                        // delay question number until next question loads
+                        setTimeout(() => {
+                            questionNumber++
+                        }, 1000)
+                    }
+
+                    else if (option.checked && option.value !== currentQuestionAnswer) {
+                        const wrongLabelId = option.labels[0].id
+                        document.getElementById(wrongLabelId).style.backgroundColor = "tomato"
+                        document.getElementById(correctOption).style.backgroundColor = "YellowGreen"
+                        incorrect++
+                        indexNumber++
+                        // delay question number until next question loads
+                        setTimeout(() => {
+                            questionNumber++
+                        }, 1000)
+                    }
+                })
+            }
+
+
+            // when 'next' button is pressed
+            function handleNextQuestion() {
+                checkForAnswer() // right or wrong?
+                uncheck()
+                // delays next question slightly
+                setTimeout(() => {
+                    if (indexNumber < 10) {
+                        // if we haven't yet asked all 10 questions, get next one
+                        NextQuestion(indexNumber)
+                    }
+                    else {
+                        // already at last question, end the quiz
+                        atLastQuestion()
+                    }
+                    resetOptionBackground()
+                }, 1000);
+            }
+
+            // set options background back to null after displaying the right/wrong colours
+            function resetBackground() {
+                const options = document.getElementsByName("option");
+                options.forEach((option) => {
+                    document.getElementById(option.labels[0].id).style.backgroundColor = ""
+                })
+            }
+
+            // uncheck all options for next question
+            function uncheck() {
+                const options = document.getElementsByName("option");
+                for (let i = 0; i < options.length; i++) {
+                    options[i].checked = false;
+                }
+            }
+
+            // after all questions are answered
+            function endGame() {
+                let feedback = null
+                let feedbackColor = null
+
+                // use score to select appropriate feedback
+                if (score < 5) {
+                    feedback = "UNSAFE!!! Keep Practicing!"
+                    feedbackColor = "tomato"
+                }
+                else if (score >= 5 && score < 7) {
+                    feedback = "Average score, you can be safer."
+                    feedbackColor = "orange"
+                }
+                else if (score >= 7) {
+                    feedback = "SAFE! You are set for a safe and healthy campus experience."
+                    feedbackColor = "YellowGreen"
+                }
+                const finalScore = (score / 10) * 100
+
+                // display after finishing quiz
+                document.getElementById('feedback').innerHTML = feedback
+                document.getElementById('feedback').style.color = feedbackColor
+                document.getElementById('score-percentage').innerHTML = finalScore
+                document.getElementById('wrong-answers').innerHTML = incorrext
+                document.getElementById('right-answers').innerHTML = score
+                document.getElementById('results-container').style.display = "flex"
+
+            }
+
+            // close results page, resets quiz and reshuffles questions
+            function closeResultsPage() {
+                questionNumber = 1
+                score = 0
+                incorrext = 0
+                indexNumber = 0
+                shuffled = []
+                NextQuestion(indexNumber)
+                document.getElementById('score').style.display = "none"
+            }
+
+            // close page telling user to pick an option
+            function closeOptionPage() {
+                document.getElementById('option-page').style.display = "none"
+            }
+        </script>
     </head>
-</html>
 
+    <body onload="NextQuestion(0)">
+    <main>
+        <!-- <link rel="stylesheet" href="quiz_styling.css"> -->
+        <!-- <script type="text/javascript" src="quiz.script.js"></script> -->
 
+        <div class="results-container" id="score">
 
-<h1>MODULE 3: STUDY-SAFE </h1>
-<h2>TIPS, TRICKS, and RESOURCES FOR UNI SUCCESS AND SAFETY</h2>
+            <div class="results-content-container">
 
-<div class="overview">
-<p>
-    Many factors contribute to uni success - beginning with arriving safely on campus. Module 3.1 outlines
-    various transport options and tips you should know.<br>
-    Along with physical safety, your mental health and safety is a crucial factor that musn't be forgotten about.
-    While being consumed by your studies, it's easy to neglect hobbies, your social life, or even sleep. UWA provides 
-    handy resources to help with balancing these aspects of your university experience. These are explored in module 3.2. <br>
-    Being happy, healthy, and motivated is essential for study success, however sometimes motovation alone is not enough.
-    Productive study is a skill that can be assumed and/or overlooked, but in reality can be overwhelming and take practice. 
-    See how UWA can help you to perfect these skills in module 3.3.
-</p>
-</div>
+                <h1>Congratulations, Quiz Completed.</h1>
 
-<!-- TRANSPORT SECTION -->
-<section>
-<button type="button" class="collapsible">Module 3.1: Transport Tips + Tricks</button>
-<div class="content">
-    <h3>3.1 TRANSPORT TIPS + TRICKS</h3>
-    <h3>Safe commutes to, from, and around uni campus</h3>
-    <h4><i class="material-icons">&#xe536;</i><i class="material-icons">&#xe52f;</i>  WALKING + CYCLING</h4>
-    <div class="submodule">
-    <p>
-        If you live close to campus, walking might be the best mode of transport for you. 
-        How can you optimise safety while travelling by foot?
-        <div class="history">
-            <b>History Lesson:</b> In 1967, a student died after being hit by a car while crossing Stirling Highway - the second incident of the kind 
-            to occur within the past 2 years. Following this event, a push from students to gain a safer alternative to crossing the highway, resulted in
-            the addition of several underpasses.
-            <br><br>
-        </div>
-        These underpasses are a great way to avoid the risk of crossing stirling hwy. 
-        The risk of walking at night time is also one to watch out for. 
-        UWA security provide an after-hours Escort Service and will walk you to car parks, colleges, and 
-        accomodation immediately adjacent to the University. To use this service, call <a href="tel:(+61 8) 6488 2258">6488 3020</a>. 
-        Help points with emergency phones are also located throught UWA campus.
-    </p>
-    <iframe src="https://www.cm.uwa.edu.au/__data/assets/pdf_file/0006/3377976/UWA-Help-points-and-walksafe-routes-09-2018.pdf" 
-            style="display:block;margin-left:auto;margin-right:auto;height:200px;width:80%;" ></iframe>
-    <p>
-        UWA is a bike friendly campus so cycling is another great option for students living close by. 
-        Stay safe by wearing a helmet and watching out for other traffic, including pedestrians!
-    </p>
-    <h4><i class="material-icons">&#xe530;</i>  PUBLIC TRANSPORT</h4>
-    <p>
-        Public transport is another option with several bus stops placed around the uni. 
-        Check out the table below to see what routes are available. 
-        Benefits of using public transport:
-        <ul>
-            <li>More time - no wasting time finding a car park</li>
-            <li>Cheap - with student fares and no need to pay for parking </li>
-            <li>Fun - can make the most of your spare time while being driven around</li>
-        </ul>
-        SmartRiders: while enrolled in UWA, you are eligible for a student concession Transperth SmartRider, which will allow cheap and easy journeys. 
-        You can use the Transperth website and app, or even Google Maps to see what is available near you.
-        <br><br>
-        Bus Routes to UWA:
-        <br><br>
+                <div class="score-details">
+                    <p>Incorrect Answers : <span id="wrong-answers"></span></p>
+                    <p>Correct Answers : <span id="right-answers"></span></p>
+                    <p>Score : <span id="score-percentage"></span>%</p>
+                    <p ><span id="feedback"></span></p>
+                </div>
 
-    <table>
-        <tr>
-            <th>FROM</th>
-            <th>ROUTE NO</th>
-            <th>JOURNEY TIME TO UWA</th>
-            <th>FREQUENCY</th>
-        </tr>
-        <tr>
-            <td>Perth
-                Elizabeth Quay Bus Station</td>
-            <td>950, 23, 102, 107</td>
-            <td>10 minutes</td>
-            <td>Every 1-5 minutes during peak times and every 5-15 minutes at other times</td>
-        </tr>
-        <tr>
-            <td>East Perth
-                St Georges Terrace</td>
-            <td>24, 103</td>
-            <td>25 minutes</td>
-            <td>Approximately every 20 minutes</td>
-        </tr>
-        <tr>
-            <td>Subiaco Train Station</td>
-            <td>97</td>
-            <td>20 Minutes</td>
-            <td>Every 15 minutes</td>
-        </tr>
-        <tr>
-            <td>Claremont Train Station</td>
-            <td>24, 23, 102, 107</td>
-            <td>10 Minutes</td>
-            <td>Every 10 minutes</td>
-        </tr>
-        <tr>
-            <td>Fremantle Train Station</td>
-            <td>998, 103</td>
-            <td>30 minutes</td>
-            <td>Every 15 minutes</td>
-        </tr>
-        <tr>
-            <td>Stirling Train Station</td>
-            <td>999</td>
-            <td>30 minutes</td>
-            <td>Every 5-10 minutes during peak times, and every 15-30 minutes at other times</td>
-        </tr>
-    </table>
+                <div class="results-button-container">
+                    <button onclick="closeResultsPage()">Continue</button>
+                </div>
 
-    <br>
-    <b>Tip: </b>Unless you're prepared to wait in a line that spans the entire length of Stirling Hwy, avoid the 950 bus during peak hours.
-</p>
-<h4><i class="material-icons">&#xe531;</i>  DRIVING</h4>
-<p>
-    UWA have parking permits available to students who:
-    <!-- add in images that tell you the list points as you press them -->
-    <ul>
-        <li>are studying full-time or part-time at UWA</li>
-        <li>have completed a minimum of 48 points towards a degree course</li>
-        <li>live far away from UWA campus</li>
-    </ul>
-
-    These parking permits cost $90 per semester and will allow you to park in the student bays around campus, 
-    which are indicated by yellow lines, whereas staff parking is red.<br><br>
-
-    <b>Tip:</b> Park for free in the red and yellow bays on weekends, or after 5pm and before 8am on weekdays.<br><br>
-
-    There is also paid visitor parking (green or white) for those not eligible for a permit.
-    
-    Click 
-    <a href = "https://www.transport.uwa.edu.au/__data/assets/pdf_file/0007/148948/UWA-Parking-map-2020.pdf">
-        here
-    </a>
-    for a map of the paid parking available around UWA.<br><br>
-
-    <iframe src="https://www.transport.uwa.edu.au/__data/assets/pdf_file/0007/148948/UWA-Parking-map-2020.pdf" 
-            style="display:block;margin-left:auto;margin-right:auto;height:200px;width:95%;" ></iframe><br><br>
-
-    REMEMBER: If staying late, UWA security is available to escort you safely to your car or residential college.
-
-</p>
-</div>
-</div>
-</section>
-
-<!-- SOCIAL AND MENTAL HEALTH SECTION -->
-<section>
-<button type="button" class="collapsible">Module 3.2: Social Safety + Mental Health</button>
-<div class="content">
-<h3>3.2 SOCIAL SAFETY + MENTAL HEALTH</h3>
-<h4>GUILD + CLUBS</h4>
-<div class="submodule">
-<p>
-    The UWA Student Guild is made up of a selection of student representatives. Along with guild committees and departments, there is an endless list of student clubs 
-    existing at UWA. <br><br>
-    This includes clubs based around various faculties, study groups, skills, cultures, religions, and so on.<br><br>
-    Involvement in these groups can enhance the university experience by providing the chance to build new connections - 
-    with future friends who share similar passions, or perhaps a study partner, potential tutor, or mentor...<br><br>
-    Connecting with the UWA community will promote a more balanced and satisfying university experience.<br><br>
-    <a href = "https://www.uwastudentguild.com/clubs">
-        Visit this website to explore the clubs available to join - or to build your own club!
-    </a>
-</p>
-
-<h4>SPORTING + FITNESS</h4>
-<p>
-    Exercise is important for the health of your body and mind. UWA Sport provides different ways in which you can keep fitness fun.
-    About UWA Sport: 
-    <ul>
-        <li>Gym and fitness centre: more than 50 group fitness classes per week</li>
-        <li>Run interfaculty sporting competitions</li>
-        <li>Run intercollege sporting competitions</li>
-        <li>Organise social sports</li>
-    </ul>
-</p>
-
-
-<h4>MENTAL HEALTH</h4>
-<p>
-    Mental health help and resources UWA:
-    <br><br>
-    Mental health nurses are available at the UWA Medical Center<br>
-    <i class="material-icons" style="font-size:15px">&#xe55f;</i>  <a href="https://www.google.com/maps/place/Guild+Village,+5+Hackett+Dr,+Crawley+WA+6009/@-31.9808823,115.8172366,17z/data=!3m1!4b1!4m5!3m4!1s0x2a32a4edd00fe4cf:0xc6f563a145db5cc4!8m2!3d-31.9808869!4d115.8194253">Level 2, Guild Village</a>
-    <br><br>
-    Welfare programs and services available to UWA students:
-    <ul>
-        <li>Counselling</li>
-        <li>Food Pantry</li>
-        <li>
-            Mental health week
-            <ul>
-                <li>Run yearly by guild access and welfare departments</li>
-                <li>Local mental health organisations showcase their services offered to students</li>
-            </ul>
-        </li>
-        <li>Stress-busting tips</li>
-        <li>Discrimination</li>
-        <li>Legal resources</li>
-        <li>see more:<a href = "https://www.uwastudentguild.com/assets/downloads/student-assist/welfare-mental-health-directory_web.pdf">
-            Mental Health Directory UWA
-        </a></li>
-    </ul>
-</p>
-</div>
-</div>
-</section>
-
-
-<!-- STUDY SECTION-->
-<section>
-<button type="button" class="collapsible">Module 3.3: Study Satisfaction</button>
-<div class="content">
-<h3>3.3 STUDY SATISFACTION</h3>
-<div class="submodule">
-<h4>STUDY RESOURCES</h4>
-<p>
-    <div class="row">
-        <div class="column">
-            <b>Careers Centre</b><br><br>
-            <i class="material-icons" style="font-size:15px">&#xe55f;</i>  
-            <a href="https://www.google.com/maps/place/Student+Central/@-31.9804555,115.8167714,17z/data=!3m1!4b1!4m5!3m4!1s0x2a32a4edd7771d61:0xaaf92cd5547a3408!8m2!3d-31.9804594!4d115.8193573">Ground Floor, Student Central</a><br>
-            <i class="material-icons" style="font-size:15px">&#xe0be;</i>  
-            <a href="mailto:careerscentre@uwa.edu.au">careerscentre@uwa.edu.au</a><br>
-            <i class="material-icons" style="font-size:15px">&#xe0b0;</i>  
-            <a href="tel:(+61 8) 6488 2258">(+61 8) 6488 2258</a><br><br>
-            Career advice and guidance.<br><br>
+            </div>
         </div>
 
-        <div class="column">
-            <b>Uni Access</b><br><br>
-            <i class="material-icons" style="font-size:15px">&#xe55f;</i>  
-            <a href="https://www.google.com/maps/place/Student+Central/@-31.9804555,115.8167714,17z/data=!3m1!4b1!4m5!3m4!1s0x2a32a4edd7771d61:0xaaf92cd5547a3408!8m2!3d-31.9804594!4d115.8193573">Level 1, Student Central</a><br>
-            <i class="material-icons" style="font-size:15px">&#xe0be;</i>  
-            <a href="mailto:uniaccess@uwa.edu.au">uniaccess@uwa.edu.au</a><br>
-            <i class="material-icons" style="font-size:15px">&#xe0b0;</i>  
-            <a href="tel:(+61 8) 6488 2423">(+61 8) 6488 2423</a><br><br>
-            Support and assistance for students with a disability or illness affecting their studies. <br>
-            UniAccess offer the following assistance while remaining confidential:
-            <ul>
-                <li>Accessible course materials</li>
-                <li>Special consideration</li>
-                <li>Required equipment, technology</li>
-                <li>Alternative exam arrangements</li>
-                <li>Advice </li>
-            </ul>
+
+        <div class="quiz-container">
+
+            <div class="quiz-details-container">
+                <h1>Score : <span id="player-score"></span> / 10</h1>
+                <h1> Question : <span id="question-number"></span> / 10</h1>
+            </div>
+
+            <div class="quiz-question-container">
+                <h1 id="display-question"></h1>
+            </div>
+
+            <div class="quiz-options-container">
+
+               <div class="option-page" id="option-page">
+
+                    <div class="quiz-content-container">
+                         <h1>Must Select An Option</h1>
+
+                         <div class="quiz-button-container">
+                            <button onclick="closeOptionPage()">Continue</button>
+                        </div>
+
+                    </div>
+
+               </div>
+
+                <span>
+                    <input type="radio" id="option-one" name="option" class="radio" value="optionA" />
+                    <label for="option-one" class="option" id="option-one-label"></label>
+                </span>
+
+
+                <span>
+                    <input type="radio" id="option-two" name="option" class="radio" value="optionB" />
+                    <label for="option-two" class="option" id="option-two-label"></label>
+                </span>
+
+
+                <span>
+                    <input type="radio" id="option-three" name="option" class="radio" value="optionC" />
+                    <label for="option-three" class="option" id="option-three-label"></label>
+                </span>
+
+
+                <span>
+                    <input type="radio" id="option-four" name="option" class="radio" value="optionD" />
+                    <label for="option-four" class="option" id="option-four-label"></label>
+                </span>
+
+
+            </div>
+
+            <div class="next-button-container">
+                <button onclick="handleNextQuestion()">Next</button>
+            </div>
+
         </div>
-
-        <div class="column">
-            <b>Study Smarter</b><br><br>
-            <i class="material-icons" style="font-size:15px">&#xe55f;</i>  
-            <a href="https://www.google.com/maps/place/Student+Central/@-31.9804555,115.8167714,17z/data=!3m1!4b1!4m5!3m4!1s0x2a32a4edd7771d61:0xaaf92cd5547a3408!8m2!3d-31.9804594!4d115.8193573">Level 2, Student Central</a><br>
-            <i class="material-icons" style="font-size:15px">&#xe0be;</i>  
-            <a href="mailto:studysmarter@uwa.edu.au">studysmarter@uwa.edu.au</a><br>
-            <i class="material-icons" style="font-size:15px">&#xe0b0;</i>  
-            <a href="tel:(+61 8) 6488 2423">(+61 8) 6488 2423</a><br><br>
-            Free programs including expert advice and tutoring in the following areas:
-            <ul>
-                <li>Study techniques</li>
-                <li>Time management</li>
-                <li>Writing</li>
-                <li>Communications</li>
-                <li>English language</li>
-                <li>Maths and stats</li>
-                <li>Research skills</li>
-            </ul>
-        </div>
-
-    </div>
-    Many clubs and guild deparments run study or career-based events. So get involved with these groups to hear about upcoming workshops 
-    and networking events which may assist with your studies and meeting others in your field.
-</p>
-
-<h4>STUDY TIPS FOR UNI</h4>
-<p>
-    <b>Exams</b><br>
-    Remember to:
-    <ul>
-        <li>Check which items are allowed in the exam</li>
-        <li>Bring:
-            <ul>
-                <li>Your student ID</li>
-                <li>A clear pencil case, carrying approved equipment</li>
-                <li>A clear water bottle</li>
-            </ul> 
-        </li>
-        <li>Turn your phone off</li>
-        <li>Have notes prepared in the case of an open book exam</li>
-        <li>Check student connect for the time and location of your exam</li>
-    </ul><br>
-    <b>Time management</b>
-    <ul>
-        <li>Pick up a UWA diary at Guild Student Central</li>
-        <li>Track classes and due dates with a diary or calendar</li>
-        <li>Break larger tasks into smaller ones</li>
-        <li>Make time goals for completing each task</li>
-        <li>Take breaks when losing concentrarion or to reward yourself after completing a task</li>
-        <li>Use your phone timer to stay on track</li>
-    </ul>
-</p>
-
-<h4>STUDY SPACES ON CAMPUS</h4>
-<p>
-    <ul>
-        <li>Reid Library</li>
-        <li>Barry J Marshall Library</li>
-        <li>Beasley Law Library</li>
-        <li>J. Robin Warren Library</li>
-        <li>EDFAA Library</li>
-    </ul>
-    With such a variety of study spaces throughout these five libraries, you can explore which study environment works best for you.
-    Private study and collaboration spaces can be booked online.<br><br>
-    OneSearch is used by these libraries to provide online resources. Logging onto OneSearch with your student number will grant you access 
-    to electronic journals, ebooks, past exam papers, and more.<br><br>
-    <b>Tip:</b> Reid Library stays open 24/7 during exam periods.
-</p>
-</div>
-</div>
-</section>
-
-<script>
-    var collapse = document.getElementsByClassName("collapsible");
-    var i;
-    
-    for (i = 0; i < collapse.length; i++) {
-      collapse[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-          content.style.display = "none";
-        } else {
-          content.style.display = "block";
-        }
-      });
-    }
-</script>
-
-</body>
+    </main>
+    <script src="index.js"></script>
+    </body>
 </html>
