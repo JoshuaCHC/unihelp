@@ -1,34 +1,61 @@
 {% extends "base.html"%}
 {% block content %}
-<div class = 'container'>
-  <h1>Current Rankings:</h1>
-  <table class = 'table table-bordered table-hover' id = 'table1'></table>
+<div class = 'container-fluid table-div'>
+  <div class = 'container' >
+  <h1 class='login-text' style='border-bottom:2px solid rgb(78, 134, 103);'>The Top 10</h1>
+  
+  <table class = 'table table-bordered table-hover' id = 'table1'>
+    <thead>
+      <th>Rank</th>
+      <th>User</th>
+      <th>Score</th>
+    </thead>
+    <tbody>
+    {%for n in range(len)%}
+    {%if n==0%}
+      <tr class='table-success'>
+        <td><span>#{{vals[n]}} <span class='medal'>&#129351;</span></span></td>
+        <td><span><img src='{{imgs[n]}}'>   {{ranks[n][0]}}</span></td>
+        <td>{{ranks[n][1]}} points</td>
+      </tr>
+    {%elif n==1%}
+      <tr class='table-success'>
+        <td><span>#{{vals[n]}} <span class='medal'>&#129352;</span></span></td>
+        <td><span><img src='{{imgs[n]}}'>   {{ranks[n][0]}}</span></td>
+        <td>{{ranks[n][1]}} points</td>
+      </tr>
+    {%elif n==2%}
+      <tr class='table-success'>
+        <td><span>#{{vals[n]}} <span class='medal'>&#129351;</span></span></td>
+        <td><span><img src='{{imgs[n]}}'>   {{ranks[n][0]}}</span></td>
+        <td>{{ranks[n][1]}} points</td>
+      </tr>
+    {%else%}
+      <tr class='table-primary'>
+        <td>#{{vals[n]}}</td>
+        <td><span><img src='{{imgs[n]}}'>   {{ranks[n][0]}}</span>   </td>     
+        <td>{{ranks[n][1]}} points</td>
+      </tr>
+      {%endif%}
+    {%endfor%}
+  </tbody>
+  </table>
+</div>
 </div>
 
 </body>
-<script>
+<!-- <script>
   window.onload = function() {
-    const table = document.querySelector("table");
-    const head = document.createElement('thead');
-    const h1 = document.createElement('th');
-    const h2 = document.createElement('th');
-    const tbody = document.createElement('tbody');
-    h1.innerHTML = 'Name';
-    h2.innerHTML = 'Score';
-    head.appendChild(h1);
-    head.appendChild(h2);
-    table.appendChild(head);
-    for(var i = 0; i < 10; i++){
-      const row = document.createElement('tr');
-      const c1 = document.createElement('td');
-      c1.innerHTML = 'Name: ' + i;
-      const c2 = document.createElement('td');
-      c2.innerHTML = 10-i + '00000';
-      row.appendChild(c1);
-      row.appendChild(c2);
-      tbody.appendChild(row);
-    }
-    table.appendChild(tbody);
+    var rows = $('#table1 > tbody > tr');
+    console.log(rows);
+    rows.each(function(){ 
+      console.log(this);
+      $(this).addClass("table-success");
+    // for (row in rows){
+    //   row.addClass('table-primary');
+    // }
+    // console.log(rows[0].classList)
+    });
   }
-</script>
+</script> -->
 {% endblock %}

@@ -1,0 +1,252 @@
+html, body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+/*CPR heading*/
+  .blinking {
+    animation: blinkingText 1.6s;
+    animation-iteration-count: 10;
+  }
+      
+  @keyframes blinkingText{
+      0%{     color: white; }
+      49%{    color: white; }
+      60%{    color: transparent; }
+      99%{    color:transparent;  }
+      100%{   color: white;    }
+  }
+  .header {
+    margin-left: 200px;
+    margin-top:auto;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 70px;
+  }
+
+  /*Top and Side Navigation Bars*/
+@media screen and (max-width: 500px) {
+  .module_navbar a {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/*Top Navigation Bar*/
+.module_navbar {
+  margin-left: 200px;
+  background-color: rgb(78, 134, 103);
+  overflow: auto;
+}
+
+.module_navbar a {
+  float: right;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  text-align: center;
+}
+
+.module_navbar a:hover {
+  background-color: rgb(252, 252, 252);
+  color: rgb(78, 134, 103);
+}
+
+/*Side Navigation Bar*/
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: rgb(78, 134, 103);
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: rgb(0, 162, 255);
+}
+.main {
+  margin-left: 210px;  
+  margin-right: 10px;
+}
+.active {
+  background-color: rgb(78, 134, 103);
+  color: white;
+}
+
+.dropdown-container {
+  display: none;
+  background-color: white;
+  padding-left: 8px;
+}
+
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+.sidenav {
+  border-style: outset;
+  border: 5px solid rgb(78, 134, 103);
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: white;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 6px 6px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color:  rgb(78, 134, 103);
+  display: block;
+}
+
+.sidenav a:hover {
+  color: rgb(0, 162, 255);
+}
+
+/* Flip Cards*/
+.flip-card {
+  display: inline-block; 
+  margin:auto;
+  background-color: transparent;
+  width: 250px;
+  height: 250px;
+  perspective: 1000px;
+}
+
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  font-size:70px;
+  padding: 100px 0;
+  text-align:center;
+  background-color: rgb(0, 162, 255);;
+  color: white;
+}
+
+.flip-card-back {
+  padding: 5px;
+  font-size:20px;
+  background-color: rgb(78, 134, 103);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/*Quizzes*/
+.question{
+	font-weight: 600;
+}
+.answers {
+  margin-bottom: 20px;
+}
+.answers label{
+  display: block;
+}
+#submit{
+	font-family: sans-serif;
+	font-size: 20px;
+	background-color: #279;
+	color: #fff;
+	border: 0px;
+	border-radius: 3px;
+	padding: 20px;
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+#submit:hover{
+	background-color: #38a;
+}
+
+/*Pressing thing*/
+
+#content {
+  width: 200px;
+  border: 1px dashed #dc0000;
+  font-size: 20px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 20px;
+  user-select: none;
+  position: relative;
+}
+
+#clickarea {
+  width: 500px;
+  height : 300px;
+  border: 2px solid #dc0000;
+  font-size: 20px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 20px;
+  position: relative;
+}
+
+
+
+#start {
+  position: relative;
+  transform: translate(-50%,-50%);
+  border: 0;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+  background-color: rgba(220, 0, 0, 1);
+  background-image: linear-gradient(to top left,
+        rgba(0, 0, 0, .2),
+        rgba(0, 0, 0, .2) 30%,
+        rgba(0, 0, 0, 0));
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+              inset -2px -2px 3px rgba(0, 0, 0, .6);
+}
+
+#start:hover {
+  background-color: rgba(255, 0, 0, 1);
+}
+
+#start:active {
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+              inset 2px 2px 3px rgba(0, 0, 0, .6);
+}

@@ -1,74 +1,86 @@
 {% extends "base.html"%}
 {% block content %}
-<div class='container-fluid' id = 'login-container'>
-    <h2> Its login time my dude </h2>
+<div class='container-fluid login-img' id = 'login-container'>
     <div class = "container-fluid">
-        <div class='row'>
-            <div class = 'col-sm-1'></div>
-        <div class = 'col-sm-4' style = "border:1px solid rgb(78, 134, 103); padding:15px">
-            <h3> Existing User: </h3>
-    <form action="" method = 'post'>
-        <div class="form-group">
-          <label for="username">Username:</label>
-          <input type="text" class="form-control" placeholder="username" id="user" name='username' value='{{request.form.username}}'>
-        </div>  
-        <div class="form-group">
-          <label for="pwd">Password:</label>
-          <input type="password" class="form-control" placeholder="password" id="pwd" name='password' value='{{request.form.password}}' >
-        </div>
-        <div class="form-group form-check">
-          <label class="form-check-label">
-            <input class="form-check-input" type="checkbox"> Remember me
-          </label>
-        </div>
-        <button type="submit" class="btn btn-primary" value='Login'>Submit</button>
-      </form>
-    </div>
-      <div class = 'col-sm-2'></div>
-      <div class = 'col-sm-4' style = "border:1px solid rgb(78, 134, 103); padding:15px">
-        <h3>New User:</h3>
-        <form action="/action_page.php" class="was-validated">
+      <div class='row'>
+        <div class='col-sm-7'></div>
+        <div class = 'col-sm-4 login-box'>
+          <h2 class = 'login-text'><big> <b>Login </b></big></h2>
+          <form action="" method = 'post' id='loginform'>
+            {{ form.hidden_tag() }}
             <div class="form-group">
-              <label for="uname">Username:</label>
-              <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
-              <div class="valid-feedback">Valid.</div>
-              <div class="invalid-feedback">Please fill out this field.</div>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-              </div>
+              <label for="username">Username:</label>
+              {{ form.username(type='text', class='form-control',placeholder='Enter username',id='user')}}
+              {% for error in errors %}
+                {%if error == 'Invalid username'%}
+                  <span style="color: red;">{{ error }}</span>
+                {%endif%}
+              {% endfor %}
+              <!-- <input type="text" class="form-control" placeholder="username" id="user" name='username' value='{{form.username}}' required placeholder="required"> -->
+            </div>  
             <div class="form-group">
               <label for="pwd">Password:</label>
-              <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
-              <div class="valid-feedback">Valid.</div>
-              <div class="invalid-feedback">Please fill out this field.</div>
+              {{ form.password(type='password', class='form-control',placeholder='Enter password',id='loginpwd')}}
+              {% for error in errors %}
+                {%if error == 'Invalid password'%}
+                  <span style="color: red;">{{ error }}</span>
+                {%endif%}
+              {% endfor %}
+              <!-- <input type="password" class="form-control" placeholder="password" id="loginpwd" name='password' value='{{form.password}}' required placeholder="required"> -->
             </div>
-            <div class="form-group">
-                <label for="cpwd">Confim password:</label>
-                <input type="password" class="form-control" id="cpwd" placeholder="Re-enter password" name="cpswd" required>
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">Please fill out this field.</div>
-              </div>
             <div class="form-group form-check">
-              <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="remember" required> I agree on blabla.
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">Check this checkbox to continue.</div>
-              </label>
+              <label class="form-check-label"><input class="form-check-input" type="checkbox"> Remember me </label>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <!-- <button type="submit" class="btn btn-primary" value='Login' id = 'login'>Login</button> -->
+            {{form.submit(class='btn btn-primary btn-block', type='submit', value='Login', id='login')}}
           </form>
-          
-
+          <hr>
+          <h3>New User?</h3>
+          <p>Register to access our services</p>
+          <a href="register" class="btn btn-primary btn-block" role="button">Register Now!</a>
+        </div>
+        <div class='col-sm-1'></div>
       </div>
-      <div class = 'col-sm-1'></div>
-
     </div>
-    </div>
-    {% if error %}
-        <p class='error'> Error!! It is: {{error}} </p>
-    {% endif %}
+</div>
+<!-- <script>
 
+  $('#login').on('click', function(event) {
+    var firstpwd = '';
+    var bool=false;
+  $("form#loginform :input").each(function(){
+    var value = $(this);
+    console.log(value.attr('type'));
+    if(value.attr('type') == 'text'){
+      console.log('checking user');
+      if(value.val() === '' || value.val() == null){
+        bool = true;
+
+        value.addClass('is-invalid');
+        console.log(value.attr('class'));
+
+      }
+      else{
+        value.addClass('is-valid');
+      }
+    }
+    if(value.attr('type') == 'password'){
+      console.log('checking password');
+      if(value.val() === '' || value.val() == null){
+        bool = true;
+
+        value.addClass('is-invalid');
+        console.log(value.attr('class'));
+
+      }
+      else{
+        value.addClass('is-valid');
+      }      
+    }
+  });
+    if(bool == true){
+      event.preventDefault();
+    }
+  });
+</script> -->
 {% endblock %}
