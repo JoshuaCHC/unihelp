@@ -10,16 +10,8 @@
                 box-sizing: border-box;
             }
 
-            html, body{
-                height: 100%;
-            }
-
-
-            body{
+            body {
                 font-family: Arial, Helvetica, sans-serif;
-            }
-
-            main{
                 width: 100%;
                 min-height: 100vh;
                 display: flex;
@@ -32,7 +24,7 @@
                 background-position: center;
             }
 
-            .quiz-container{
+            .quiz-container {
                 width: 40rem;
                 height: 30rem;
                 background-color: white;
@@ -43,7 +35,7 @@
                 border-radius: 30px;
             }
 
-            .quiz-details-container{
+            .quiz-details-container {
                 width: 80%;
                 height: 4rem;
                 display: flex;
@@ -51,11 +43,11 @@
                 align-items: center;
             }
 
-            .quiz-details-container h1{
+            .quiz-details-container h1 {
                 font-size: 1.2rem;
             }
 
-            .quiz-question-container{
+            .quiz-question-container {
                 width: 80%;
                 height: 8rem;
                 display: flex;
@@ -65,13 +57,13 @@
                 border-radius: 25px;
             }
 
-            .quiz-question-container h1{
+            .quiz-question-container h1 {
                 font-size: 1.1rem;
                 text-align: center;
                 padding: 3px;
             }
 
-            .quiz-options-container{
+            .quiz-options-container {
                 width: 80%;
                 height: 12rem;
                 display: flex;
@@ -80,14 +72,15 @@
                 justify-content: space-around;
             }
 
-            .quiz-options-container span{
+            .quiz-options-container span {
                 width: 45%;
                 height: 3rem;
                 border: 2px solid rgb(78, 134, 103);
                 border-radius: 20px;
                 overflow: hidden;
             }
-            span label{
+
+            span label {
                 width: 100%;
                 height: 100%;
                 display: flex;
@@ -99,7 +92,7 @@
                 color: rgb(22, 22, 22);
             }
 
-            span label:hover{
+            span label:hover {
                 -ms-transform: scale(1.12);
                 -webkit-transform: scale(1.12);
                 transform: scale(1.12);
@@ -117,13 +110,13 @@
                 color: white;
             }
 
-            .next-button-container{
+            .next-button-container {
                 width: 50%;
                 height: 3rem;
                 display: flex;
                 justify-content: center;
             }
-            .next-button-container button{
+            .next-button-container button {
                 width: 8rem;
                 height: 2rem;
                 border-radius: 10px;
@@ -134,11 +127,11 @@
                 cursor: pointer;
                 outline: none;
             }
-            .next-button-container button:hover{
+            .next-button-container button:hover {
                 background-color: orange;
             }
 
-            .results-container{
+            .results-container {
                 display: none;
                 position: fixed;
                 z-index: 1; 
@@ -156,7 +149,7 @@
                 animation: fadeIn 1.2s ease-in-out;
             }
 
-            .results-content-container{
+            .results-content-container {
                 height: 20rem;
                 width: 25rem;
                 background-color: rgb(43, 42, 42);
@@ -167,14 +160,14 @@
                 border-radius: 25px;
             }
 
-            .results-content-container h1{
+            .results-content-container h1 {
                 font-size: 1.3rem;
                 height: 3rem;
                 color: rgb(173, 207, 189);
                 text-align: center;
             }
 
-            .score-details{
+            .score-details {
                 width: 15rem;
                 height: 10rem;
                 display: flex;
@@ -183,12 +176,12 @@
                 justify-content: space-around;
             }
 
-            .score-details p{
+            .score-details p {
                 color: white;
                 text-align: center;
             }
 
-            .results-button-container{
+            .results-button {
                 height: 2rem;
                 width: 100%;
                 display: flex;
@@ -196,7 +189,7 @@
                 justify-content: center;
             }
 
-            .results-button-container button{
+            .results-button button {
                 width: 10rem;
                 height: 2rem;
                 background: none;
@@ -207,77 +200,82 @@
                 cursor: pointer;
                 border-radius: 20px;
             }
-            .results-button-container button:hover{
+            .results-button button:hover {
                 background-color: rgb(83, 82, 82);
             }
 
             @media(min-width : 300px) and (max-width : 350px){
-                .quiz-container{
+                .quiz-container {
                     width: 90%;
                     height: 80vh;
                 }
-                .quiz-details-container h1{
+
+                .quiz-details-container h1 {
                     font-size: 0.8rem;
                 }
 
-                .quiz-question-container{
+                .quiz-question-container {
                     height: 6rem;
                 }
-                .quiz-question-container h1{
-                font-size: 0.9rem;
+
+                .quiz-question-container h1 {
+                    font-size: 0.9rem;
                 }
 
-                .quiz-options-container span{
+                .quiz-options-container span {
                     width: 90%;
                     height: 2.5rem;
                 }
-                .quiz-options-container span label{
+
+                .quiz-options-container span label {
                     font-size: 0.8rem;
                 }
-                .results-content-container{
+
+                .results-content-container {
                     width: 90%;
                     height: 25rem;
                 }
 
-                .results-content-container h1{
+                .results-content-container h1 {
                     font-size: 1.2rem;
                 }
             }
 
             @media(min-width : 350px) and (max-width : 700px){
-            .quiz-container{
-                width: 90%;
-                height: 80vh;
+                .quiz-container {
+                    width: 90%;
+                    height: 80vh;
                 }
-                .quiz-details-container h1{
+
+                .quiz-details-container h1 {
                     font-size: 1rem;
                 }
 
-                .quiz-question-container{
+                .quiz-question-container {
                     height: 8rem;
                 }
 
-                .quiz-question-container h1{
+                .quiz-question-container h1 {
                     font-size: 0.9rem;
                 }
 
-                .quiz-options-container span{
+                .quiz-options-container span {
                     width: 90%;
                 }
-                .results-content-container{
+
+                .results-content-container {
                     width: 90%;
                     height: 25rem;
                 }
-                .results-content-container h1{
+                
+                .results-content-container h1 {
                     font-size: 1.2rem;
                 }
             }
 
-
-
             @keyframes fadeIn {
                 from {opacity: 0;}
-                to {opacity:1 ;}
+                to {opacity: 1;}
             }
 
             @-webkit-keyframes fadeIn {
@@ -288,7 +286,7 @@
         <script>
              const questions = [
                 {
-                    // 1 - transport
+                    // Q1 - transport
                     question: "Sally has successfully completed 96 degree points while studying full-time at UWA. Sally lives in an area considered eligible for a permit but has decided to change to part-time study. Is Sally still eligible for a student-parking permit?",
                     optionA: "Yes",
                     optionB: "No",
@@ -298,7 +296,7 @@
                 },
 
                 {
-                    // 2 - transport
+                    // Q2 - transport
                     question: "If you call security on 6488 3020 after hours, what service will they provide?",
                     optionA: "Complete your assignment for you",
                     optionB: "Walk you to your car",
@@ -308,7 +306,7 @@
                 },
 
                 {
-                    // 3 - transport
+                    // Q3 - transport
                     question: "After a student died while crossing Stirling Hwy, what road-crossing alternative was introduced?",
                     optionA: "Bike share",
                     optionB: "private helicopters",
@@ -318,7 +316,7 @@
                 },
 
                 {
-                    // 4 - transport
+                    // Q4 - transport
                     question: "Which of the following does NOT affect one's eligibility for a UWA parking permit?",
                     optionA: "Residential postcode",
                     optionB: "Age",
@@ -328,7 +326,7 @@
                 },
 
                 {
-                    // 5 - mental health
+                    // Q5 - mental health
                     question: "What week is run by the Guild Access and Welfare Departments each year?",
                     optionA: "Women's week",
                     optionB: "Easter week",
@@ -338,7 +336,7 @@
                 },
 
                 {
-                    // 6 - mental health
+                    // Q6 - mental health
                     question: "Which of these options is not a sporting event run by UWA Sport?",
                     optionA: "Social Sports",
                     optionB: "Drinking Sports",
@@ -348,7 +346,7 @@
                 },
 
                 {
-                    // 7 - study satisfaction
+                    // Q7 - study satisfaction
                     question: "In which building will you find the Careers Centre, Uni Access, and Study Smarter?",
                     optionA: "Student Central",
                     optionB: "Reid Library",
@@ -358,7 +356,7 @@
                 },
 
                 {
-                    // 8 - study satisfaction
+                    // Q8 - study satisfaction
                     question: "Which of UWA's libraries opens 24/7 during exam periods?",
                     optionA: "Barry J Marshall",
                     optionB: "Reid",
@@ -368,7 +366,7 @@
                 },
 
                 {
-                    // 9 - study satisfaction
+                    // Q9 - study satisfaction
                     question: "What time management tool can you pick up at Guild Student Central?",
                     optionA: "Timer",
                     optionB: "Goal journal",
@@ -378,7 +376,7 @@
                 },
 
                 {
-                    // 10 - study satisfaction
+                    // Q10 - study satisfaction
                     question: "What is the name of UWA's academic support team?",
                     optionA: "Smarter Study",
                     optionB: "Study Help",
@@ -389,29 +387,28 @@
             ]
 
             // store the shuffled questions
-            let shuffled = []
+            let shuffled = [];
 
-            // shuffle the questions and store them in shuffledQuestions array
+            // shuffle the questions and store them in the shuffled array
             function shuffleQuestions() { 
                 while (shuffled.length < 10) {
-                    const random = questions[Math.floor(Math.random() * 10)]
+                    const random = questions[Math.floor(Math.random() * 10)];
                     if (!shuffled.includes(random)) {
-                        shuffled.push(random)
+                        shuffled.push(random);
                     }
                 }
             }
 
-            let questionNumber = 1 
-            let score = 0 
-            let incorrect = 0 // num of incorrect answers
-            let indexNumber = 0 // used to find next question
+            let score = 0; 
+            let incorrect = 0; // num of incorrect answers
+            let questionNum = 0; // which question are we up to?
 
             // display next question
-            function NextQuestion(index) {
-                handleQuestions()
-                const currentQuestion = shuffledQuestions[index]
-                document.getElementById("question-number").innerHTML = questionNumber
-                document.getElementById("player-score").innerHTML = score
+            function nextQuestion(questionNum) {
+                shuffleQuestions();
+                const currentQuestion = shuffled[questionNum];
+                document.getElementById("question-number").innerHTML = questionNum + 1; //starts at 0 (we want 1)
+                document.getElementById("user-score").innerHTML = score;
                 document.getElementById("display-question").innerHTML = currentQuestion.question;
                 document.getElementById("option-one-label").innerHTML = currentQuestion.optionA;
                 document.getElementById("option-two-label").innerHTML = currentQuestion.optionB;
@@ -421,48 +418,43 @@
             }
 
             function checkAnswer() {
-                const currentQuestion = shuffledQuestions[indexNumber] // gets question
-                const currentAnswer = currentQuestion.correctOption // gets answer
-                const options = document.getElementsByName("option"); // gets all answer options for current Q
-                let correctOption = null
+                const currentQuestion = shuffledQuestions[questionNum]; // gets question
+                const currentAnswer = currentQuestion.correctOption; // get answer
+                const options = document.getElementsByName("option"); // get all answer options for current Q
+                let correctOption = null;
 
                 options.forEach((option) => {
                     if (option.value === currentAnswer) {
-                        correctOption = option.labels[0].id
+                        correctOption = option.labels[0].id;
                     }
                 })
 
-                //checking to make sure a radio input has been checked or an option being chosen
-                // if (options[0].checked === false && options[1].checked === false && options[2].checked === false && options[3].checked == false) {
-                //     document.getElementById('option-modal').style.display = "flex"
-                // }
-
-                // check that an option has been selected
+                // show option 'warning' if no option has been selected
                 if (!options[0].checked && !options[1].checked && !options[2].checked && !options[3].checked) {
-                    document.getElementById('option-page').style.display = "flex"
+                    document.getElementById('option-page').style.display = "flex";
                 }
 
-                // check that option selected is same as correct option
+                // check if selected option matches correct option
                 options.forEach((option) => {
-                    if (option.checked && option.value === currentQuestionAnswer) {
-                        document.getElementById(correctOption).style.backgroundColor = "YellowGreen"
-                        score++ 
-                        indexNumber++ // move to next question
+                    if (option.checked && option.value === currentAnswer) {
+                        document.getElementById(correctOption).style.backgroundColor = "yellowgreen";
+                        score++; 
+                        questionNum++; // move to next question
                         // delay question number until next question loads
                         setTimeout(() => {
-                            questionNumber++
+                            questionNum++;
                         }, 1000)
                     }
 
-                    else if (option.checked && option.value !== currentQuestionAnswer) {
-                        const wrongLabelId = option.labels[0].id
-                        document.getElementById(wrongLabelId).style.backgroundColor = "tomato"
-                        document.getElementById(correctOption).style.backgroundColor = "YellowGreen"
-                        incorrect++
-                        indexNumber++
+                    else if (option.checked && option.value !== currentAnswer) {
+                        const wrongLabelId = option.labels[0].id;
+                        document.getElementById(wrongLabelId).style.backgroundColor = "tomato";
+                        document.getElementById(correctOption).style.backgroundColor = "yellowgreen";
+                        incorrect++;
+                        questionNum++;
                         // delay question number until next question loads
                         setTimeout(() => {
-                            questionNumber++
+                            questionNum++;
                         }, 1000)
                     }
                 })
@@ -470,20 +462,20 @@
 
 
             // when 'next' button is pressed
-            function handleNextQuestion() {
-                checkForAnswer() // right or wrong?
-                uncheck()
+            function nextButton() {
+                checkAnswer(); 
+                uncheck();
                 // delays next question slightly
                 setTimeout(() => {
-                    if (indexNumber < 10) {
+                    if (questionNum < 9) {
                         // if we haven't yet asked all 10 questions, get next one
-                        NextQuestion(indexNumber)
+                        nextQuestion(questionNum);
                     }
                     else {
                         // already at last question, end the quiz
-                        atLastQuestion()
+                        endQuiz();
                     }
-                    resetOptionBackground()
+                    resetBackground();
                 }, 1000);
             }
 
@@ -491,7 +483,7 @@
             function resetBackground() {
                 const options = document.getElementsByName("option");
                 options.forEach((option) => {
-                    document.getElementById(option.labels[0].id).style.backgroundColor = ""
+                    document.getElementById(option.labels[0].id).style.backgroundColor = "white";
                 })
             }
 
@@ -504,137 +496,107 @@
             }
 
             // after all questions are answered
-            function endGame() {
-                let feedback = null
-                let feedbackColor = null
+            function endQuiz() {
+                let feedback = null;
+                let feedbackColor = null;
 
                 // use score to select appropriate feedback
                 if (score < 5) {
-                    feedback = "UNSAFE!!! Keep Practicing!"
-                    feedbackColor = "tomato"
+                    feedback = "UNSAFE!!! Keep practicing to ensure campus safety!";
+                    feedbackColor = "tomato";
                 }
                 else if (score >= 5 && score < 7) {
-                    feedback = "Average score, you can be safer."
-                    feedbackColor = "orange"
+                    feedback = "Average score, you can be safer.";
+                    feedbackColor = "orange";
                 }
                 else if (score >= 7) {
-                    feedback = "SAFE! You are set for a safe and healthy campus experience."
-                    feedbackColor = "YellowGreen"
+                    feedback = "SAFE! You are set for a safe and healthy campus experience.";
+                    feedbackColor = "yellowgreen";
                 }
-                const finalScore = (score / 10) * 100
+                const percentage = (score / 10) * 100;
 
                 // display after finishing quiz
-                document.getElementById('feedback').innerHTML = feedback
-                document.getElementById('feedback').style.color = feedbackColor
-                document.getElementById('score-percentage').innerHTML = finalScore
-                document.getElementById('wrong-answers').innerHTML = incorrext
-                document.getElementById('right-answers').innerHTML = score
-                document.getElementById('results-container').style.display = "flex"
+                document.getElementById('feedback').innerHTML = feedback;
+                document.getElementById('feedback').style.color = feedbackColor;
+                document.getElementById('score-percentage').innerHTML = percentage;
+                document.getElementById('wrong-answers').innerHTML = incorrext;
+                document.getElementById('right-answers').innerHTML = score;
+                document.getElementById('results-container').style.display = "flex";
 
             }
 
-            // close results page, resets quiz and reshuffles questions
+            // close results page, reset quiz and reshuffle questions
             function closeResultsPage() {
-                questionNumber = 1
-                score = 0
-                incorrext = 0
-                indexNumber = 0
-                shuffled = []
-                NextQuestion(indexNumber)
-                document.getElementById('score').style.display = "none"
+                score = 0;
+                incorrext = 0;
+                questionNum = 0;
+                shuffled = [];
+                nextQuestion(questionNum);
+                document.getElementById('score').style.display = "none";
             }
 
-            // close page telling user to pick an option
+            // close option warning
             function closeOptionPage() {
-                document.getElementById('option-page').style.display = "none"
+                document.getElementById('option-page').style.display = "none";
             }
         </script>
     </head>
 
-    <body onload="NextQuestion(0)">
-    <main>
-        <!-- <link rel="stylesheet" href="quiz_styling.css"> -->
-        <!-- <script type="text/javascript" src="quiz.script.js"></script> -->
+    <body onload="nextQuestion(0)">
 
         <div class="results-container" id="score">
-
             <div class="results-content-container">
-
-                <h1>Congratulations, Quiz Completed.</h1>
-
+                <h1>Yay, you have completed the quiz!</h1>
                 <div class="score-details">
                     <p>Incorrect Answers : <span id="wrong-answers"></span></p>
                     <p>Correct Answers : <span id="right-answers"></span></p>
                     <p>Score : <span id="score-percentage"></span>%</p>
-                    <p ><span id="feedback"></span></p>
+                    <p><span id="feedback"></span></p>
                 </div>
-
-                <div class="results-button-container">
+                <div class="results-button">
                     <button onclick="closeResultsPage()">Continue</button>
                 </div>
-
             </div>
         </div>
 
-
         <div class="quiz-container">
-
             <div class="quiz-details-container">
                 <h1>Score : <span id="player-score"></span> / 10</h1>
                 <h1> Question : <span id="question-number"></span> / 10</h1>
             </div>
-
             <div class="quiz-question-container">
                 <h1 id="display-question"></h1>
             </div>
-
             <div class="quiz-options-container">
-
                <div class="option-page" id="option-page">
-
-                    <div class="quiz-content-container">
-                         <h1>Must Select An Option</h1>
-
-                         <div class="quiz-button-container">
+                    <div class="option-warning">
+                        <h1>Must select an option!</h1>
+                        <div class="quiz-button-container">
                             <button onclick="closeOptionPage()">Continue</button>
                         </div>
-
                     </div>
-
                </div>
-
                 <span>
                     <input type="radio" id="option-one" name="option" class="radio" value="optionA" />
                     <label for="option-one" class="option" id="option-one-label"></label>
                 </span>
-
-
                 <span>
                     <input type="radio" id="option-two" name="option" class="radio" value="optionB" />
                     <label for="option-two" class="option" id="option-two-label"></label>
                 </span>
-
-
                 <span>
                     <input type="radio" id="option-three" name="option" class="radio" value="optionC" />
                     <label for="option-three" class="option" id="option-three-label"></label>
                 </span>
-
-
                 <span>
                     <input type="radio" id="option-four" name="option" class="radio" value="optionD" />
                     <label for="option-four" class="option" id="option-four-label"></label>
                 </span>
-
-
             </div>
-
             <div class="next-button-container">
-                <button onclick="handleNextQuestion()">Next</button>
+                <button onclick="nextQuestion()">Next</button>
             </div>
-
         </div>
-    </main>
-    <script src="index.js"></script>
+
     </body>
 </html>

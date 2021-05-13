@@ -10,7 +10,7 @@ Building a web application that simulates a learning experience with learning as
 
 ## What we are teaching
 Our team created a webpage aimed at UWA students, to educate them about university health and safety, providing handy tips, tricks, and resources to develop their skills when it comes to 
-staying safe and healthy during semester.
+staying safe and healthy during the semester.
 
 ## What the Uni-Safe webpage involves and how to navigate it
 
