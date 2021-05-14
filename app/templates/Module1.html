@@ -191,6 +191,7 @@
       </div>
 
       <div id="clickarea">
+        <img src = "https://www.researchgate.net/profile/Pantelis-Nikolaidis/publication/332621009/figure/fig3/AS:751207572312077@1556113250973/Location-of-chest-compression.ppm">
         <button id="start">Start</button>
       </div>
 
@@ -254,19 +255,19 @@
         //to update DOM elements just before the alert
         setTimeout(function() {
           if(clicsBySeconds <= 2 && clicsBySeconds > 1.7){
-          alert('You made ' + score + ' clicks in ' + duration + 
-          ' seconds. It is ' + clicsBySeconds + 
-          ' clicks by seconds. Good Job, you are in the correct range');
+          alert('You clicked ' + score + ' times in ' + duration + 
+          ' seconds. Therefore you did ' + clicsBySeconds + 
+          ' compressions per second. Good Job, you are in the correct range');
         }
         else if(clicsBySeconds > 2){
-          alert('You made ' + score + ' clicks in ' + duration + 
-          ' seconds. It is ' + clicsBySeconds + 
-          ' clicks by seconds. Try again, you were too fast.');
+          alert('You clicked ' + score + ' times in ' + duration + 
+          ' seconds. Therefore you did ' + clicsBySeconds + 
+          ' compressions per second. Try again, you were too fast.');
         }
         else if(clicsBySeconds <= 1.7){
-          alert('You made ' + score + ' clicks in ' + duration + 
-          ' seconds. It is ' + clicsBySeconds + 
-          ' clicks by seconds. Try again, you were too slow.')}
+          alert('You clicked ' + score + ' times in ' + duration + 
+          ' seconds. Therefore you did ' + clicsBySeconds + 
+          ' compressions per second. Try again, you were too slow.')}
           
 
         }, 10);
