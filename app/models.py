@@ -27,6 +27,7 @@ class User(UserMixin, db.Model):
         return check_password_hash(self.password_hash, password)
 
 
+
 class Marks(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     mod1 = db.Column(db.Float)
@@ -37,8 +38,11 @@ class Marks(db.Model):
     def __repr__(self):
         return '<User {} got marks: 1: {} 2: {} 3: {}>'.format(self.user_id, mod1,mod2,mod3)
 
-    def get_avg_mark(self, id):
-        markslist = marks.session.query
+    # def get_avg_mark(self, id):
+    #     markslist = marks.session.query
+    def update_avg_mark(self):
+        self.avgMark = '{:.2f}'.format((self.mod1 + self.mod2 + self.mod3)/3)
+
 @login.user_loader
 def load_user(id):
     return User.query.get(int(id))
