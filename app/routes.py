@@ -57,18 +57,17 @@ def results():
 
 
 
-#ADD NUMBERS AND STYLING TO TABLE
 
 
 @app.route('/rankings')
 def rankings():
-    t1 = User.query.join(Marks).filter(User.id == Marks.user_id).order_by(Marks.avgMark).with_entities(User.username, Marks.avgMark, User.email).limit(10).all()
+    t1 = User.query.join(Marks).filter(User.id == Marks.user_id).order_by(Marks.avgMark.desc()).with_entities(User.username, Marks.avgMark, User.email).limit(10).all()
     print(t1)
     img = []
     for i in range(len(t1)):
         digest = md5(t1[i][2].lower().encode('utf-8')).hexdigest()
         img.append('https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(digest, 40))
-    nums = range(1,10)
+    nums = range(1,11)
     return render_template('Rankings.html', ranks = t1, vals = nums, len = len(t1), imgs = img)	
 
 

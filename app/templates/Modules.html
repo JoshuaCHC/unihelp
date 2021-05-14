@@ -2,6 +2,7 @@
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
+  <title>Modules</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -19,8 +20,8 @@
 <!--Please change these before we submit!!!-->
 <div class="module_navbar navbar">
   <a href="/">Home</a> 
-  <a href="about">About</a> 
-  <a href="rankings">Rankings</a> 
+  <a href="{{url_for('about')}}">About</a> 
+  <a href="{{url_for('rankings')}}">Rankings</a> 
    
   
 
