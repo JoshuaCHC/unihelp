@@ -49,6 +49,12 @@ def quiz3():
 def home_mod():
     return render_template('home_mod.html')
 
+@login_required
+@app.route('/login/results')
+def results():
+    return render_template('results.html')
+
+
 
 
 
