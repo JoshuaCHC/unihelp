@@ -2,12 +2,27 @@
 {% block content %}
 <div class = "main">
 <div id="quiz"></div>
-<button id="submit">Submit Quiz</button>
 <div id="results"></div>
+<button id="complete" class='btn btn-primary'>Submit Quiz</button>
+<input type='text', style='display:none' id='mark' name='mark'>
+<script>
+  $(function(){
+    $('button#complete').bind('click', function(){
+      console.log($('input[name="mark"]').val());
+      $.getJSON('/login/module1/quiz/_update_marks', {
+        mark: $('input[name="mark"]').val()
+      }, function(data){
+        alert(data.status);
+      });
+      return false;
+    });
+  });
+</script>
+</form>
 </div>
 
 <script>
-    (function(){
+  (function(){
   function buildQuiz(){
     // variable to store the HTML output
     const output = [];
@@ -77,11 +92,13 @@
 
     // show number of correct answers out of total
     resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+    document.getElementById('mark').value = numCorrect;
+    
   }
 
   const quizContainer = document.getElementById('quiz');
   const resultsContainer = document.getElementById('results');
-  const submitButton = document.getElementById('submit');
+  const submitButton = document.getElementById('complete');
   const myQuestions = [
     {
       question: " How long should you check for breathing while performing CPR?",
@@ -140,5 +157,7 @@
   // Event listeners
   submitButton.addEventListener('click', showResults);
 })();
+
+    
 </script>
   {% endblock %}

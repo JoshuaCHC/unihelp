@@ -2,10 +2,23 @@
 {% block content %}
 <div class = "main">
     <div id="quiz"></div>
-    <button id="submit">Submit Quiz</button>
     <div id="results"></div>
+    <button id="complete" class='btn btn-primary'>Submit Quiz</button>
+    <input type='text', style='display:none' id='mark' name='mark'>
     </div>
-    
+    <script>
+      $(function(){
+        $('button#complete').bind('click', function(){
+          console.log($('input[name="mark"]').val());
+          $.getJSON('/login/module3/quiz/_update_marks', {
+            mark: $('input[name="mark"]').val()
+          }, function(data){
+            alert(data.status);
+          });
+          return false;
+        });
+      });
+    </script> 
     <script>
         (function(){
       function buildQuiz(){
@@ -77,11 +90,13 @@
     
         // show number of correct answers out of total
         resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+        document.getElementById('mark').value = numCorrect;
+
       }
     
       const quizContainer = document.getElementById('quiz');
       const resultsContainer = document.getElementById('results');
-      const submitButton = document.getElementById('submit');
+      const submitButton = document.getElementById('complete');
       const myQuestions = [
         {
           question: "Sally has successfully completed 96 degree points while studying full-time at UWA. Sally lives in an area considered eligible for a permit but has decided to change to part-time study. Is Sally still eligible for a student-parking permit?",
