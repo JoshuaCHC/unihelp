@@ -8,7 +8,7 @@ html, body {
   }
       
   @keyframes blinkingText{
-      0%{     color: white;    }
+      0%{     color: white; }
       49%{    color: white; }
       60%{    color: transparent; }
       99%{    color:transparent;  }
@@ -162,8 +162,109 @@ html, body {
 }
 
 .flip-card-back {
+  padding: 5px;
+  font-size:20px;
   background-color: rgb(78, 134, 103);
   color: white;
   transform: rotateY(180deg);
 }
+
+/*Quizzes*/
+.question{
+	font-weight: 600;
+}
+.answers {
+  margin-bottom: 20px;
+}
+.answers label{
+  display: block;
+}
+#submit{
+	font-family: sans-serif;
+	font-size: 20px;
+	background-color: #279;
+	color: #fff;
+	border: 0px;
+	border-radius: 3px;
+	padding: 20px;
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+#submit:hover{
+	background-color: #38a;
+}
+
+/*Pressing thing*/
+
+#content {
+    width: 200px;
+    border: 1px dashed rgb(78, 134, 103);
+    font-size: 20px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 20px;
+    user-select: none;
+  }
+	
+  #clickarea {
+    font-size: 20px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 20px;
+    position: relative;
+  }
+	
+  #logo {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    margin-top: 50px;
+    display: block;
+    user-select: none;
+  }
+	
+  #start {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgb(78, 134, 103);
+    background-image: linear-gradient(to top left,
+				  rgba(0, 0, 0, .2),
+				  rgba(0, 0, 0, .2) 30%,
+				  rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+  }
+	
+  #start:hover {
+    background-color: rgb(0, 162, 255);
+  }
+	
+  #start:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+  }
+
+  .background { 
   
+    background-repeat: no-repeat;
+  background-attachment: fixed;
+ background-size: cover;
+
+     background-image: url(/static/images/background_Mod.jpg);
+   
+ }
+
+ .demo_img{
+   width: 50x;
+ }
