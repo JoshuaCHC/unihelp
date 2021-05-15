@@ -1,6 +1,7 @@
 import unittest
 from app import app, db
 from app.models import User, Marks
+from app.routes import add_marks
 import random as rand
 
 #TEST PASSWORDS
@@ -59,7 +60,9 @@ class UserModelCase(unittest.TestCase):
         m.update_avg_mark()
         self.assertEqual(m.avgMark, (mod1+mod2+mod3)/3)
         
-
+    def test_add_marks(self):
+        u = User(username='new_user', email = 'new_user@b.com')
+        
     # def test_follow(self):
     #     u1 = User(username = 'g1', email = 'e1')
     #     u2 = User(username = 'g2', email = 'e2')

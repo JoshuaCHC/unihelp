@@ -36,7 +36,7 @@ class Marks(db.Model):
     avgMark = db.Column(db.Float)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     def __repr__(self):
-        return '<User {} got marks: 1: {} 2: {} 3: {}>'.format(self.user_id, mod1,mod2,mod3)
+        return '<User {} got marks: 1: {} 2: {} 3: {}>'.format(self.user_id, self.mod1,self.mod2,self.mod3)
 
     # def get_avg_mark(self, id):
     #     markslist = marks.session.query

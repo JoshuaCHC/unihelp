@@ -1,6 +1,6 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, request_started, jsonify
 from app import app,db
-from app.forms import LoginForm, RegistrationForm
+from app.forms import LoginForm, RegistrationForm, SubmitForm
 from werkzeug.urls import url_parse
 from flask_login import login_required, logout_user, current_user, login_user
 from app.models import User, Marks
@@ -34,6 +34,19 @@ def mod3():
 def quiz1():
     return render_template('Module1_quiz.html')
 
+@app.route('/login/module1/quiz/_update_marks')
+def add_marks():
+    mark = request.args.get("mark",0,type=int)
+    print(mark)
+    m = Marks.query.filter_by(id = current_user.id).all()
+    if(m[0].mod1 > float(mark)):
+        return jsonify(status="Your existing mark was better than this one! Not updated.")
+    else:
+        m[0].mod1 = float(mark)
+        m[0].update_avg_mark()
+        db.session.commit()
+        return jsonify(status ="Success! Your mark has been updated.")
+
 @login_required
 @app.route('/login/module2/quiz')
 def quiz2():
@@ -44,6 +57,19 @@ def quiz2():
 def quiz3():
     return render_template('Module3_quiz.html')
 
+@app.route('/login/module3/quiz/_update_marks')
+def add_marks_3():
+    mark = request.args.get("mark",0,type=int)
+    print(mark)
+    m = Marks.query.filter_by(id = current_user.id).all()
+    if(m[0].mod3 > float(mark)):
+        return jsonify(status="Your existing mark was better than this one! Not updated.")
+    else:
+        m[0].mod3 = float(mark)
+        m[0].update_avg_mark()
+        db.session.commit()
+        return jsonify(status ="Success! Your mark has been updated.")
+
 @login_required
 @app.route('/login/modules')
 def home_mod():
@@ -53,11 +79,6 @@ def home_mod():
 @app.route('/login/results')
 def results():
     return render_template('results.html')
-
-
-
-
-
 
 @app.route('/rankings')
 def rankings():
