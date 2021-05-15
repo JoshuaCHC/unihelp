@@ -12,7 +12,6 @@ Building a web application that simulates a learning experience with learning as
 Our team created a webpage aimed at UWA students, to educate them about university health and safety, providing handy tips, tricks, and resources to develop their skills when it comes to 
 staying safe and healthy during the semester.
 
-## What the Uni-Safe webpage involves and how to navigate it
 
 
 ## Architecture
@@ -59,6 +58,29 @@ Requirements:
 
 
 ## Unit tests
+
+```Python
+class UserModelCase(unittest.TestCase):
+
+    setUp(self):
+
+    tearDown(self):
+    - resets the database, removing any existing content
+
+    test_password_hash(self):
+    - checks that the password hashing is working correctly
+    - does this using the check_password method
+
+    test_top_players(self):
+
+    test_avg_mark(self):
+    - tests average mark is correct
+    - compares mark to manual avg calculation of the three scores
+
+    test_add_marks(self):
+
+
+```
 
 ## Preloaded user accounts
 
