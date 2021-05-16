@@ -34,6 +34,13 @@ We teach this content through a selection of modules with attached multiple-choi
 Immediate results are displayed after each multiple-coice quizz, as well as a final results page providing an summary of the user's results overall. Users will be able to compare their overall results to other users via the rankings page which presents a leaderboard with the current top users.
 
 ## Architecture
+... client-server architecture....
+client-side:
+- html 
+- css
+- javascript
+
+server-side:
 
 
 
