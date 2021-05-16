@@ -52,6 +52,19 @@ def add_marks():
 def quiz2():
     return render_template('Module2_quiz.html')
 
+@app.route('/login/module2/quiz/_update_marks')
+def add_marks_2():
+    mark = request.args.get("mark",0,type=int)
+    print(mark)
+    m = Marks.query.filter_by(id = current_user.id).all()
+    if(m[0].mod2 > float(mark)):
+        return jsonify(status="Your existing mark was better than this one! Not updated.")
+    else:
+        m[0].mod2 = float(mark)
+        m[0].update_avg_mark()
+        db.session.commit()
+        return jsonify(status ="Success! Your mark has been updated.")
+
 @login_required
 @app.route('/login/module3/quiz')
 def quiz3():
