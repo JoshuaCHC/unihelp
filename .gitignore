@@ -131,4 +131,4 @@ dmypy.json
 
 #Database information
 app.db
-/migrations
+migrations/

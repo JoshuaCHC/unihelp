@@ -4,13 +4,13 @@
     <div id="quiz"></div>
     <div id="results"></div>
     <button id="complete" class='btn btn-primary'>Submit Quiz</button>
-    <input type='text', style='display:none' id='mark' name='mark'>
+    <input type='text', style='display:none' id='mark2' name='mark'>
     </div>
     <script>
       $(function(){
         $('button#complete').bind('click', function(){
           console.log($('input[name="mark"]').val());
-          $.getJSON('/login/module3/quiz/_update_marks', {
+          $.getJSON('/login/module2/quiz/_update_marks', {
             mark: $('input[name="mark"]').val()
           }, function(data){
             alert(data.status);
@@ -90,7 +90,7 @@
     
         // show number of correct answers out of total
         resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
-        document.getElementById('mark').value = numCorrect;
+        document.getElementById('mark2').value = numCorrect;
 
       }
     
