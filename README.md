@@ -19,7 +19,8 @@ Building a web application that simulates a learning experience with learning as
 - [Shana Edwards (22479434)](https://github.com/shana-edwards)
 - [Tatum Botha (22976568)](https://github.com/tatum-botha)
 
-## What we are teaching
+## Purpose of the web application
+<!-- explain both the context and the assessment mechanism used (multi-choice) -->
 Our team created a webpage aimed at UWA students, to educate them about university health and safety, providing handy tips, tricks, and resources to develop their skills when it comes to 
 staying safe and healthy during the semester.
 
