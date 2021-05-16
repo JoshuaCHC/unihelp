@@ -266,6 +266,47 @@ html, body {
  }
 
  .demo_img{
+   width: 50x;
+ }
+
+ /* Making it look nice */
+
+ .content {
+  color:rgb(8, 92, 47);
+  padding: 10px 100px 30px;
+}
+
+.content h1 {
+  padding-top: 50px;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.content h2 {
+  font-size: 40px;
+  color: rgb(8, 92, 47);
+  text-align: center;
+}
+
+.content span{
+  font-size: 25px;
+  color: grey;
+}
+.content h3 {
+  padding: 0;
+  font-size: 25px;
+  color: rgb(255, 69, 0);
+}
+
+.content hr {
+  border: 1px solid rgb(8, 92, 47);
+  width: 2em;
+}
+
+.content p {
+  color: rgb(8, 92, 47);
+  text-align: justify;
   width: 800px;
   display: block;
   margin-left: auto;
