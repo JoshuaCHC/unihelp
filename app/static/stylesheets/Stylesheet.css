@@ -566,8 +566,10 @@ body {
 
   .table-div { 
     margin-top:15px;
+    margin-bottom:15px;
+
     position: relative; 
-    height: 100vh;
+    /* height: 100vh; */
     width: 100%;
     display: flex;
   }
