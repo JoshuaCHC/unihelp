@@ -3,10 +3,16 @@
 - the architecture of the web application.
 - describe how to launch the web application.
 - describe some unit tests for the web application, and how to run them.
-- Include commit logs, showing contributions and review from both contributing students 
--->
+ -->
 
-
+ <!-- TODO
+ - architecture
+ - describe the unit tests
+ - agile
+ - screenshots
+ - database schema
+ - update requirements
+ - image referencing -->
 
 
 # CITS3403 Agile Web Development Project 2021
@@ -14,17 +20,26 @@
 Building a web application that simulates a learning experience with learning assessments, results and feedback for users. 
 
 ## Our team
-- [Joshua Cheng (22708023)](https://github.com/JoshCUni)
-- [Matthew Walsh (22734017)](https://www.example.com)
-- [Shana Edwards (22479434)](https://github.com/shana-edwards)
-- [Tatum Botha (22976568)](https://github.com/tatum-botha)
+- Joshua Cheng (22708023)
+- Matthew Walsh (22734017)
+- Shana Edwards (22479434)
+- Tatum Botha (22976568)
 
-## Purpose of the web application
+## Purpose
 <!-- explain both the context and the assessment mechanism used (multi-choice) -->
-Our team created a webpage aimed at UWA students, to educate them about university health and safety, providing handy tips, tricks, and resources to develop their skills when it comes to 
-staying safe and healthy during the semester.
+The purpose of our webpage is to educate UWA students about university health and safety, providing handy tips, tricks, and resources to develop their skills when it comes to staying safe and healthy during the semester.
+
+We teach this content through a selection of modules with attached multiple-choice quizzes assessing the user's learning as they progress through each module.
+
+Immediate results are displayed after each multiple-coice quizz, as well as a final results page providing an summary of the user's results overall. Users will be able to compare their overall results to other users via the rankings page which presents a leaderboard with the current top users.
 
 ## Architecture
+
+
+
+
+## Agile
+
 
 
 ## Database schema
@@ -41,12 +56,23 @@ In the terminal at the root directory of the web page, tell flask where to find 
 
 ``` $ export FLASK_APP=web.py ```
 
+Adding in the database:
+
+``` $ flask db init ```
+
+``` $ flask db migrate ```
+
+``` $ flask db upgrade```
+
 Now run the application:
 
 ``` $ flask run ```
 
 
+
+
 ## Dependencies and requirements
+<!-- update the requirements last minute -->
 Requirements:
 - click==7.1.2
 - Flask==1.1.2
@@ -70,6 +96,8 @@ Requirements:
 
 ## Unit tests
 <!-- Explain how to run these as well! -->
+To run the web application unit tests, run the following line in terminal:
+``` pythontests.py ```
 
 ```Python
 class UserModelCase(unittest.TestCase):
@@ -116,6 +144,7 @@ class GoogleTestCase(unittest.TestCase):
 
 
 ## Screenshots
+<!-- of all pages and include images of all drafting - powerpoint and everything etc. -->
 
 
 ## References - Images
