@@ -3,11 +3,11 @@
 <div class = "main">
 <div id="quiz"></div>
 <div id="results"></div>
-<button id="complete" class='btn btn-primary'>Submit Quiz</button>
-<input type='text', style='display:none' id='mark' name='mark'>
+<button id="complete1" class='btn btn-primary'>Submit Quiz</button>
+<input type='text', style='display:none' id='mark1' name='mark'>
 <script>
   $(function(){
-    $('button#complete').bind('click', function(){
+    $('button#complete1').bind('click', function(){
       console.log($('input[name="mark"]').val());
       $.getJSON('/login/module1/quiz/_update_marks', {
         mark: $('input[name="mark"]').val()
@@ -92,13 +92,13 @@
 
     // show number of correct answers out of total
     resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
-    document.getElementById('mark').value = numCorrect;
+    document.getElementById('mark1').value = numCorrect;
     
   }
 
   const quizContainer = document.getElementById('quiz');
   const resultsContainer = document.getElementById('results');
-  const submitButton = document.getElementById('complete');
+  const submitButton = document.getElementById('complete1');
   const myQuestions = [
     {
       question: " How long should you check for breathing while performing CPR?",

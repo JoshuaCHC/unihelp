@@ -37,6 +37,7 @@ def quiz1():
 @app.route('/login/module1/quiz/_update_marks')
 def add_marks():
     mark = request.args.get("mark",0,type=int)
+    print(mark)
     m = Marks.query.filter_by(id = current_user.id).all()
     if(m[0].mod1 > float(mark)):
         return jsonify(status="Your existing mark was better than this one! Not updated.")
