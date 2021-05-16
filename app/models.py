@@ -33,7 +33,7 @@ class Marks(db.Model):
     mod1 = db.Column(db.Float)
     mod2 = db.Column(db.Float)
     mod3 = db.Column(db.Float)
-    avgMark = db.Column(db.Float)
+    avg_mark = db.Column(db.Float)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     def __repr__(self):
         return '<User {} got marks: 1: {} 2: {} 3: {}>'.format(self.user_id, self.mod1,self.mod2,self.mod3)
@@ -41,7 +41,7 @@ class Marks(db.Model):
     # def get_avg_mark(self, id):
     #     markslist = marks.session.query
     def update_avg_mark(self):
-        self.avgMark = '{:.2f}'.format((self.mod1 + self.mod2 + self.mod3)/3)
+        self.avg_mark = '{:.2f}'.format((self.mod1 + self.mod2 + self.mod3)/3)
 
 @login.user_loader
 def load_user(id):

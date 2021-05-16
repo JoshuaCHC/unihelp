@@ -84,7 +84,7 @@ def results():
 
 @app.route('/rankings')
 def rankings():
-    t1 = User.query.join(Marks).filter(User.id == Marks.user_id).order_by(Marks.avgMark.desc()).with_entities(User.username, Marks.avgMark, User.email).limit(10).all()
+    t1 = User.query.join(Marks).filter(User.id == Marks.user_id).order_by(Marks.avg_mark.desc()).with_entities(User.username, Marks.avg_mark, User.email).limit(10).all()
     print(t1)
     img = []
     for i in range(len(t1)):
@@ -150,7 +150,9 @@ def register():
 
         user = User(username=form.username.data, email=form.email.data)
         user.set_password(form.password.data)
+        m = Marks(user = user, mod1=0,mod2=0,mod3=0,avg_mark=0)
         db.session.add(user)
+        db.session.add(m)
         db.session.commit()
         flash('Congratulations, you are now a registered user!')
         return redirect(url_for('homePage'))
