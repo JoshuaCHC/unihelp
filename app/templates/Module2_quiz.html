@@ -1,0 +1,193 @@
+{% extends "Modules.html"%}
+{% block content %}
+<div class = "main">
+<div id="quiz"></div>
+<div id="results"></div>
+<button id="complete" class='btn btn-primary'>Submit Quiz</button>
+<input type='text', style='display:none' id='mark' name='mark'>
+<script>
+  $(function(){
+    $('button#complete').bind('click', function(){
+      console.log($('input[name="mark"]').val());
+      $.getJSON('/login/module1/quiz/_update_marks', {
+        mark: $('input[name="mark"]').val()
+      }, function(data){
+        alert(data.status);
+      });
+      return false;
+    });
+  });
+</script>
+</form>
+</div>
+
+<script>
+  (function(){
+  function buildQuiz(){
+    // variable to store the HTML output
+    const output = [];
+
+    // for each question...
+    myQuestions.forEach(
+      (currentQuestion, questionNumber) => {
+
+        // variable to store the list of possible answers
+        const answers = [];
+
+        // and for each available answer...
+        for(letter in currentQuestion.answers){
+
+          // ...add an HTML radio button
+          answers.push(
+            `<label>
+              <input type="radio" name="question${questionNumber}" value="${letter}">
+              ${letter} :
+              ${currentQuestion.answers[letter]}
+            </label>`
+          );
+        }
+
+        // add this question and its answers to the output
+        output.push(
+          `<div class="question"> ${currentQuestion.question} </div>
+          <div class="answers"> ${answers.join('')} </div>`
+        );
+      }
+    );
+
+    // finally combine our output list into one string of HTML and put it on the page
+    quizContainer.innerHTML = output.join('');
+  }
+
+  function showResults(){
+
+    // gather answer containers from our quiz
+    const answerContainers = quizContainer.querySelectorAll('.answers');
+
+    // keep track of user's answers
+    let numCorrect = 0;
+
+    // for each question...
+    myQuestions.forEach( (currentQuestion, questionNumber) => {
+
+      // find selected answer
+      const answerContainer = answerContainers[questionNumber];
+      const selector = `input[name=question${questionNumber}]:checked`;
+      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
+      // if answer is correct
+      if(userAnswer === currentQuestion.correctAnswer){
+        // add to the number of correct answers
+        numCorrect++;
+
+        // color the answers green
+        answerContainers[questionNumber].style.color = 'lightgreen';
+      }
+      // if answer is wrong or blank
+      else{
+        // color the answers red
+        answerContainers[questionNumber].style.color = 'red';
+      }
+    });
+
+    // show number of correct answers out of total
+    resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+    document.getElementById('mark').value = numCorrect;
+    
+  }
+
+  const quizContainer = document.getElementById('quiz');
+  const resultsContainer = document.getElementById('results');
+  const submitButton = document.getElementById('complete');
+  const myQuestions = [
+    {
+      question: "How much food should you eat before going out?",
+      answers: {
+        a: "A horses worth", 
+        b: "A fist full",
+        c: "None, to save money",
+        d: "As much as you can"
+      },
+      correctAnswer: "b"
+    },
+    {
+      question: "How much should you drink on a night out?",
+      answers: {
+        a: "Enough to make you feel sick",
+        b: "One standard drink",
+        c: "As much as you physically can",
+        d: "Depends on multiple factors"
+        
+      },
+      correctAnswer: "d"
+    },
+    {
+      question: "How do you know if it's safe to send an intoxicated person to bed?",
+      answers: {
+        a: "If they say they are okay",
+        b: "If they are breathing",
+        c: "If they pass the chair test",
+        d: "It's always safe"
+      },
+      correctAnswer: "c"
+    },
+
+    {
+      question: "You should feed bread to drunk people, as it will absorb the alcohol",
+      answers: {
+        a: "False",
+        b: "True"
+      },
+      correctAnswer: "a"
+    },
+    {
+      question: "Where is the most dangerous place to take a drunk person",
+      answers: {
+        a: "Magnet House",
+        b: "A bathroom",
+        c: "Anywhere their parents are",
+        d: "Outside"
+      },
+      correctAnswer: "b"
+    },
+    {
+        question: "Paramedics have to write a report for the police",
+        answers: {
+            a: "False",
+            b: "True",
+        },
+        correctAnswer: "a"
+    },
+    {
+        question: "How long should you wait before driving the next morning?",
+        answers: {
+            a: "Till noon if you had a big night, the whole day is you had a massive night",
+            b: "You should be fine as soon as you wake up",
+            c: "A whole week",
+            d: "1 hour after your last drink",
+        },
+        correctAnswer: "a"
+    },
+    {
+        question: "What is the only way to fix a hangover?",
+        answers: {
+            a: "Sleep",
+            b: "Drink some more",
+            c: "Water and time",
+            d: "Seven raw eggs "
+        },
+        correctAnswer: "c"
+    }
+
+  ];
+
+  // Kick things off
+  buildQuiz();
+
+  // Event listeners
+  submitButton.addEventListener('click', showResults);
+})();
+
+    
+</script>
+  {% endblock %}
