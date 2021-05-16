@@ -78,6 +78,8 @@ def home_mod():
 @login_required
 @app.route('/login/results')
 def results():
+    # t1 = Marks.query.filter_by(id=current_user.id).first()
+    # mark = t1.avgMark
     return render_template('results.html')
 
 @app.route('/rankings')

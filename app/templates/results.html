@@ -1,4 +1,21 @@
 {% extends "Modules.html"%}
 {% block content %}
-<h1> results</h1>
+<body class = "background">
+    <h1 class="header">Results</h1>
+<div class="main">
+
+<div class = "jumbotron" style="background-color:lightblue">
+<h2 class = "center_text">Oh no!</h2>
+<p class = "center_text">It seems as though you have either not attempted the quizzes or failed the quizzes. Please try again.</p>
+<img class = "center_img" src="https://cdn.shopify.com/s/files/1/1061/1924/products/Sad_Face_Emoji_1024x1024.png?v=1571606037" alt="sad face">
+</div>
+
+<div class = "jumbotron" style="background-color:rgb(255, 69, 0)">
+    <h2 class = "center_text blinking">Good Job!</h2>
+    <p class = "center_text">It looks like you passed the quizzes, this means you are ready to start your first year of university!</p>
+    <img class = "center_img" src="https://media.giphy.com/media/IwAZ6dvvvaTtdI8SD5/giphy.gif" alt>
+    </div>
+
+
+</body>
 {% endblock %}

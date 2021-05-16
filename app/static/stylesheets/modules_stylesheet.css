@@ -287,7 +287,7 @@ html, body {
  padding: 100px;
 
 }
-.row::after {
+/*.row::after {
  content: "";
  clear: both;
  display: table;
@@ -296,4 +296,25 @@ html, body {
  .column {
    width: 50%;
  }
-}
+ */
+ .text_image {
+   display: flex;
+   align-items: center;
+   justify-content: center
+ }
+ .image {
+   flex-basis: 40%
+ }
+ .picture_text {
+   font-size: 20px;
+   padding-left: 20px;
+ }
+ .center_text{
+   text-align:center;
+ }
+ .center_img{
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   width: 70%;
+ }
