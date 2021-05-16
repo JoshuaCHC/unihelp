@@ -45,15 +45,15 @@ class UserModelCase(unittest.TestCase):
                 m3=0
             m = Marks(mod1=m1, mod2 = m2, mod3 = m3, user = u)
             m.update_avg_mark()
-            self.assertEqual(m.avgMark, '{:.2f}'.format((m1+m2+m3)/3))
+            self.assertEqual(m.avg_mark, '{:.2f}'.format((m1+m2+m3)/3))
             plist.append([u,m])
             db.session.add(u)
             db.session.add(m)
             print(u.username)
             db.session.commit()
-        t1 = User.query.join(Marks).filter(User.id == Marks.user_id).order_by(Marks.avgMark.desc()).with_entities(User.username, Marks.avgMark, User.email).limit(10).all()
+        t1 = User.query.join(Marks).filter(User.id == Marks.user_id).order_by(Marks.avg_mark.desc()).with_entities(User.username, Marks.avg_mark, User.email).limit(10).all()
         for i in range(10):
-            self.assertEqual(t1[i],(plist[i][0].username, plist[i][1].avgMark, plist[i][0].email))
+            self.assertEqual(t1[i],(plist[i][0].username, plist[i][1].avg_mark, plist[i][0].email))
         
     def test_avg_mark(self):
         u = User(username = 'new_user', email = 'new_user@g.com')
@@ -62,7 +62,7 @@ class UserModelCase(unittest.TestCase):
         mod3 = rand.randint(0,5)
         m = Marks(mod1 = mod1, mod2= mod2, mod3=mod3, user=u)
         m.update_avg_mark()
-        self.assertEqual(m.avgMark, '{:.2f}'.format((mod1+mod2+mod3)/3))
+        self.assertEqual(m.avg_mark, '{:.2f}'.format((mod1+mod2+mod3)/3))
         
     def test_add_marks(self):
         u = User(username='new_user', email = 'new_user@b.com')
@@ -109,10 +109,17 @@ class GoogleTestCase(unittest.TestCase):
         email = self.driver.find_element_by_id('email')
         pwd = self.driver.find_element_by_id('pswd')
         cpwd = self.driver.find_element_by_id('cpswd')
+        reg = self.driver.find_element_by_id('register')
         user.send_keys('user1')
         email.send_keys('gg@gmail.com')
         pwd.send_keys('1234')
         cpwd.send_keys('1234')
+        ActionChains(self.driver).click(reg).perform()
+        q = User.query.filter_by(username = 'user1')
+        self.assertEqual(q.username, 'user1')
+        self.assertEqual(q.email, 'gg@gmail.com')
+        m = Marks.query.filter_by(user = q).first()
+        self.assertEqual(m.mod1, 0)
 
 
     def tearDown(self):
