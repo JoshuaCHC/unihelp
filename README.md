@@ -1,12 +1,23 @@
+<!-- 
+- the purpose of the web application, explaining both the context and the assessment mechanism used.
+- the architecture of the web application.
+- describe how to launch the web application.
+- describe some unit tests for the web application, and how to run them.
+- Include commit logs, showing contributions and review from both contributing students 
+-->
+
+
+
+
 # CITS3403 Agile Web Development Project 2021
 # Uni-Safe Online Formative Assessment
 Building a web application that simulates a learning experience with learning assessments, results and feedback for users. 
 
 ## Our team
-- [Joshua Cheng (student number)](https://github.com/JoshCUni)
-- [Matthew Walsh (student number)](https://www.example.com)
+- [Joshua Cheng (22708023)](https://github.com/JoshCUni)
+- [Matthew Walsh (22734017)](https://www.example.com)
 - [Shana Edwards (22479434)](https://github.com/shana-edwards)
-- [Tatum Botha (student number)](https://github.com/tatum-botha)
+- [Tatum Botha (22976568)](https://github.com/tatum-botha)
 
 ## What we are teaching
 Our team created a webpage aimed at UWA students, to educate them about university health and safety, providing handy tips, tricks, and resources to develop their skills when it comes to 
@@ -17,7 +28,7 @@ staying safe and healthy during the semester.
 ## Architecture
 
 ## Database schema
-
+<!-- user and score tables -->
 
 ## Launching the application
 To launch the application from local host:
@@ -58,6 +69,7 @@ Requirements:
 
 
 ## Unit tests
+<!-- Explain how to run these as well! -->
 
 ```Python
 class UserModelCase(unittest.TestCase):
@@ -72,17 +84,40 @@ class UserModelCase(unittest.TestCase):
     - does this using the check_password method
 
     test_top_players(self):
+    - tests that the ranking of the top players is done correctly
 
     test_avg_mark(self):
     - tests average mark is correct
     - compares mark to manual avg calculation of the three scores
 
     test_add_marks(self):
+    - 
 
 
 ```
 
-## Preloaded user accounts
+```Python
+class GoogleTestCase(unittest.TestCase):
+
+    setUp(self):
+
+    tearDown(self):
+
+    testPageTitle(self):
+
+    testRegister(self):
+
+    test_quiz_marks(self):
+
+
+
+
+```
+
 
 ## Screenshots
+
+
+## References - Images
+
 
