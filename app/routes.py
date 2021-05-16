@@ -67,6 +67,7 @@ def add_marks_3():
     else:
         m[0].mod3 = float(mark)
         m[0].update_avg_mark()
+        print(m[0].avg_mark)
         db.session.commit()
         return jsonify(status ="Success! Your mark has been updated.")
 
@@ -78,11 +79,14 @@ def home_mod():
 @login_required
 @app.route('/login/results')
 def results():
-    return render_template('results.html')
+    t1 = Marks.query.filter_by(id=current_user.id).first()
+    mark = t1.avg_mark
+    print(mark)
+    return render_template('results.html', mark = mark)
 
 @app.route('/rankings')
 def rankings():
-    t1 = User.query.join(Marks).filter(User.id == Marks.user_id).order_by(Marks.avgMark.desc()).with_entities(User.username, Marks.avgMark, User.email).limit(10).all()
+    t1 = User.query.join(Marks).filter(User.id == Marks.user_id).order_by(Marks.avg_mark.desc()).with_entities(User.username, Marks.avg_mark, User.email).limit(10).all()
     print(t1)
     img = []
     for i in range(len(t1)):
@@ -148,7 +152,9 @@ def register():
 
         user = User(username=form.username.data, email=form.email.data)
         user.set_password(form.password.data)
+        m = Marks(user = user, mod1=0,mod2=0,mod3=0,avg_mark=0)
         db.session.add(user)
+        db.session.add(m)
         db.session.commit()
         flash('Congratulations, you are now a registered user!')
         return redirect(url_for('homePage'))

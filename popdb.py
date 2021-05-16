@@ -7,7 +7,7 @@ SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
 app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
 f = Marks.query.all()
 for i in range(15):
-    u = User(username = 'g'.format(i), email = 'e{}@gmail.com'.format(i))
+    u = User(username = 'g{}'.format(i), email = 'e{}@gmail.com'.format(i))
     if(i < 5):
         m1 = 5
         m2 = 5

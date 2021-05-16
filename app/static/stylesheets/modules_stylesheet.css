@@ -292,7 +292,6 @@ html, body {
 .content span{
   font-size: 25px;
   color: grey;
-  text-transform:
 }
 .content h3 {
   padding: 0;
@@ -308,4 +307,55 @@ html, body {
 .content p {
   color: rgb(8, 92, 47);
   text-align: justify;
+  width: 800px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+.home_headers1{
+ text-decoration:underline;
+ color:rgb(255, 69, 0);
+}
+.home_headers2{
+	text-decoration:underline;
+ text-align:center;
+  color:rgb(255, 69, 0);
+ }
+
+
+.column {
+ padding: 100px;
+
+}
+/*.row::after {
+ content: "";
+ clear: both;
+ display: table;
+}
+@media screen and (min-width: 850px) {
+ .column {
+   width: 50%;
+ }
+ */
+ .text_image {
+   display: flex;
+   align-items: center;
+   justify-content: center
+ }
+ .image {
+   flex-basis: 40%
+ }
+ .picture_text {
+   font-size: 20px;
+   padding-left: 20px;
+ }
+ .center_text{
+   text-align:center;
+ }
+ .center_img{
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   width: 70%;
+ }
