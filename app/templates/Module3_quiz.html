@@ -4,7 +4,7 @@
     <div id="quiz"></div>
     <div id="results"></div>
     <button id="complete" class='btn btn-primary'>Submit Quiz</button>
-    <input type='text', style='display:none' id='mark' name='mark'>
+    <input type='text', style='display:none' id='mark3' name='mark'>
     </div>
     <script>
       $(function(){
@@ -90,7 +90,7 @@
     
         // show number of correct answers out of total
         resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
-        document.getElementById('mark').value = numCorrect;
+        document.getElementById('mark3').value = numCorrect;
 
       }
     

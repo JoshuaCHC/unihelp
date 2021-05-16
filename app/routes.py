@@ -67,6 +67,7 @@ def add_marks_3():
     else:
         m[0].mod3 = float(mark)
         m[0].update_avg_mark()
+        print(m[0].avg_mark)
         db.session.commit()
         return jsonify(status ="Success! Your mark has been updated.")
 
@@ -78,9 +79,10 @@ def home_mod():
 @login_required
 @app.route('/login/results')
 def results():
-    # t1 = Marks.query.filter_by(id=current_user.id).first()
-    # mark = t1.avgMark
-    return render_template('results.html')
+    t1 = Marks.query.filter_by(id=current_user.id).first()
+    mark = t1.avg_mark
+    print(mark)
+    return render_template('results.html', mark = mark)
 
 @app.route('/rankings')
 def rankings():
