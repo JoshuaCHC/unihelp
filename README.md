@@ -40,7 +40,7 @@ We used an agile approach to manage our project in the following ways:
 
 ## Database Schema
 <!-- user and score tables -->
-![Schema](dbschema.png)
+![Schema](https://github.com/JoshCUni/unihelp/blob/module3/app/static/images/dbschema.png)
 
 
 ## Launching the Application
