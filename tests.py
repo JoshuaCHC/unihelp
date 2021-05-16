@@ -3,6 +3,9 @@ from app import app, db
 from app.models import User, Marks
 from app.routes import add_marks
 import random as rand
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver import ActionChains
 
 #TEST PASSWORDS
 #CAN WRITE TEST FIRST THEN WRITE THE CODE TO MEET THE TEST REQUIREMENTS
@@ -27,7 +30,7 @@ class UserModelCase(unittest.TestCase):
     def test_top_players(self):
         plist = []
         for i in range(15):
-            u = User(username = 'g'.format(i), email = 'e{}@gmail.com'.format(i))
+            u = User(username = 'g{}'.format(i), email = 'e{}@gmail.com'.format(i))
             if(i < 5):
                 m1 = 5
                 m2 = 5
@@ -42,11 +45,12 @@ class UserModelCase(unittest.TestCase):
                 m3=0
             m = Marks(mod1=m1, mod2 = m2, mod3 = m3, user = u)
             m.update_avg_mark()
-            self.assertEqual(m.avgMark, (m1+m2+m3)/3)
+            self.assertEqual(m.avgMark, '{:.2f}'.format((m1+m2+m3)/3))
             plist.append([u,m])
             db.session.add(u)
             db.session.add(m)
-        db.session.commit()
+            print(u.username)
+            db.session.commit()
         t1 = User.query.join(Marks).filter(User.id == Marks.user_id).order_by(Marks.avgMark.desc()).with_entities(User.username, Marks.avgMark, User.email).limit(10).all()
         for i in range(10):
             self.assertEqual(t1[i],(plist[i][0].username, plist[i][1].avgMark, plist[i][0].email))
@@ -58,7 +62,7 @@ class UserModelCase(unittest.TestCase):
         mod3 = rand.randint(0,5)
         m = Marks(mod1 = mod1, mod2= mod2, mod3=mod3, user=u)
         m.update_avg_mark()
-        self.assertEqual(m.avgMark, (mod1+mod2+mod3)/3)
+        self.assertEqual(m.avgMark, '{:.2f}'.format((mod1+mod2+mod3)/3))
         
     def test_add_marks(self):
         u = User(username='new_user', email = 'new_user@b.com')
@@ -87,5 +91,37 @@ class UserModelCase(unittest.TestCase):
 
     #     # Then do the same thing for unfollow.
     #     #I'll need to do this for adding marks etc
+
+
+class GoogleTestCase(unittest.TestCase):
+
+    def setUp(self):
+        self.driver = webdriver.Chrome('./chromedriver')
+        # self.addCleanup(self.driver.close())
+
+    def testPageTitle(self):
+        self.driver.get("http://127.0.0.1:5000/")
+        self.assertIn('Unihelp', self.driver.title)
+
+    def testRegister(self):
+        self.driver.get('http://127.0.0.1:5000/register')
+        user = self.driver.find_element_by_id('uname')
+        email = self.driver.find_element_by_id('email')
+        pwd = self.driver.find_element_by_id('pswd')
+        cpwd = self.driver.find_element_by_id('cpswd')
+        user.send_keys('user1')
+        email.send_keys('gg@gmail.com')
+        pwd.send_keys('1234')
+        cpwd.send_keys('1234')
+
+
+    def tearDown(self):
+        self.driver.close()
+
+
 if __name__ == '__main__':
     unittest.main(verbosity=2)
+
+
+
+
