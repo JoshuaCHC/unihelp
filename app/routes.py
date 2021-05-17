@@ -99,14 +99,28 @@ def results():
 
 @app.route('/rankings')
 def rankings():
-    t1 = User.query.join(Marks).filter(User.id == Marks.user_id).order_by(Marks.avg_mark.desc()).with_entities(User.username, Marks.avg_mark, User.email).limit(10).all()
-    print(t1)
+    t1 = User.query.join(Marks).filter(User.id == Marks.user_id).order_by(Marks.avg_mark.desc()).with_entities(User.username, Marks.avg_mark, User.email).all()
+    # t2 = User.query.join(Marks,User.id == Marks.user_id).filter(username = current_user.username).order_by(Marks.avg_mark.desc()).with_entities(User.username, Marks.avg_mark, User.email).limit(10).all()
+    # print(t1)
     img = []
-    for i in range(len(t1)):
+    for i in range(10):
         digest = md5(t1[i][2].lower().encode('utf-8')).hexdigest()
         img.append('https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(digest, 40))
-    nums = range(1,11)
-    return render_template('Rankings.html', ranks = t1, vals = nums, len = len(t1), imgs = img)	
+    cu = 0
+    for i in range(len(t1)):
+        if(current_user.username == t1[i][0]):
+            print(current_user.username, t1[i][0])
+            cu = i
+            break
+    digest = md5(t1[cu][2].lower().encode('utf-8')).hexdigest()
+    img.append('https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(digest, 40))
+    if(cu < 10):
+        nums = range(1,11)
+        return render_template('Rankings.html', ranks = t1[:10], vals = nums, len = 10, imgs = img, cu = 'None', ur = cu)
+    else:
+        nums = range(1,11)
+        return render_template('Rankings.html', ranks = t1[:10], vals = nums, len = 10, imgs = img, cu = t1[cu], ur = cu)
+
 
 
 
