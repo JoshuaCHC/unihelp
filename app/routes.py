@@ -128,14 +128,23 @@ def rankings():
         digest = md5(t1[cu][2].lower().encode('utf-8')).hexdigest()
         img.append('https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(digest, 40))
         if(cu < 10):
-            nums = range(1,11)
-            return render_template('Rankings.html', ranks = t1[:10], vals = nums, len = len(img)-1, imgs = img, cu = 'None', ur = cu)
+            if(len(t1) <= 10):
+                nums = range(1,11)
+                return render_template('Rankings.html', ranks = t1, vals = nums, len = len(t1), imgs = img, cu = 'None', ur = cu)
+            else:
+                nums = range(1,11)
+                print(len(img)-2)
+                return render_template('Rankings.html', ranks = t1[:10], vals = nums, len = 10, imgs = img, cu = 'None', ur = cu)
         else:
             nums = range(1,11)
-            return render_template('Rankings.html', ranks = t1[:10], vals = nums, len = len(img)-1, imgs = img, cu = t1[cu], ur = cu)
+            return render_template('Rankings.html', ranks = t1[:10], vals = nums, len = 10, imgs = img, cu = t1[cu], ur = cu)
     else:
-        nums = range(1,11)
-        return render_template('Rankings.html', ranks = t1[:10], vals = nums, len = len(img)-1, imgs = img, cu = 'None', ur = None)
+        if(len(t1) < 10):
+            nums = range(1,11)
+            return render_template('Rankings.html', ranks = t1, vals = nums, len = len(t1), imgs = img, cu = 'None', ur = None)
+        else:
+            nums = range(1,11)
+            return render_template('Rankings.html', ranks = t1[:10], vals = nums, len = 10, imgs = img, cu = 'None', ur = None)
 
 
 
