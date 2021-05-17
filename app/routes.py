@@ -95,10 +95,14 @@ def home_mod():
 @login_required
 @app.route('/login/results')
 def results():
-    t1 = Marks.query.filter_by(id=current_user.id).first()
-    mark = t1.avg_mark
-    print(mark)
-    return render_template('results.html', mark = mark)
+    if(current_user.is_anonymous):
+        return redirect(url_for('login'))
+    else:
+        t1 = Marks.query.filter_by(id=current_user.id).first()
+        mark = t1.avg_mark
+        print(mark)
+        return render_template('results.html', mark = mark)
+    
 
 @app.route('/rankings')
 def rankings():

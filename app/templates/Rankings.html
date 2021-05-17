@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang = "en">
 <meta charset = 'utf-8'>
-<title>Module 3 Quiz</title>
+<title>Rankings</title>
 {% extends "base.html"%}
 {% block content %}
 <div class = 'container-fluid table-div'>
@@ -10,9 +10,11 @@
   
   <table class = 'table table-bordered table-hover' id = 'table1'>
     <thead>
-      <th>Rank</th>
-      <th>User</th>
-      <th>Score</th>
+      <tr>
+        <th>Rank</th>
+        <th>User</th>
+        <th>Score</th>
+      </tr>
     </thead>
     <tbody>
     {%for n in range(len)%}
