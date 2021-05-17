@@ -266,7 +266,11 @@ html, body {
  }
 
  .demo_img{
-   width: 50x;
+   width: 1000px;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+
  }
 
  /* MAIN STYLE FOR CONENT IN MODULES */
