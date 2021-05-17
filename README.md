@@ -1,9 +1,3 @@
-<!-- TODO
- - screenshots
- - update requirements
- - image referencing -->
-
-
 # CITS3403 Agile Web Development Project 2021
 # Uni-Safe Online Formative Assessment
 Building a web application that simulates a learning experience with learning assessments, results and feedback for users. 
@@ -38,7 +32,6 @@ We used an agile approach to manage our project in the following ways:
 
 
 ## Database Schema
-<!-- user and score tables -->
 ![Schema](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/dbschema.png)
 
 
@@ -67,29 +60,30 @@ Now run the application:
 
 
 ## Requirements
-<!-- update the requirements last minute -->
+- alembic==1.6.2
 - click==7.1.2
 - Flask==1.1.2
-- itsdangerous==1.1.0
-- Jinja2==2.11.3
-- MarkupSafe==1.1.1
-- Werkzeug==1.0.1
-- alembic==1.6.2
 - Flask-Login==0.5.0
 - Flask-Migrate==2.7.0
 - Flask-SQLAlchemy==2.5.1
+- Flask-WTF==0.14.3
 - greenlet==1.1.0
+- itsdangerous==1.1.0
+- Jinja2==2.11.3
 - Mako==1.1.4
+- MarkupSafe==1.1.1
 - python-dateutil==2.8.1
 - python-dotenv==0.17.1
 - python-editor==1.0.4
+- selenium==3.141.0
 - six==1.16.0
 - SQLAlchemy==1.4.14
+- urllib3==1.26.4
+- Werkzeug==1.0.1
 - WTForms==2.3.3
 
 
 ## Unit Tests
-<!-- Explain how to run these as well! -->
 To run the unit tests, type the following command into the terminal:  ``` python tests.py ```
 
 ```Python
@@ -117,8 +111,11 @@ class UserModelCase(unittest.TestCase):
 class GoogleTestCase(unittest.TestCase):
 
     setUp(self):
+    - sets up browser testing, checking that the webpage is running correctly on the browser
+    - does this with chrome driver
 
     tearDown(self):
+    - closes the browser window that the driver is currently on
 
     testPageTitle(self):
     - checks that page title is correct
@@ -132,28 +129,75 @@ class GoogleTestCase(unittest.TestCase):
 
 
 ## Screenshots
-<!-- of all pages and include images of all drafting - powerpoint and everything etc. -->
+
+The planning process begun with drawing out ideas and creating a powerpoint to play with different layouts.
+
+![Planning Powerpoint](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/pwrpoint.jpg)
+
+![Planning page1](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/plan1.jpg)
+
+![Planning page2](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/plan2.jpg)
+
+![Planning page3](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/plan3.jpg)
+
+Starting at the home page, you can navigate through the webpage, accessing an about page or heading to the login page. 
+The login page allows returning users to login and new users to register a new account. 
+After logging in, a user can access the three learning modules, take quizzes, see their results, and then view their ranking compared with other users.
+
+![Home page](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/home.png)
+
+![About page](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/about.png)
+
+![Login page](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/login.png)
+
+![Module home page](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/modulehome.png)
+
+![Modules page](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/modules.png)
+
+![Results page](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/results.png)
+
+![Ranking page](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/ranking.png)
 
 
 ## Images Used
-<!-- ieee referencing... -->
-<!-- 
-- home page:
-- about page: 
-- modules:
-- log in and results etc.:
- -->
+Home_Page
+[1]
+Perkinsbuilders.com.au, 2019. [Online]. Available: https://www.perkinsbuilders.com.au/wp-content/uploads/2020/05/UWA_EZONE275_001_small-Copy.jpg. [Accessed: 1-May-2021]
 
-![Planning Powerpoint](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/pwrpoint.jpg)
-![Planning page1](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/plan1.jpg)
-![Planning page2](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/plan2.jpg)
-![Planning page3](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/plan3.jpg)
-![Home page](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/home.png)
-![About page](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/about.png)
-![Login page](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/login.png)
-![Module home page](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/modulehome.png)
-![Modules page](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/modules.png)
-![Quiz page](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/Quiz.png)
-![Results page](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/results.png)
-![Ranking page](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/ranking.png)
- 
+Login
+[1]
+Bellvuestudents.co.uk, 2021. [Online]. Available: https://www.bellvuestudents.co.uk/wp-content/uploads/2016/11/shutterstock_276679427.jpg. [Accessed: 2-May-2021]
+
+Results
+[1]
+GIPHY, “Excited Season 2 GIF by The Office - Find & Share on GIPHY,” GIPHY, 2020. https://media.giphy.com/media/IwAZ6dvvvaTtdI8SD5/giphy.gif (accessed April 15, 2021).
+
+[1]
+Shopify.com, 2021. [Online]. Available: https://cdn.shopify.com/s/files/1/1061/1924/products/Sad_Face_Emoji_1024x1024.png?v=1571606037. [Accessed: 16-May-2021]
+
+about
+‌[1]
+Cloudfront.net, 2021. [Online]. Available: https://dm0qx8t0i9gc9.cloudfront.net/watermarks/image/rDtN98Qoishumwih/graphicstock-young-smiling-man-sitting-at-the-table-with-glass-and-bottle-of-wine-happy-man-drinking-wine-at-restaurant-cheerful-man-enjoying-a-drink-at-wine-bar-vector-flat-design-illustration-square-layout_SX6BAcIIb_SB_PM.jpg. [Accessed: 1-May-2021]
+
+[1]
+Istockphoto.com, 2021. [Online]. Available: https://media.istockphoto.com/vectors/students-on-a-book-pile-vector-id951047480?k=6&m=951047480&s=612x612&w=0&h=wCWzjKLuQMbIR1KvnqjzX8uJzxGIM9bMk6TXkqvgi4w=. [Accessed: 2-May-2021]
+
+[1]
+Calmedtrainingcenter.com, 2021. [Online]. Available: https://calmedtrainingcenter.com/wp-content/uploads/2017/12/CPR_BLS.png. [Accessed: 15-April-2021]
+
+home_mod
+[1]
+Healthyactivebydesign.com.au, 2021. [Online]. Available: https://www.healthyactivebydesign.com.au/images/uploads/Case_Studies/WA/UWA4_Cropped.jpg. [Accessed: 6-May-2021]
+
+module1
+[1]
+Cloudfront.net, 2019. [Online]. Available: https://d2ebzu6go672f3.cloudfront.net/media/content/images/H0819b_costo(1).jpg. [Accessed: 5-May-2021]
+
+[1]
+Researchgate.net, 2021. [Online]. Available: https://www.researchgate.net/profile/Pantelis-Nikolaidis/publication/332621009/figure/fig3/AS:751207572312077@1556113250973/Location-of-chest-compression.ppm. [Accessed: 10-May-2021]
+
+module2
+[1]
+S. Irl et al., “”, [Online]. Available: https://www.cm.uwa.edu.au/__data/assets/pdf_file/0006/3377976/UWA-Help-points-and-walksafe-routes-09-2018.pdf. [Accessed: 3-May-2021]
+
+transport.uwa.edu.au, “Crawley Campus Parking Map.” Accessed: Apr. 20, 2021. [Online]. Available: https://www.transport.uwa.edu.au/__data/assets/pdf_file/0007/148948/UWA-Parking-map-2020.pdf
