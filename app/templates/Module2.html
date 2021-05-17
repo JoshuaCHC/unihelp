@@ -3,12 +3,11 @@
 <div class = main>
 <div class = content>
 <h1> Module 2: Safe Drinking Practices</h1>
+<h2>TIPS, TRICKS, and RESOURCES FOR UNI SUCCESS AND SAFETY</h2>
 <br>
 <br>
         <h3>Picture this...</h3>
         <p>
-            <br>
-            <br>
             It's 2:00AM in the morning, you've yacked two times already in your parents garden bed.  
             Your mate dissapeared 3 hours ago and no-one has seen him, and everyone else (including you) is still downing shots.
             You came here straight from work and haven't eaten anything since breakfast.  Feeling a little sick, you decide to eat some
@@ -20,7 +19,8 @@
             In this module we will list some practices you can use to look after yourself, and others, on a big night out!
         </p>
     <br>
-    <h2>Before you go out...</h2>
+    <button type="button" class="collapsible">Module 2.1: Before you go out</button>
+    <section class = "submodule">
     <br>
         <h3>Plan Plan Plan!</h3>
         <p>
@@ -55,8 +55,10 @@
             Drink in moderation to avoid going over your limit.  A good tip is to only take enough alcohol to enjoy your night, and not enough to
             make you sick.  
         </p>
+    </section>
     <br>
-    <h2>While you're out...</h2>
+    <button type="button" class="collapsible">Module 2.1: While you're out</button>
+    <section class = "submodule">
     <br>
         <p>
             Ok, assuming you've followed everything so far, you should have safely arrived at the venue with not too much alcohol, a fist full of food
@@ -140,8 +142,10 @@
                     <li>Is s/he breathing? Yes or no answer required. </li>
                 </ul>
             </p>
+            </section>
 <br>
-<h2>When(if) you get home...</h2>
+<button type="button" class="collapsible">Module 2.3: When(if) you get home</button>
+<section class = "submodule">
 <br>
     <h3>Am I alright to drive in the morning</h3>
         <p>
@@ -164,6 +168,23 @@
         </p>
 <br>
 <h2>Now attempt our quiz to see how well you retained this knowledge!</h2>
+</section>
 </div>
 </div>
+<script>
+    var collapse = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < collapse.length; i++) {
+      collapse[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var submodule = this.nextElementSibling;
+        if (submodule.style.display === "block") {
+          submodule.style.display = "none";
+        } else {
+          submodule.style.display = "block";
+        }
+      });
+    }
+</script>
 {% endblock %}

@@ -73,7 +73,7 @@ html, body {
 
 /* On mouse-over */
 .sidenav a:hover, .dropdown-btn:hover {
-  color: rgb(0, 162, 255);
+  color: rgb(155, 64, 64);
 }
 .main {
   margin-left: 210px;  
@@ -117,7 +117,7 @@ html, body {
 }
 
 .sidenav a:hover {
-  color: rgb(0, 162, 255);
+  color: rgb(155, 64, 64);
 }
 
 /* Flip Cards*/
@@ -157,7 +157,7 @@ html, body {
   font-size:70px;
   padding: 100px 0;
   text-align:center;
-  background-color: rgb(0, 162, 255);;
+  background-color: rgb(155, 64, 64);
   color: white;
 }
 
@@ -247,7 +247,7 @@ html, body {
   }
 	
   #start:hover {
-    background-color: rgb(0, 162, 255);
+    background-color: rgb(155, 64, 64);
   }
 	
   #start:active {
@@ -269,7 +269,7 @@ html, body {
    width: 50x;
  }
 
- /* Making it look nice */
+ /* MAIN STYLE FOR CONENT IN MODULES */
 
  .content {
   color:rgb(8, 92, 47);
@@ -284,9 +284,11 @@ html, body {
 }
 
 .content h2 {
-  font-size: 40px;
+  font-size: 60px;
   color: rgb(8, 92, 47);
   text-align: center;
+  padding: 20px;
+  color: rgb(255, 69, 0);
 }
 
 .content span{
@@ -294,11 +296,17 @@ html, body {
   color: grey;
 }
 .content h3 {
-  padding: 0;
-  font-size: 25px;
+  margin: 10px;
+  margin-left: 100px;
+  margin-right: 100px;
+  font-size: 40px;
   color: rgb(255, 69, 0);
+  padding-top: 10px;
 }
-
+.content h4 {
+  margin-left: 100px;
+  margin-right: 100px;
+}
 .content hr {
   border: 1px solid rgb(8, 92, 47);
   width: 2em;
@@ -306,21 +314,27 @@ html, body {
 
 .content p {
   color: rgb(8, 92, 47);
-  text-align: justify;
-  width: 800px;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 100px;
+  margin-right: 100px;
+  font-size: 20px;
+}
+.content ul, ol {
+  margin-left: 100px;
+  font-size: 20px;
+}
+.content a{
+  color: rgb(155, 64, 64);
 }
 
 .home_headers1{
  text-decoration:underline;
- color:rgb(255, 69, 0);
+ color:rgb(155, 64, 64);
 }
 .home_headers2{
 	text-decoration:underline;
  text-align:center;
-  color:rgb(255, 69, 0);
+  color:rgb(155, 64, 64);
  }
 
 
@@ -341,10 +355,10 @@ html, body {
  .text_image {
    display: flex;
    align-items: center;
-   justify-content: center
+   justify-content: center;
  }
  .image {
-   flex-basis: 40%
+   flex-basis: 0%;
  }
  .picture_text {
    font-size: 20px;
@@ -359,3 +373,94 @@ html, body {
    margin-right: auto;
    width: 70%;
  }
+
+ /* COLLAPSING MODULES STYLE */
+
+ .collapsible {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 25px;
+}
+
+.active, .collapsible:hover {
+  background-color: white;;
+  color: rgb(78, 134, 103);
+  font-size: 30px;
+}
+
+.submodule {
+  display: none;
+  overflow: hidden;
+  background-color: white;
+}
+/* MODULE 1 SPECIFIC STLYE */
+.yt-link {
+  margin-left: 150px;
+  margin-right: 150px;
+}
+.flippy-bois {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.flip-card h3 {
+  margin: 0;
+  color: white;
+  font-size: 30px;
+
+}
+.flip-card p {
+  margin: 0;
+  color: white;
+  font-size: 22px;
+}
+.flip-card a{
+  color: rgb(155, 64, 64);
+}
+/* MODULE 3 SPECIFIC STYLE */
+.M3history {
+  margin: 5% 20%;
+  color: rgb(78, 134, 103);
+}
+.M3tip {
+  margin: 2%;
+  margin-left: 20%;
+  margin-right: 20%;
+  color: rgb(78, 134, 103);
+}
+table {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.M3column {
+  margin: 0px;
+  float: left;
+  width: 20%;
+  padding: 15px;
+  margin-left: 90px;
+  margin-right: 90px;
+}
+.M3column ul {
+  margin: 0px;
+  font-size: 15px;
+
+}
+.M3row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.nested-list ul{
+  margin-left: 0px;
+  margin-right: 0px;
+}
