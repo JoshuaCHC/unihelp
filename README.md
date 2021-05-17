@@ -217,6 +217,7 @@ S. Irl et al., “”, [Online]. Available: https://www.cm.uwa.edu.au/__data/ass
 transport.uwa.edu.au, “Crawley Campus Parking Map.” Accessed: Apr. 20, 2021. [Online]. Available: https://www.transport.uwa.edu.au/__data/assets/pdf_file/0007/148948/UWA-Parking-map-2020.pdf
 
 References for module 1:
+
 “How to perform CPR,” Healthdirect.gov.au, May 06, 2021. https://www.healthdirect.gov.au/how-to-perform-cpr (accessed May 1, 2021).
 
 “First aid fact sheet,.” [Online]. Available: https://stjohn.org.au/assets/uploads/fact%20sheets/english/Fact%20sheets_recovery%20position.pdf.
