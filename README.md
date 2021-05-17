@@ -175,43 +175,43 @@ Ranking page:
 
 ## Images Used
 Home_Page
-[1]
+
+
 Perkinsbuilders.com.au, 2019. [Online]. Available: https://www.perkinsbuilders.com.au/wp-content/uploads/2020/05/UWA_EZONE275_001_small-Copy.jpg. [Accessed: 1-May-2021]
 
-Login
-[1]
+Login:
+
 Bellvuestudents.co.uk, 2021. [Online]. Available: https://www.bellvuestudents.co.uk/wp-content/uploads/2016/11/shutterstock_276679427.jpg. [Accessed: 2-May-2021]
 
-Results
-[1]
+Results:
+
 GIPHY, “Excited Season 2 GIF by The Office - Find & Share on GIPHY,” GIPHY, 2020. https://media.giphy.com/media/IwAZ6dvvvaTtdI8SD5/giphy.gif (accessed April 15, 2021).
 
-[1]
+
 Shopify.com, 2021. [Online]. Available: https://cdn.shopify.com/s/files/1/1061/1924/products/Sad_Face_Emoji_1024x1024.png?v=1571606037. [Accessed: 16-May-2021]
 
-about
-‌[1]
+About:
+
 Cloudfront.net, 2021. [Online]. Available: https://dm0qx8t0i9gc9.cloudfront.net/watermarks/image/rDtN98Qoishumwih/graphicstock-young-smiling-man-sitting-at-the-table-with-glass-and-bottle-of-wine-happy-man-drinking-wine-at-restaurant-cheerful-man-enjoying-a-drink-at-wine-bar-vector-flat-design-illustration-square-layout_SX6BAcIIb_SB_PM.jpg. [Accessed: 1-May-2021]
 
-[1]
+
 Istockphoto.com, 2021. [Online]. Available: https://media.istockphoto.com/vectors/students-on-a-book-pile-vector-id951047480?k=6&m=951047480&s=612x612&w=0&h=wCWzjKLuQMbIR1KvnqjzX8uJzxGIM9bMk6TXkqvgi4w=. [Accessed: 2-May-2021]
 
-[1]
+
 Calmedtrainingcenter.com, 2021. [Online]. Available: https://calmedtrainingcenter.com/wp-content/uploads/2017/12/CPR_BLS.png. [Accessed: 15-April-2021]
 
-home_mod
-[1]
+Home Module:
+
 Healthyactivebydesign.com.au, 2021. [Online]. Available: https://www.healthyactivebydesign.com.au/images/uploads/Case_Studies/WA/UWA4_Cropped.jpg. [Accessed: 6-May-2021]
 
-module1
-[1]
+Module 1
+
 Cloudfront.net, 2019. [Online]. Available: https://d2ebzu6go672f3.cloudfront.net/media/content/images/H0819b_costo(1).jpg. [Accessed: 5-May-2021]
 
-[1]
 Researchgate.net, 2021. [Online]. Available: https://www.researchgate.net/profile/Pantelis-Nikolaidis/publication/332621009/figure/fig3/AS:751207572312077@1556113250973/Location-of-chest-compression.ppm. [Accessed: 10-May-2021]
 
-module2
-[1]
+Module 2
+
 S. Irl et al., “”, [Online]. Available: https://www.cm.uwa.edu.au/__data/assets/pdf_file/0006/3377976/UWA-Help-points-and-walksafe-routes-09-2018.pdf. [Accessed: 3-May-2021]
 
 transport.uwa.edu.au, “Crawley Campus Parking Map.” Accessed: Apr. 20, 2021. [Online]. Available: https://www.transport.uwa.edu.au/__data/assets/pdf_file/0007/148948/UWA-Parking-map-2020.pdf
