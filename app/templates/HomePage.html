@@ -2,13 +2,13 @@
 {% block content %}
 <section>
   <div class = "bg-image">
-    <img src = https://www.perkinsbuilders.com.au/wp-content/uploads/2020/05/UWA_EZONE275_001_small-Copy.jpg class = "img-blur" style = "background-image">
+    <img src = https://www.perkinsbuilders.com.au/wp-content/uploads/2020/05/UWA_EZONE275_001_small-Copy.jpg class = "img-blur" >
     <div class = "parallelogram2">
       UniSafe works to provide students with accessible and 
       approachable resources with the aim of educating individuals about 
       putting their own health and the health of others first - mental and physical.
     </div>
-    <a href = "login.html">
+    <a href = {{url_for("login")}}>
     <div class="parallelogram1">
       Take our course now!
     </div>
@@ -30,7 +30,7 @@
     $('.img-blur').css({
       filter: "blur(" + (scroll/200) + "px)"
     })
-  })
+  });
 </script>
 
   {% endblock %}

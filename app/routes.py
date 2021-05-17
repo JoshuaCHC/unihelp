@@ -87,7 +87,10 @@ def add_marks_3():
 @login_required
 @app.route('/login/modules')
 def home_mod():
-    return render_template('home_mod.html')
+    if(current_user.is_anonymous):
+        return redirect(url_for('login'))
+    else:
+        return render_template('home_mod.html')
 
 @login_required
 @app.route('/login/results')
