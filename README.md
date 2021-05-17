@@ -39,7 +39,7 @@ We used an agile approach to manage our project in the following ways:
 
 ## Database Schema
 <!-- user and score tables -->
-![Schema](https://github.com/JoshCUni/unihelp/blob/module3/app/static/images/dbschema.png)
+![Schema](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/dbschema.png)
 
 
 ## Launching the Application
@@ -143,3 +143,17 @@ class GoogleTestCase(unittest.TestCase):
 - modules:
 - log in and results etc.:
  -->
+
+![Planning Powerpoint](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/pwrpoint.jpg)
+![Planning page1](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/plan1.jpg)
+![Planning page2](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/plan2.jpg)
+![Planning page3](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/plan3.jpg)
+![Home page](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/home.png)
+![About page](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/about.png)
+![Login page](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/login.png)
+![Module home page](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/modulehome.png)
+![Modules page](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/modules.png)
+![Quiz page](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/Quiz.png)
+![Results page](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/results.png)
+![Ranking page](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/ranking.png)
+ 
