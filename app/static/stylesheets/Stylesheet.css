@@ -107,8 +107,9 @@ html, body {
   color: white;
   font-size: 30px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: 1000;
+  font-weight: bolder;
 }
+
 .footer .footer-content .about h1 span {
   color: rgb(155, 64, 64);
 }
@@ -344,32 +345,8 @@ html, body {
 
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;}
-
-    .module_navbar {
-        width: 100%;
-        background-color: rgb(78, 134, 103);
-        overflow: auto;
-        position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-        z-index: 1; /* Stay on top */
-        top: 0;
-      }
-      
-      .module_navbar a {
-        float: right;
-        padding: 12px;
-        color: white;
-        text-decoration: none;
-        font-size: 17px;
-        width: 25%; /* Four links of equal widths */
-        text-align: center;
-      }
-      
-      .module_navbar a:hover {
-        background-color: rgb(252, 252, 252);
-        color: rgb(78, 134, 103);
-      }
-
+    font-family: Arial, Helvetica, sans-serif;
+}
 .topnav p {
   float: right;
   color: red;

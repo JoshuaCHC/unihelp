@@ -1,6 +1,6 @@
 {% extends "Modules.html"%}
 {% block content %}
-<body class = "background">
+<div class = "background">
 <div class="main">
 <div class = "content">
         <h1>Welcome to the modules</h1>
@@ -14,7 +14,7 @@
         <div class="text_image">
             <div class="image">
         <h1 class = "home_headers1" id = "navbar">Navbar</h1>
-        <img class="shadow" src ="/static/images/navbar2.png">
+        <img class="shadow" src ="/static/images/navbar2.png" alt="navbar-demo">
     </div>
     <div class="picture_text">
         <h5>If you look to your left there is a navbar which contains the modules, the quizzes as well as a results page that will tell you how well you did in this course.
@@ -26,7 +26,7 @@
     <div class="image">
 
         <h1 class ="home_headers1" id = "modules">Modules</h1>
-        <img class="shadow" src ="/static/images/module2.png">
+        <img class="shadow" src ="/static/images/module2.png" alt="modules-demo">
     </div>
     <div class="picture_text">
         <h5>
@@ -37,13 +37,13 @@
 
 
         <h1 class ="home_headers2" id = "words">Content</h1>
-        <img class="demo_img" src ="/static/images/module1.png">
+        <img class="demo_img" src ="/static/images/module1.png" alt="module1-demo">
         <h5 class="center_text">In each module there is a content page that will teach you about the university health and safety in a fun and interesting manner</h5>
     
     
 
         <h1  class ="home_headers2" id = "quiz">Quiz</h1>
-        <img  class="demo_img" src ="/static/images/quiz1.png" >
+        <img  class="demo_img" src ="/static/images/quiz1.png" alt="quiz-demo">
         <h5 class="center_text"> 
             When you are ready to undertake the quiz, click on the relevant module then click quiz. 
             The quizzes will save your high score thus far, meaning if you re-attempt the quiz and you do worse than your previous attempt it will not impact your rankings.</h5>
@@ -55,5 +55,5 @@
 
 </div>   
 </div>
-</body>
+</div>
 {% endblock %}

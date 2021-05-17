@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html lang = "en">
+<meta charset = 'utf-8'>
+<title>Modules</title>
 {% extends "base.html"%}
 {% block content %}
 <div class='container-fluid login-img' id = 'login-container'>
@@ -6,7 +10,7 @@
         <div class='col-sm-7'></div>
         <div class = 'col-sm-4 login-box'>
           <h2 class = 'login-text'><big> <b>Register </b></big></h2>            
-          <form action="" method= 'post' id='regform' class = "needs-validation" >
+          <form method= 'post' id='regform' class = "needs-validation" >
               {{ form.hidden_tag() }}
                 <div class="form-group">
                   <label for="uname">Username:</label>
@@ -129,5 +133,5 @@
     }
   });
       </script>
-
 {%endblock%}
+</html>

@@ -1,10 +1,14 @@
+<!DOCTYPE html>
+<html lang = "en">
+<meta charset = 'utf-8'>
+<title>Module 3 Quiz</title>
 {% extends "Modules.html"%}
 {% block content %}
 <div class = "main">
     <div id="quiz"></div>
     <div id="results"></div>
     <button id="complete" class='btn btn-primary'>Submit Quiz</button>
-    <input type='text', style='display:none' id='mark3' name='mark'>
+    <input type='text' style='display:none' id='mark3' name='mark'>
     </div>
     <script>
       $(function(){
@@ -211,7 +215,7 @@
       submitButton.addEventListener('click', showResults);
     })();
     </script>
-      {% endblock %}
-
+{% endblock %}
+</html>
 
       
