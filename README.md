@@ -19,7 +19,7 @@ Immediate results are displayed after each multiple-coice quizz, as well as a fi
 
 ## Architecture
 Our webpage uses a client-server architecture, with the one server and database responding to many clients.
-HTML, CSS, and JavaScript were used to design the client-side of the web applciation, with Python, Flask, and SQAlchemy used for the server-side.
+HTML, CSS, and JavaScript were used to design the client-side of the web application, with Python, Flask, and SQAlchemy used for the server-side.
 
 
 ## Agile Development Approach
