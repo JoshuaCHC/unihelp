@@ -144,17 +144,31 @@ Starting at the home page, you can navigate through the webpage, accessing an ab
 The login page allows returning users to login and new users to register a new account. 
 After logging in, a user can access the three learning modules, take quizzes, see their results, and then view their ranking compared with other users.
 
+Home page:
+
 ![Home page](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/home.png)
+
+About page:
 
 ![About page](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/about.png)
 
+Login page:
+
 ![Login page](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/login.png)
+
+Home page for the modules:
 
 ![Module home page](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/modulehome.png)
 
+Module pages:
+
 ![Modules page](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/modules.png)
 
+Results page:
+
 ![Results page](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/results.png)
+
+Ranking page:
 
 ![Ranking page](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/ranking.png)
 
