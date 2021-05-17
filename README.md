@@ -140,6 +140,10 @@ The planning process begun with drawing out ideas and creating a powerpoint to p
 
 ![Planning page3](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/plan3.jpg)
 
+![Planning page4](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/plan4.png)
+
+![Planning page5](https://github.com/JoshCUni/unihelp/blob/main/app/static/images/plan5.png)
+
 Starting at the home page, you can navigate through the webpage, accessing an about page or heading to the login page. 
 The login page allows returning users to login and new users to register a new account. 
 After logging in, a user can access the three learning modules, take quizzes, see their results, and then view their ranking compared with other users.
