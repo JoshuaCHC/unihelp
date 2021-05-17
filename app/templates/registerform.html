@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang = "en">
 <meta charset = 'utf-8'>
-<title>Modules</title>
+<title>Register</title>
 {% extends "base.html"%}
 {% block content %}
 <div class='container-fluid login-img' id = 'login-container'>
@@ -13,7 +13,7 @@
           <form method= 'post' id='regform' class = "needs-validation" >
               {{ form.hidden_tag() }}
                 <div class="form-group">
-                  <label for="uname">Username:</label>
+                  <label>Username:</label>
                   {{ form.username(type='text', class='form-control',placeholder='Enter username',id='uname')}}
                   {% for error in errors %}
                     {%if error == 'Username is taken, please try another.'%}
@@ -23,7 +23,7 @@
                   <!-- <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required> -->
                 </div>
                 <div class="form-group">
-                    <label for='email'>Email address</label>
+                    <label>Email address</label>
                     {{ form.email(type='email', class='form-control',placeholder='Enter email',id='email')}}
     
                     <!-- <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required> -->
@@ -35,13 +35,13 @@
                   {% endfor %}
                   </div>
                 <div class="form-group">
-                  <label for="pswd">Password:</label>
+                  <label>Password:</label>
                   {{ form.password(type='password', class='form-control',placeholder='Enter password',id='pswd')}}
     
                   <!-- <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required> -->
                 </div>
                 <div class="form-group">
-                    <label for="cpswd">Confim password:</label>
+                    <label>Confim password:</label>
                     {{ form.password2(type='password', class='form-control',placeholder='Re-enter password',id='cpswd')}}
     
                     <!-- <input type="password" class="form-control" id="cpwd" placeholder="Re-enter password" name="cpswd" required> -->
