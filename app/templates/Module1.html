@@ -1,6 +1,5 @@
 {% extends "Modules.html"%}
 {% block content %}
-<body>
 <h1 class="blinking header">
   CPR
 </h1>
@@ -37,12 +36,13 @@
 <h3>Who can you perform CPR on?</h3>
 <p>
   Only ever perform CPR if the person:
+</p>
   <ul>
       <li>Is unconscious</li>
       <li>Is not responding to you</li>
       <li>Is not breathing, or is breathing abnormally</li>
   </ul>
-</p>
+
 
 <h3>What should you do in an emergency?</h3>
 <p>
@@ -145,7 +145,7 @@
   CPR aim for 30:2 ratio, meaning 30 compressions with 2 breaths in between, you must also aim to do between 100 and 120
   compressions per minute.</p>
   <h3> To carry out chest compressions you must:</h3>
-  <img style="float:right; margin: 5px;" src="https://d2ebzu6go672f3.cloudfront.net/media/content/images/H0819b_costo(1).jpg"></img>
+  <img style="float:right; margin: 5px;" src="https://d2ebzu6go672f3.cloudfront.net/media/content/images/H0819b_costo(1).jpg" alt = "Breast Bone">
   <ol style="text-align: justify; font-size: 25px">
       <li>Place the patient on their back and kneel beside them.</li>
       <li>Place the heel of your hand on the lower half of the breastbone,
@@ -171,7 +171,7 @@
   <section class = "submodule">
   <br>
   <h1 id="recovery">What is the recovery position?</h1>
-  <img style="float:right; margin: 5px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQoMAKO_OVf130yx35hxZbZTrOImfga3LuFA&usqp=CAU"></img>
+  <img style="float:right; margin: 5px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQoMAKO_OVf130yx35hxZbZTrOImfga3LuFA&usqp=CAU" alt = "Recovery Position">
   <ol style="text-align: justify; font-size: 25px">
       <li>Lie the patient down on their back</li>
       <li>Place the patient&apos;s furthest arm directly out from their body </li>
@@ -182,7 +182,6 @@
       <li>Place the patient’s hand under their chin to stop their head from tilting and to keep their airway open.</li>
     </ol>
 
-    <body>
       <div id="content">
         Timer: <span id="timer"></span><br/>
         Score: <span id="score"></span><br/>
@@ -190,7 +189,7 @@
       </div>
 
       <div id="clickarea">
-        <img src = "https://www.researchgate.net/profile/Pantelis-Nikolaidis/publication/332621009/figure/fig3/AS:751207572312077@1556113250973/Location-of-chest-compression.ppm">
+        <img src = "https://www.researchgate.net/profile/Pantelis-Nikolaidis/publication/332621009/figure/fig3/AS:751207572312077@1556113250973/Location-of-chest-compression.ppm" alt = "chest image">
         <button id="start">Start</button>
       </div>
       <script type="text/javascript">
@@ -285,7 +284,6 @@
       });
     </script>
     </section>
-    </body>
 <script>
     var collapse = document.getElementsByClassName("collapsible");
     var i;
