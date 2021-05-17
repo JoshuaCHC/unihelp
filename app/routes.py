@@ -125,13 +125,13 @@ def rankings():
         img.append('https://www.gravatar.com/avatar/{}?d=identicon&s={}'.format(digest, 40))
         if(cu < 10):
             nums = range(1,11)
-            return render_template('Rankings.html', ranks = t1[:10], vals = nums, len = 10, imgs = img, cu = 'None', ur = cu)
+            return render_template('Rankings.html', ranks = t1[:10], vals = nums, len = len(img)-1, imgs = img, cu = 'None', ur = cu)
         else:
             nums = range(1,11)
-            return render_template('Rankings.html', ranks = t1[:10], vals = nums, len = 10, imgs = img, cu = t1[cu], ur = cu)
+            return render_template('Rankings.html', ranks = t1[:10], vals = nums, len = len(img)-1, imgs = img, cu = t1[cu], ur = cu)
     else:
         nums = range(1,11)
-        return render_template('Rankings.html', ranks = t1[:10], vals = nums, len = 10, imgs = img, cu = 'None', ur = None)
+        return render_template('Rankings.html', ranks = t1[:10], vals = nums, len = len(img)-1, imgs = img, cu = 'None', ur = None)
 
 
 
